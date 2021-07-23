@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+#navContainer{
+    background-color: rgba(0, 0, 0, 0.707);
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    height: 125px;
+    z-index: 1000;
+}
+#nav{
+    max-width: 1000px;
+    overflow: hidden;
+}
+#navTitle{
+    color: white;
+    height: 62%;
+    font-family: 'Montserrat', sans-serif;
+}
+.title{
+    height: 100%;
+    font-size: 1.7rem;
+    font-weight: 200;
+    text-shadow: 0 0 6px rgb(255, 255, 255);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-animation: letterSpacing 1.5s forwards;
+            animation: letterSpacing 1.5s forwards;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+}
+@keyframes letterSpacing {
+    from{
+        letter-spacing: 50px;
+        opacity: 0;
+    }
+    to{
+        letter-spacing: 14px;
+        opacity: 1;
+    }
+}
+#formsContainer{
+    padding: 10px 0 0 10px;
+    position: relative;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+#formsContainer * {
+    margin-right: 5px;
+}
+#forms{
+    display: none;
+    height: 30px;
+    -webkit-transform: translateX(35px);
+        -ms-transform: translateX(35px);
+            transform: translateX(35px);
+    opacity: 0;
+    padding-top: 5px;
+    margin: 0 !important;
+    -webkit-transition: 750ms;
+    -o-transition: 750ms;
+    transition: 750ms;
+    -webkit-transition-delay: 100ms;
+         -o-transition-delay: 100ms;
+            transition-delay: 100ms;
+}
+.formsAnimation{
+    -webkit-transform: translateX(0) !important;
+        -ms-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+    opacity: 1 !important;
+}
+@-webkit-keyframes forms {
+    from{
+        -webkit-transform: translateX(35px);
+                transform: translateX(35px);
+        opacity: 0;
+    }
+    to{
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes forms {
+    from{
+        -webkit-transform: translateX(35px);
+                transform: translateX(35px);
+        opacity: 0;
+    }
+    to{
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        opacity: 1;
+    }
+}
+#burger{
+    cursor: pointer;
+    padding: 2px;
+    margin: 0;
+}
+#burger:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#burger * {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.burger{
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.burger line:first-child{
+    -webkit-transform: rotate(47deg);
+        -ms-transform: rotate(47deg);
+            transform: rotate(47deg);
+    -webkit-transform-origin: 20% 20%;
+        -ms-transform-origin: 20% 20%;
+            transform-origin: 20% 20%;
+}
+.burger line:nth-child(2){
+    -webkit-transform: rotate(-48deg);
+        -ms-transform: rotate(-48deg);
+            transform: rotate(-48deg);
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+}
+.burger line:last-child{
+    opacity: 0;
+}
+#formSearch{
+}
+#search{
+    height: 19px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+#searchSubmit{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+#searchSubmit::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 4px;
+    height: 20px;
+    width: 2px;
+    background-color: transparent;
+    border-right: 1px solid white;
+}
+.profileBtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+.iconContainer{
+    height: 20px;
+    width: 20px;
+}
+#navLinksContainer{
+    height: 38%;
+    position: relative;
+}
+#navLinks{
+    position: relative;
+    height: 100%;
+    padding-top: 10px;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+.data{
+    width: 10px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+}
+.data:last-child{
+    justify-content: flex-end !important;
+}
+.navLink{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    position: relative;
+    text-transform: uppercase;
+    scroll-snap-align: center;
+}
+.navLink::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px !important;
+    box-shadow: 0 0 2px 0.5px rgb(255, 255, 255);
+    background-color: white;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.navLink:hover::after{
+    height: 1px !important;
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+}
+@media screen and (max-width: 1200px){
+    #nav{
+        padding: 0 10px;
+    }
+}

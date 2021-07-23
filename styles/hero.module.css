@@ -1,0 +1,205 @@
+.heroCarouselWrapper{
+    position: relative;
+    margin: 40px 0 30px 0;
+    transition: 1.2s cubic-bezier(0.1, 0.1, 0.15, 0.96);
+    z-index: 100;
+}
+.leftButton{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(4, 4, 5, 0.425);
+    box-shadow: 0 0 4px 1px rgba(4, 4, 5, 0.6);
+    transition: 1.2s cubic-bezier(0.1, 0.1, 0.15, 0.96), background-color 0.5s ease;
+    cursor: pointer;
+    z-index: 3;
+}
+.leftButton:hover{
+    background-color: rgba(4, 4, 5, 0.836);
+    box-shadow: 0 0 10px 1px rgba(4, 4, 5, 0.6);
+}
+.leftButton svg{
+    width: 100%;
+    height: 100%;
+    padding: 13px 16px 13px 13px;
+    color: rgb(255, 255, 255);
+}
+.rightButton{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) translateX(50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(4, 4, 5, 0.425);
+    box-shadow: 0 0 4px 1px rgba(4, 4, 5, 0.6);
+    transition: 1.2s cubic-bezier(0.1, 0.1, 0.15, 0.96), background-color 0.5s ease;
+    cursor: pointer;
+    z-index: 3;
+}
+.rightButton:hover{
+    background-color: rgba(4, 4, 5, 0.836);
+    box-shadow: 0 0 10px 1px rgba(4, 4, 5, 0.6);
+}
+.rightButton svg{
+    width: 100%;
+    height: 100%;
+    padding: 13px 13px 13px 16px;
+    color: rgb(255, 255, 255);
+}
+.heroContainer{
+    position: relative;
+    width: 100%;
+    height: 340px;
+    margin-right: 100px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    z-index: 2;
+    user-select: none;
+}
+.heroContainer:last-child{
+    margin-right: 0;
+}
+.activeContainer{
+    opacity: 1;
+}
+.activeColor{
+
+}
+.mentorInfo{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    justify-content: start;
+    align-items: center;
+    z-index: 2;
+}
+.profileImgContainer{
+    margin-right: 10px;
+}
+.profileImg{
+    border-radius: 50%;
+}
+.mentorInfo h1{
+    font-size: 1.2rem;
+    margin: 20px 0 0 0;
+}
+.tweetContainer{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 9px;
+    background-color: rgba(245, 245, 255, 0.5);
+    width: 400px;
+    height: 200px;
+    z-index: 2;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.tweetContainer:hover{
+    background-color: rgba(245, 245, 255, 0.8);
+}
+.tweetProfile{
+    width: 100%;
+    height: 65px;
+}
+.tweetProfileImgContainer{
+    width: 80px;
+    height: 100%;
+    padding: 8px 15.5px;
+}
+.tweetProfileImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.tweetProfileImg img{
+    width: 100%;
+}
+.tweetProfileDetails{
+    width: 180px;
+    height: 100%;
+    padding: 10px 0;
+}
+.tweetProfileDetails a{
+    flex-grow: 1;
+    width: 100%;
+}
+.tweetProfileDetails a:first-child{
+    font-size: 1rem;
+    color: #1DA1F2;
+}
+.tweetProfileDetails a:last-child{
+    font-size: 0.8rem;
+    color: black;
+}
+.tweetFollowBtnContainer{
+    width: 140px;
+    height: 100%;
+}
+.tweetFollowBtnContainer a{
+    border: 1px solid #1DA1F2;
+    border-radius: 50px;
+    padding: 3px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1DA1F2;
+    transition: 0.3s;
+}
+.tweetFollowBtnContainer a:hover{
+    color: whitesmoke;
+    background-color: #1DA1F2;
+}
+.tweet{
+    width: 100%;
+    height: 105px;
+    border-top: 1px solid rgba(4, 4, 5, 0.2);
+    padding: 5px 10px;
+}
+.tweetLikesComments{
+    width: 100%;
+    height: 30px;
+    border-top: 1px solid rgba(4, 4, 5, 0.2);
+}
+.Likes{
+    width: 70px;
+    height: 100%;
+}
+.Likes img{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+.Likes div:last-child{
+    font-size: 0.8rem;
+}
+.Comments{
+    width: 70px;
+    height: 100%;
+}
+.Comments img{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+.Comments div:last-child{
+    font-size: 0.8rem;
+}
+.heroVideoContainer{
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 1;
+}
+.heroBackground{
+    border-radius: 16px;
+}
+.heroVideo{
+    object-fit: cover;
+    width: 100%;
+}
