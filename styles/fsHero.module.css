@@ -11,9 +11,15 @@
     z-index: 2;
 }
 
+.particles{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .heroText{
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 30%;
     transform: translate(-50%, -50%);
     font-family: 'Montserrat', sans-serif;
@@ -45,14 +51,15 @@
     position: relative;
     width: 230px;
     height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
     outline: 1px solid;
     outline-color: rgba(255, 255, 255, 0.836);
     outline-offset: 0px;
-    box-shadow: 0 0 0.2em 0.1em white;
+    box-shadow: 0 0 0.3em 0.1em white;
     margin-right: 5em;
-    color: white;
-    text-shadow: 0 0 5px rgb(255, 255, 255);
-    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300 !important;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -69,23 +76,23 @@
 
 .heroText button::before{
     background: #fff;
-    box-shadow: 0 0 20px 1px white;
+    box-shadow: 0 0 40px 5px white;
     content: "";
     height: 185px;
     left: -85px;
-    opacity: .4;
+    opacity: .6;
     position: absolute;
     top: -60px;
     transform: rotate(35deg);
-    transition: all 450ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
     width: 50px;
     z-index: -10;
 }
 
 .heroText button:hover::before{
     left: 120%;
-    opacity: .8;
-    transition: all 450ms cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: .9;
+    transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .heroText button::after{
@@ -103,7 +110,8 @@
 }
 
 .heroText button svg{
-    filter: drop-shadow(0px 0px 3px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0, 0.6));
+    fill: rgb(40, 40, 40);
     width: 1.3em;
     height: 1.3em;
     z-index: 4;
