@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.13.2",
     "express": "^4.17.1",
     "mongoose": "^5.13.7",
