@@ -1,9 +1,34 @@
 import mongoose from "mongoose";
+import {string} from "prop-types";
 const Schema = mongoose.Schema
 
-const blogSchema = new Schema({
+const ProjectSchema = new Schema({
     firstName: {
         type: String,
+        lowercase: true,
+        trim: true,
         required: true
+    },
+    lastName: {
+        type: String,
+        lowercase: true,
+        trim: true,
+        required: true
+    },
+    country: {
+        type: String,
+        lowercase: true,
+        trim: true,
+        required: true,
+    },
+    companyName: {
+        type: String,
+        unique: true,
+        trim: true
+    },
+    companyEmail: {
+        type: String,
+        unique: true,
+        trim: true
     }
-});
+    }, {timestamps: true});

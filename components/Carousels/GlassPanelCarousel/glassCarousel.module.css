@@ -1,6 +1,7 @@
 .heroSection{
     position: relative;
     height: 700px;
+    max-width: 100%;
     perspective: 8px;
     perspective-origin: center center;
     z-index: 5;
@@ -33,6 +34,7 @@
 .panelMediaContainer img{
     height: 100%;
 }
+
 .panelMediaContainer video{
     width: 100%;
     height: 100%;
