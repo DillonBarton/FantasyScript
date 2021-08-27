@@ -1,8 +1,5 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
-import {use} from "ast-types";
-
-
 
 export default function useAxios(URL) {
 
@@ -24,5 +21,5 @@ export default function useAxios(URL) {
             .catch(err => alert(err))
     }, [URL])
 
-    return { payLoad, isLoading }
+    return [payLoad, isLoading ]
 }

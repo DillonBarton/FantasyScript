@@ -141,3 +141,86 @@ export const opacity = keyframes`
         opacity: 1;
     }
 `
+export const slide = keyframes`
+    0 % {
+        transform: translate(0, 0);
+    }
+    2% {
+        transform: translate(33px, 0);
+    }
+    12.5% {
+        transform: translate(33px, 0);
+    }
+    15.5% {
+        transform: translate(66px, 0);
+    }
+    25% {
+        transform: translate(66px, 0);
+    }
+    27% {
+        transform: translate(66px, 33px);
+    }
+    37.5% {
+        transform: translate(66px, 33px);
+    }
+    39.5% {
+        transform: translate(33px, 33px);
+    }
+    50% {
+        transform: translate(33px, 33px);
+    }
+    52% {
+        transform: translate(33px, 66px);
+    }
+    62.5% {
+        transform: translate(33px, 66px);
+    }
+    64.5% {
+        transform: translate(0, 66px);
+    }
+    75% {
+        transform: translate(0, 66px);
+    }
+    77% {
+        transform: translate(0, 33px);
+    }
+    87.5% {
+        transform: translate(0, 33px);
+    }
+    89.5% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+`
+export const gradient1 = keyframes`
+    from {
+        stop-color: #4383b8;
+    }
+    50% {
+        stop-color: #8013b9;
+}
+    to {
+        stop-color: #4383b8;
+    }
+`
+export const gradient2 = keyframes`
+    from {
+        stop-color: #4aa06c;
+    }
+    50% {
+        stop-color: #b22358;
+}
+    to {
+        stop-color: #4aa06c;
+    }
+`
+export const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`

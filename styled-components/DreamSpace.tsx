@@ -45,7 +45,7 @@ export default function DreamSpace(){
         <div className={`boxW100H100`}>
             {/* <DreamContainer className={`boxW100H100`}>
 
-                <img src="/images/dream.png" alt="dreamBackround"/>
+                <img src="/images/dream.png" alt="dreamBackground"/>
 
             </DreamContainer> */}
 

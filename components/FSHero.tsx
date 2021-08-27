@@ -10,7 +10,8 @@ export default function FSHero() {
     return (
         <section className={styles.heroSection}>
             <Particles params={particleParams} className={`${styles.particles} boxW100H100`}/>
-
+            <div className={`${styles.heroScreen} ${styles.heroScreenBlack}`}/>
+            <div className={`${styles.heroScreen} ${styles.heroScreenWhite}`}/>
             <div className={`${styles.heroText} flexColumn ss`}>
 
                 <h1>

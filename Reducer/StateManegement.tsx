@@ -18,7 +18,7 @@ export function ApiCall(baseURL, URI, page, component){
 }
 // return failed or success
 
-export default function StateManager(params){
+export default function useStateManager(params){
 
     const api = axios.create({
         baseURL: `${params.URL}${params.URI}`
@@ -28,12 +28,6 @@ export default function StateManager(params){
         switch (params.action) {
             case ACTIONS.DATA_LOCATION:
                 let response = axiosRequest()
-                    .then(res => {
-                        if (res[1]){
-                            return res[1]
-                        }
-                        return res[0];
-                    })
                 if (params.component){
                     return {...payLoad, [params.page]: { [params.component]: response}}
                 }
@@ -46,17 +40,19 @@ export default function StateManager(params){
         }
     }
 
-    const axiosRequest = async () => {
+    const axiosRequest = () => {
         try{
-            let response = await api.get('/')
-                .then(res => res.data);
+            const response = () => {
+                return api.get('/')
+                    .then(res => res.data)
+            }
             return [response, null]
         }catch (err){
             return [null, err]
         }
     }
 
-    const [ payLoad, dispatch ] = useReducer(reducer, {})
+    const [ payLoad, dispatch ] = useReducer(reducer, null)
 
     return [dispatch, payLoad];
 }
