@@ -6,6 +6,7 @@
     width: 100%;
     min-width: 100%;
     height: calc(100vh - 125px);
+    min-height: 800px;
     margin-top: 125px;
     z-index: 2;
     animation: heroBackground 1.5s forwards;

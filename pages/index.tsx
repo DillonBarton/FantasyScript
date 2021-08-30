@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {useEffect, useLayoutEffect, useMemo, useState} from 'react'
 
 import styles from '../styles/index.module.css'
@@ -8,7 +9,7 @@ import Layout from '../components/Layout'
 import DreamSpace from '../styled-components/DreamSpace'
 import FSHero from '../components/FSHero'
 import PhaseDisplay from '../components/InformationDisplay/PhaseDisplay/PhaseDisplay'
-import NewClientForm from "../components/Forms/NewClientForm";
+import NewApplicantForm from "../components/Forms/NewApplicantForm";
 import useStateManager, { ApiCall } from '../Reducer/StateManegement'
 import useAxios from "../hooks/useAxios";
 import GlassScrollBar from "../components/scrollBars/GlassScrollBar/GlassScrollBar";
@@ -20,23 +21,20 @@ export default function Home() {
     const [ dispatch, payLoad ] = useStateManager({})
     const [loaded, setLoaded, setLoading] = usePageLoaderHook(false)
 
-
-
     useEffect(()=>{
         setURL('http://localhost:3000/api/Users')
-
     }, [])
     useLayoutEffect(()=>{
         setLoaded()
     })
 
     return (
-        <Layout pageTitle={`Home`}>
+        <Layout pageTitle={`Home`} metaTags={{keyWords: ' Index, Home', description: ''}}>
             {loaded}
             <DreamSpace/>
             <FSHero/>
             <PhaseDisplay/>
-            <NewClientForm/>
+            <NewApplicantForm/>
             <GlassScrollBar/>
         </Layout>
       )

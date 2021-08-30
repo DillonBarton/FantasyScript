@@ -20,7 +20,7 @@
     cursor: pointer;
     overflow: hidden;
     z-index: 999;
-    transition: 0.2s cubic-bezier(0,-0.01,.19,.99);
+    /*transition: 0.1s cubic-bezier(0,-0.01,.19,.99);*/
 }
 
 .scrollBarThumbActive{
