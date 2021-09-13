@@ -257,8 +257,6 @@ export function Section(props:{ section, identifier}){
                 )
 
         default:
-            console.log("yo")
-            console.log(props.section)
             return (
                 <div ref={props.identifier} />
             )
