@@ -81,7 +81,7 @@
 
 .sectionContainer{
     transform-style: preserve-3d;
-    perspective: 8px;
+    perspective: 10px;
     max-width: 1200px;
     height: 280px;
     background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
@@ -93,7 +93,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(-800px) translateZ(-1px);
+    transform: translateY(-400px) translateZ(-1px);
     height: 280px;
     padding: 0.9em;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.8);
@@ -102,17 +102,20 @@
 
 .sectionOnMountAnimation{
     transform: translateY(0) translateZ(-1px) !important;
-    transition: 0.4s !important;
+    transition: 0.4s;
+    z-index: 3;
 }
 
 .sectionOnMountAnimation2{
     transform: translateY(0) translateZ(0) !important;
-    transition: 0.6s !important;
+    transition: 0.6s;
+    z-index: 3;
 }
 
 .sectionUnMountAnimation{
     transform: translateY(0) translateZ(-2px) !important;
-    transition: 0.6s !important;
+    transition: 0.6s;
+    z-index: 2;
 }
 
 .displayNone{

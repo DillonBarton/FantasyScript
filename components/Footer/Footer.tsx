@@ -3,7 +3,6 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import Image from 'next/image'
 import Link from 'next/link'
 
-
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { FaFacebook } from 'react-icons/fa'
 import { SiYoutube } from 'react-icons/si'
@@ -15,11 +14,11 @@ const sections = ['twitter', 'facebook', 'youtube', 'instagram', 'linkedin']
 
 export default function Footer(){
 
+    const [ isMounted, setIsMounted ] = useState(false)
     const initialState = 2;
     const counter = useRef(initialState);
-    const previousSlide = useRef(initialState - 1);
     const [ section, setSection ] = useState( sections[initialState] );
-    const [ isMounted, setIsMounted ] = useState(true);
+    const [ sectionMounted, setSectionMounted ] = useState(true);
     const slideOne = useRef(null);
     const slideOneSection = useRef(initialState);
     const slideTwo = useRef(null);
@@ -28,21 +27,21 @@ export default function Footer(){
 
     const unMountFunc = () => {
 
-        previousSlide.current = counter.current;
-
-        if(isMounted){
+        if(sectionMounted === true){
 
             slideOne.current.classList.add(`${styles.sectionUnMountAnimation}`)
             setTimeout(()=>{
-                setIsMounted(!isMounted)
-            }, 600)
+                slideOne.current.classList.replace(`${styles.sectionUnMountAnimation}`, `${styles.displayNone}`)
+                slideOne.current.classList.remove(`${styles.sectionOnMountAnimation2}`)
+            }, 1000)
 
         }else{
 
             slideTwo.current.classList.add(`${styles.sectionUnMountAnimation}`)
             setTimeout(()=>{
-                setIsMounted(!isMounted)
-            }, 600)
+                slideTwo.current.classList.replace(`${styles.sectionUnMountAnimation}`, `${styles.displayNone}`)
+                slideTwo.current.classList.remove(`${styles.sectionOnMountAnimation2}`)
+            }, 1000)
 
         }
 
@@ -50,29 +49,35 @@ export default function Footer(){
 
     const mountFunc = () => {
 
+        if(sectionMounted){
+            slideTwo.current.classList.remove(`${styles.displayNone}`)
+            setSectionMounted(!sectionMounted)
+        } else {
+            slideOne.current.classList.remove(`${styles.displayNone}`)
+            setSectionMounted(!sectionMounted)
+        }
+
         setTimeout(()=>{
 
-            if(isMounted){
+            if(sectionMounted){
 
                 slideTwo.current.classList.add(`${styles.sectionOnMountAnimation}`)
                 setTimeout(()=>{
-                    slideTwo.current.classList.add(`${styles.sectionOnMountAnimation2}`)
-                }, 400)
+                    slideTwo.current.classList.replace(`${styles.sectionOnMountAnimation}`,`${styles.sectionOnMountAnimation2}`)
+                }, 600)
 
 
             } else {
 
                 slideOne.current.classList.add(`${styles.sectionOnMountAnimation}`)
                 setTimeout(()=>{
-                    slideOne.current.classList.add(`${styles.sectionOnMountAnimation2}`)
-                }, 400)
+                    slideOne.current.classList.replace(`${styles.sectionOnMountAnimation}`,`${styles.sectionOnMountAnimation2}`)
+                }, 600)
 
             }
 
 
         }, 600)
-
-
 
     }
 
@@ -83,7 +88,7 @@ export default function Footer(){
             if(counter.current === 4){
 
                 counter.current = 0
-                if(isMounted){
+                if(sectionMounted){
 
                     slideTwoSection.current = counter.current;
 
@@ -100,7 +105,7 @@ export default function Footer(){
 
                 counter.current++
 
-                if(isMounted){
+                if(sectionMounted){
 
                     slideTwoSection.current = counter.current;
 
@@ -116,9 +121,27 @@ export default function Footer(){
         }, 600)
     }
 
+    const mountHandlerFunction = (section) => {
+        console.log(sectionMounted)
+        if(section){
+            counter.current = section;
+        }
+        counterFunc();
+        unMountFunc();
+        mountFunc();
+    }
+
     useEffect(() => {
 
-        let interval = setInterval(counterFunc, 50000);
+        if(isMounted){
+
+        } else {
+            slideOne.current.classList.add(`${styles.sectionOnMountAnimation2}`)
+            slideTwo.current.classList.add(`${styles.displayNone}`)
+            setIsMounted(true)
+        }
+
+        let interval = setInterval(mountHandlerFunction, 9000);
 
         return () => clearInterval(interval)
 
@@ -130,30 +153,28 @@ export default function Footer(){
                 <div className={`${styles.socialMediaIcons} boxW100 flexRow sc`}>
 
                     <AiFillTwitterCircle
-                        onClick={ () => { counter.current = 4; counterFunc(); unMountFunc(); mountFunc(); } }
+                        onClick={ () => { mountHandlerFunction(4)} }
                         className={`${styles.twitterIcon}  ${section == 'twitter' ? styles.iconSelected : null}`}
                     />
 
                     <FaFacebook
-                        onClick={() => {counter.current = 0; counterFunc(); unMountFunc(); mountFunc(); } }
+                        onClick={() => {mountHandlerFunction(0)} }
                         className={`${styles.facebookIcon}  ${section == 'facebook' ? styles.iconSelected : null}`}
                     />
 
                     <SiYoutube
-                        onClick={() => { counter.current = 1; counterFunc(); unMountFunc(); mountFunc(); } }
+                        onClick={() => {mountHandlerFunction(1)} }
                         className={`${styles.youtubeIcon} ${section == 'youtube' ? styles.iconSelected : null}`}
                     />
 
                     <InstagramSVG
                         counter={counter}
-                        mountFunc={mountFunc}
-                        unMountFunc={unMountFunc}
-                        counterFunc={counterFunc}
+                        mountHandlerFunction={mountHandlerFunction}
                         section={section}
                     />
 
                     <GrLinkedin
-                        onClick={() => { counter.current = 3; counterFunc(); unMountFunc(); mountFunc(); } }
+                        onClick={() => {mountHandlerFunction(3)} }
                         className={`${styles.linkedinIcon} ${section == 'linkedin' ? styles.iconSelected : null}`}
                     />
 
@@ -161,18 +182,18 @@ export default function Footer(){
             </div>
 
                 <div className={`${styles.sectionContainer} boxW100 flexColumn sc`}>
-                    <Section identifier={slideOne} isMounted={isMounted} section={sections[slideOneSection.current]}/>
-                    <Section identifier={slideTwo} isMounted={!isMounted} section={section[slideTwoSection.current]}/>
+                    <Section identifier={slideOne} section={sections[slideOneSection.current]}/>
+                    <Section identifier={slideTwo} section={sections[slideTwoSection.current]}/>
                 </div>
 
         </footer>
     )
 }
 
-export function InstagramSVG(props:{counter, section, counterFunc, unMountFunc, mountFunc}){
+export function InstagramSVG(props:{counter, section, mountHandlerFunction}){
 
     return(
-        <svg onClick={() => {props.counter.current = 2; props.counterFunc(); props.unMountFunc(); props.mountFunc(); } } className={`${styles.instagramIcon} ${props.section == 'instagram' ? styles.iconSelected : null}`} enableBackground="new 0 0 24 24" viewBox="0 0 24 24">
+        <svg onClick={() => {props.mountHandlerFunction(2)} } className={`${styles.instagramIcon} ${props.section == 'instagram' ? styles.iconSelected : null}`} enableBackground="new 0 0 24 24" viewBox="0 0 24 24">
             <linearGradient id="myGradient" gradientTransform="matrix(0 -1.982 -1.844 0 -132.522 -51.077)" gradientUnits="userSpaceOnUse" x1="-37.106" x2="-26.555" y1="-72.705" y2="-84.047">
                 <stop offset="0" stopColor="#fd5"/>
                 <stop offset=".5" stopColor="#ff543e"/>
@@ -184,35 +205,12 @@ export function InstagramSVG(props:{counter, section, counterFunc, unMountFunc, 
     )
 }
 
-export function Section(props:{ section, identifier, isMounted }){
-
-    const [ pageRendered, setPageRendered ] = useState(false)
-    useEffect(()=>{
-
-        if(pageRendered){
-
-            if(!props.isMounted){
-
-                setTimeout(()=>{
-                    props.identifier.current.classList.add(`${styles.displayNone}`)
-                }, 600)
-
-            }
-
-        } else {
-
-            setPageRendered(true)
-
-        }
-
-
-    }, [props.isMounted])
+export function Section(props:{ section, identifier}){
 
     switch (props.section){
 
         case sections[0]:
 
-            if(props.isMounted){
                 return(
                     <div ref={props.identifier} className={`${styles.twitter} ${styles.section} boxW100 flexRow sc`}>
 
@@ -224,61 +222,43 @@ export function Section(props:{ section, identifier, isMounted }){
 
                     </div>
                 )
-            } else{
-                return <div ref={props.identifier} />
-            }
 
         case sections[1]:
-            if(props.isMounted){
+
                 return(
                     <div ref={props.identifier} className={`${styles.facebook} ${styles.section} boxW100`}>
 
                     </div>
                 )
-            } else {
-                return <div ref={props.identifier} />
-            }
-
 
         case sections[2]:
 
-            if(props.isMounted){
                 return(
                     <div ref={props.identifier} className={`${styles.youtube} ${styles.section} boxW100`}>
 
                     </div>
                 )
-            } else {
-                return <div ref={props.identifier} />
-            }
-
 
         case sections[3]:
 
-            if(props.isMounted){
                 return(
                     <div ref={props.identifier} className={`${styles.instagram} ${styles.section} boxW100`}>
 
                     </div>
                 )
-            } else{
-                return <div ref={props.identifier} />
-            }
 
 
         case sections[4]:
-            if(props.isMounted){
+
                 return(
                     <div ref={props.identifier} className={`${styles.linkedin} ${styles.section} boxW100`}>
 
                     </div>
                 )
-            } else {
-                return <div ref={props.identifier} />
-            }
-
 
         default:
+            console.log("yo")
+            console.log(props.section)
             return (
                 <div ref={props.identifier} />
             )
