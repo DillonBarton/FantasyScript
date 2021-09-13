@@ -1,0 +1,146 @@
+#footerContainer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 475px;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 997;
+    padding-bottom: 20px;
+}
+
+.socialMediaIconsContainer{
+    flex-shrink: 0;
+    padding: 12px 0;
+}
+
+.socialMediaIcons{
+    max-width: 1200px;
+    justify-content: space-evenly !important;
+}
+
+.socialMediaIcons svg{
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.twitterIcon{
+    width: 66px;
+    height: 66px;
+    color: rgb(29, 161, 242);
+    opacity: 0.45;
+}
+
+.twitterIcon.iconSelected{
+    padding: 5px !important;
+}
+
+.instagramIcon{
+    width: 63px;
+    height: 63px;
+    opacity: 0.45;
+}
+
+.facebookIcon{
+    width: 64px;
+    height: 64px;
+    color: rgb(66, 103, 178);
+    opacity: 0.45;
+}
+
+.facebookIcon.iconSelected{
+    backdrop-filter: brightness(1.8) saturate(6);
+}
+
+.youtubeIcon{
+    width: 66px;
+    height: 66px;
+    color: rgb(196, 48, 43);
+    overflow: visible;
+    opacity: 0.45;
+}
+
+.linkedinIcon{
+    width: 62px;
+    height: 62px;
+    color: rgb(40, 103, 178);
+    opacity: 0.45;
+}
+
+.linkedinIcon.iconSelected{
+    backdrop-filter: brightness(1.5) saturate(6);
+}
+
+.iconSelected{
+    box-shadow: 0 0 10px 1px rgba(40, 40, 40, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: brightness(2.3) saturate(6);
+    opacity: 1 !important;
+}
+
+.sectionContainer{
+    transform-style: preserve-3d;
+    perspective: 8px;
+    max-width: 1200px;
+    height: 280px;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    backdrop-filter: saturate(2.3) brightness(2.7) blur(4px);
+    overflow: hidden;
+}
+
+.section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-800px) translateZ(-1px);
+    height: 280px;
+    padding: 0.9em;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+}
+
+.sectionOnMountAnimation{
+    transform: translateY(0) translateZ(-1px) !important;
+    transition: 0.4s !important;
+}
+
+.sectionOnMountAnimation2{
+    transform: translateY(0) translateZ(0) !important;
+    transition: 0.6s !important;
+}
+
+.sectionUnMountAnimation{
+    transform: translateY(0) translateZ(-2px) !important;
+    transition: 0.6s !important;
+}
+
+.displayNone{
+    display: none !important;
+}
+
+.twitter{
+    background-color: rgb(29, 161, 242);
+}
+
+.facebook{
+    background-color: rgb(66, 103, 178);
+}
+
+.youtube{
+    background-color: rgb(196, 48, 43);
+}
+
+.instagram{
+    background: radial-gradient(circle at 10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.linkedin{
+    background-color: rgb(40, 103, 178);
+}
+
+.imageContainer{
+    position: relative;
+    height: 100%;
+    width: 270px;
+}

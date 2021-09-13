@@ -33,7 +33,7 @@ export default function Home() {
             {loaded}
             <DreamSpace/>
             <FSHero/>
-            <PhaseDisplay/>
+            {/*<PhaseDisplay/>*/}
             <NewApplicantForm/>
             <GlassScrollBar/>
         </Layout>

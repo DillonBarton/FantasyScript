@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/layout.module.css'
 
 import Navbar from './Navbar/Navbar'
+import Footer from './Footer/Footer'
 
     /*
     * google analytics
@@ -29,6 +30,7 @@ export default function Layout({children, pageTitle, metaTags}){
             </Head>
             <Navbar/>
             {children}
+            <Footer/>
         </div>
     )
 }

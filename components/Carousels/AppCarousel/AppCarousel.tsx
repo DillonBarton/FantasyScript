@@ -75,14 +75,14 @@ export function AppCarouselCard(props:{
     }) {
     const [shown, setReveal] = useState(false);
     const [modalContainerAnimation, setContainerAnimation] = useState(false);
-    const [modalAnimation, setmodalAnimation] = useState(false);
+    const [modalAnimation, setModalAnimation] = useState(false);
     const [valueChange, setValue] = useState(false)
     return(
         <div className={`${styles.carouselItemAndModalContainer} ${props.section == `profile` ? ` ${styles.profilePageItemAndModalContainer} ` : ``} flexColumn cc`}>
             <AppCarouselModal
                     valueChange={valueChange}
                     setValue={setValue}
-                    setmodalAnimation={setmodalAnimation}
+                    setmodalAnimation={setModalAnimation}
                     modalAnimation={modalAnimation}
                     modalContainerAnimation={modalContainerAnimation}
                     setContainerAnimation={setContainerAnimation}

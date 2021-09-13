@@ -17,13 +17,13 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 export default function Hero() {
     const numberOfContainers = 5;
     const containerMargin = 100;
-    const initalState = 0;
+    const initialState = 0;
     const heroCarousel = useRef<HTMLDivElement>(null);
     const heroContainer = useRef<HTMLDivElement>(null);
     const leftButton = useRef<HTMLDivElement>(null);
     const rightButton = useRef<HTMLDivElement>(null);
-    const [count, setCount] = useState(initalState);
-    const counterRef = useRef(initalState);
+    const [count, setCount] = useState(initialState);
+    const counterRef = useRef(initialState);
 
     useEffect(() => {
         counterRef.current = count;
@@ -32,7 +32,7 @@ export default function Hero() {
     useEffect(() => {
         let interval = setInterval(() => {
             if(count == numberOfContainers){
-                setCount(initalState)
+                setCount(initialState)
             } else{
                 setCount(counterRef.current + 1);
             }
@@ -65,7 +65,7 @@ export default function Hero() {
                 onClick={
                     () => {
                         if(count <= 0 ){
-                            setCount(initalState)
+                            setCount(initialState)
                         } else {
                             setCount(counterRef.current - 1)
                         }

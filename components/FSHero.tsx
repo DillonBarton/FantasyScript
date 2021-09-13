@@ -8,37 +8,39 @@ import {FaArrowAltCircleRight} from 'react-icons/fa'
 export default function FSHero() {
 
     return (
-        <section className={styles.heroSection}>
+        <section className={`${styles.heroSection} flexRow cc`}>
             <Particles params={particleParams} className={`${styles.particles} boxW100H100`}/>
             <div className={`${styles.heroScreen} ${styles.heroScreenBlack}`}/>
             <div className={`${styles.heroScreen} ${styles.heroScreenWhite}`}/>
-            <div className={`${styles.heroText} flexColumn ss`}>
+            <div className={`${styles.heroContent} flexRow ss`}>
+                <div className={`${styles.heroText} flexColumn ss`}>
 
-                <h1>
-                    FS.Studio
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis pariatur reiciendis natus porro
-                    temporibus! Consequuntur, aperiam quia nulla eos accusamus.
-                </p>
-                <div className={`flexRow sc`}>
+                    <h1>
+                        FS.Studio
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis pariatur reiciendis natus porro
+                        temporibus! Consequuntur, aperiam quia nulla eos accusamus.
+                    </p>
+                    <div className={`flexRow sc`}>
 
-                    <button className={`flexRow cc`}>
+                        <button className={`flexRow cc`}>
 
-                        <div>View Portfolio</div>
-                        <FaArrowAltCircleRight/>
+                            <div>View Portfolio</div>
+                            <FaArrowAltCircleRight/>
 
-                    </button>
+                        </button>
 
-                    <button className={`flexRow cc`}>
+                        <button className={`flexRow cc`}>
 
-                        <   div>Start Project</div>
-                        <FaArrowAltCircleRight/>
+                            <   div>Start Project</div>
+                            <FaArrowAltCircleRight/>
 
-                    </button>
+                        </button>
+
+                    </div>
 
                 </div>
-
             </div>
             {/* rgba(28, 134, 255, 0.247) rgba(57, 149, 255, 0.35)*/}
             <div className={styles.shapedividerLayer1}>

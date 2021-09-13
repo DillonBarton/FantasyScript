@@ -63,6 +63,7 @@ svg#loading .rect {
     animation: slide 15s ease infinite;
     z-index: 10001;
 }
+
 svg#loading #rect1 {
     animation-delay: 0s;
 }

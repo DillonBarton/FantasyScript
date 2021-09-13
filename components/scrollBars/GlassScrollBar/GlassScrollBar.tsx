@@ -96,7 +96,7 @@ export default function GlassScrollBar() {
                 } else {
 
                     // if the mouse is still in the same place do not reset value
-                    document.documentElement.scrollTo(0, scrollPosition.current);
+                    document.documentElement.scrollTo(0, scrollingTo);
                     valueStillEqual.current = true;
 
                 }
@@ -136,7 +136,7 @@ export default function GlassScrollBar() {
                 } else {
 
                     // if the mouse is still in the same place do not reset value
-                    document.documentElement.scrollTo(0, scrollPosition.current);
+                    document.documentElement.scrollTo(0, scrollingTo);
                     valueStillEqual.current = true;
 
                 }

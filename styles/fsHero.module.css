@@ -6,10 +6,9 @@
     width: 100%;
     min-width: 100%;
     height: calc(100vh - 125px);
+    backdrop-filter: saturate(1.4);
     min-height: 800px;
-    margin-top: 125px;
     z-index: 2;
-    animation: heroBackground 1.5s forwards;
 }
 
 .heroScreen{
@@ -50,13 +49,31 @@
     z-index: 5;
 }
 
+.heroContent{
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+}
+
 .heroText{
     position: absolute;
     top: 30%;
-    left: 30%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    transform: translate(0, -50%);
     font-family: 'Montserrat', sans-serif;
+    padding: 20px;
     z-index: 6;
+}
+
+.heroText::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .heroText h1{
@@ -72,18 +89,19 @@
 
 .heroText p{
     max-width: 45ch;
-    margin: 1.2em 0 2em 0;
+    margin: 1.2em 0 1.8em 0;
     color: white;
     font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
     font-weight: 200;
     text-shadow: 0 0 5px rgb(255, 255, 255);
-    line-height: 1.4em;
+    line-height: 1.6em;
 }
 
 .heroText button{
     position: relative;
-    width: 230px;
-    height: 60px;
+    width: 270px;
+    height: 65px;
     background-color: rgba(255, 255, 255, 0.3);
     outline: rgba(255, 255, 255, 0.836) solid 1px;
     outline-offset: 0;
@@ -94,7 +112,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300 !important;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1rem;
     cursor: pointer;
     z-index: 4;
     overflow: hidden;
