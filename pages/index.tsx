@@ -13,6 +13,7 @@ import NewApplicantForm from "../components/Forms/NewApplicantForm";
 import useStateManager, { ApiCall } from '../Reducer/StateManegement'
 import useAxios from "../hooks/useAxios";
 import GlassScrollBar from "../components/scrollBars/GlassScrollBar/GlassScrollBar";
+import GlassPanelCarousel from '../components/Carousels/GlassPanelCarousel/GlassPanelCarousel';
 
 export default function Home() {
 
@@ -35,7 +36,7 @@ export default function Home() {
             <FSHero/>
             {/*<PhaseDisplay/>*/}
             <NewApplicantForm/>
-            <GlassScrollBar/>
+            {/* <GlassScrollBar/> */}
         </Layout>
       )
 }

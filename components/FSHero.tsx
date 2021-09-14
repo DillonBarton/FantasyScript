@@ -3,7 +3,8 @@ import particleParams from '../particle.config'
 
 import styles from '../styles/fsHero.module.css'
 
-import {FaArrowAltCircleRight} from 'react-icons/fa'
+import { FaArrowAltCircleRight } from 'react-icons/fa'
+import GlassCarousel from './Carousels/GlassPanelCarousel/GlassPanelCarousel'
 
 export default function FSHero() {
 
@@ -12,7 +13,8 @@ export default function FSHero() {
             <Particles params={particleParams} className={`${styles.particles} boxW100H100`}/>
             <div className={`${styles.heroScreen} ${styles.heroScreenBlack}`}/>
             <div className={`${styles.heroScreen} ${styles.heroScreenWhite}`}/>
-            <div className={`${styles.heroContent} flexRow ss`}>
+            <div className={`${styles.heroContent}`}>
+
                 <div className={`${styles.heroText} flexColumn ss`}>
 
                     <h1>
@@ -33,7 +35,7 @@ export default function FSHero() {
 
                         <button className={`flexRow cc`}>
 
-                            <   div>Start Project</div>
+                            <div>Start Project</div>
                             <FaArrowAltCircleRight/>
 
                         </button>
@@ -41,6 +43,9 @@ export default function FSHero() {
                     </div>
 
                 </div>
+
+                <GlassCarousel/>
+
             </div>
             {/* rgba(28, 134, 255, 0.247) rgba(57, 149, 255, 0.35)*/}
             <div className={styles.shapedividerLayer1}>

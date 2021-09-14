@@ -1,6 +1,10 @@
 .heroSection{
-    position: relative;
-    height: 700px;
+    position: absolute;
+    top: 35%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 700px;
     max-width: 100%;
     perspective: 8px;
     perspective-origin: center center;
@@ -13,6 +17,7 @@
     perspective: 8px;
     perspective-origin: center center;
     transform-style: preserve-3d;
+    cursor: pointer;
     transition: 1s ease-out;
 }
 
@@ -43,16 +48,16 @@
 .nextWrapper{
     opacity: 1;
     left: 0;
-    transform-origin: 50% 50% -100000px;
-    transform: translate3d(100px, 0, -2px) rotateY(358.8deg);
+    transform-origin: 50% 50% -95000px;
+    transform: translate3d(100px, 0, -2px) rotateY(358.6deg);
     z-index: 4 !important;
 }
                     
 .leftWrapper{
     opacity: 1;
     left: 0;
-    transform-origin: 50% 50% -80000px;
-    transform: translate3d(-45%, 0, -5.7px) rotateY(359.3deg);
+    transform-origin: 50% 50% -97000px;
+    transform: translate3d(0%, 0, -5.7px) rotateY(359.3deg);
     z-index: 6 !important;
 }
 
@@ -74,9 +79,9 @@
 
 .centerWrapper{
     opacity: 1;
-    left: 50% !important;
-    transform-origin: 50% 50% -90000px !important;
-    transform: translate3d(-50%, 0, -2px) rotateY(360deg);
+    left: 0 !important;
+    transform-origin: 50% 50% -94000px !important;
+    transform: translate3d(0, 0, -2px) rotateY(360deg);
     z-index: 6 !important;
 }
 
@@ -101,8 +106,8 @@
 
 .rightWrapper{
     left: 0;
-    transform-origin: 50% 50% -90000px;
-    transform: translate3d(200px, 0, -2.5px) rotateY(360.7deg);
+    transform-origin: 50% 50% -92000px;
+    transform: translate3d(-150px, 0, -3.8px) rotateY(360.8deg);
     z-index: 5 !important;
 }
 
@@ -125,8 +130,8 @@
 .lastWrapper{
     opacity: 1;
     left: 0;
-    transform-origin: 50% 50% -100000px;
-    transform: translate3d(200px, 0, -5px) rotateY(361.2deg);
+    transform-origin: 50% 50% -77000px;
+    transform: translate3d(100px, 0, -5px) rotateY(361.6deg);
     z-index: 4 !important;
 }
 

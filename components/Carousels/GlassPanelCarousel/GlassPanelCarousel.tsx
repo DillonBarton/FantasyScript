@@ -172,7 +172,6 @@ export default function GlassCarousel(){
     }, [count])
 
     return(
-        <div id="center" className="flexColumn sc boxW100" style={{zIndex: 100, position: "relative"}}>
 
             <div className={`${styles.heroSection} boxW100`}>
 
@@ -290,7 +289,5 @@ export default function GlassCarousel(){
 
 
             </div>
-            
-        </div>
     )
 }
