@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/FSPageLoader.tsx"  ],
+, "components/FSPageLoader.tsx", "server/controller/server.js"  ],
   "exclude": [
     "node_modules"
   ]
