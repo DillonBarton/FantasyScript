@@ -25,6 +25,8 @@ export default function Footer(){
     const slideTwoSection = useRef(initialState - 1);
 
 
+
+
     const unMountFunc = () => {
 
         if(sectionMounted === true){
@@ -122,7 +124,6 @@ export default function Footer(){
     }
 
     const mountHandlerFunction = (section) => {
-        console.log(sectionMounted)
         if(section){
             counter.current = section;
         }

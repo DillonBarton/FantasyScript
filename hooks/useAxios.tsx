@@ -16,10 +16,11 @@ export default function useAxios(URL) {
         api.get('/')
             .then( res => {
                 setIsLoading(false);
+                console.log(res)
                 setPayLoad(res);
             })
             .catch(err => alert(err))
     }, [URL])
 
-    return [payLoad, isLoading ]
+    return [ payLoad, isLoading ]
 }

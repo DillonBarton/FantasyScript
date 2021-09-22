@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-dotenv.config()
+dotenv.config();
 import express from 'express'
 const app = express();
 import mongoose from 'mongoose';
@@ -9,9 +9,9 @@ import fetch from 'node-fetch'
 
 // Connect to database
 
-const dbURI = process.env.MONGODB_URI
+const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(res => {app.listen(4500); console.log("listening")})
+    .then(res => {app.listen(4500); console.log('listening')})
     .catch(err => console.log(err))
 
 // Middleware
@@ -24,12 +24,20 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
+// CLASSES
+
+
+class Option{
+
+}
+
+
 // OBJECTS
 
 
 // Media objects
 
-const mediaArr = {
+const mediaRequestsObject = {
     twitter: {
         auth: `${process.env.TWITTER_BEARER_TOKEN}`,
         title: 'twitter',
@@ -37,33 +45,30 @@ const mediaArr = {
             {
                 baseUrl: 'https://api.twitter.com',
                 pathParams: `/2/users/${process.env.TWITTER_ID}`,
-                queryParams: '?expansions=pinned_tweet_id&user.fields=name,username,description,profile_image_url,created_at',
+                queryParams: '?user.fields=name,username,description,profile_image_url',
             },
             {
                 baseUrl: 'https://api.twitter.com/2',
                 pathParams: `/users/${process.env.TWITTER_ID}/tweets`,
-                queryParams: '?tweet.fields=attachments,created_at',
+                queryParams: '?tweet.fields=attachments,created_at,public_metrics&max_results=5',
             }
         ]
     },
     facebook: {
-        auth: `${process.env.FACEBOOK_BEARER_TOKEN}`,
+        auth: null,
         title: 'facebook',
         endPoints: [
             {
                 baseUrl: 'https://graph.facebook.com',
-                pathParams: '/102963895477102_103008712139287',
-                queryParams: '',
-            },
-            // {
-            //     title,
-            //     baseUrl,
-            //     pathParams,
-            //     queryParams,
-            //     aith
-            // }
+                pathParams: '/102963895477102',
+                queryParams: `?fields=name,description,about,category,followers_count,link,username,picture{url},posts.limit(1){full_picture,likes.limit(0).summary(true),comments.limit(1).summary(true),created_time,message,message_tags}&access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+            }
         ]
     }
+}
+
+const mediaResponseObject = {
+
 }
 
 // FUNCTIONS
@@ -80,18 +85,19 @@ const footerMediaLog = (mediaFunction) => {
 
 const mediaFunction = async (mediaType, next) => {
     try{
+        let options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+            }
+        }
+
+        mediaType.auth ? options.headers['Authorization'] = `Bearer ${mediaType.auth}` : null
+
         let data = await Promise.all(mediaType.endPoints.map(
 
             async (obj) => {
-
-                let payLoad = await fetch(`${obj.baseUrl}${obj.pathParams}${obj.queryParams}`,
-                {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json; charset=utf-8',
-                        'Authorization': `Bearer ${mediaType.auth}`
-                    }
-                })
+                let payLoad = await fetch(`${obj.baseUrl}${obj.pathParams}${obj.queryParams}`, options)
                 .then(res => res.json())
                 .catch(err => err)
 
@@ -115,19 +121,34 @@ const mediaFunction = async (mediaType, next) => {
 
 
 
-app.get('/:mediaType', async (req, res, next)=>{
+app.get('/twitter', async (req, res, next)=>{
 
-    if(mediaArr[req.params.mediaType]){
+    let data = await mediaFunction(mediaRequestsObject.twitter, next)
 
-        let data = await mediaFunction(mediaArr[req.params.mediaType], next)
-        res.send(data);
+    for (let i = 0; i < data.length; i++) {
 
-    } else {
-        
-        res.send(new Error('Invalid media type'))
+        mediaResponseObject[`res${i}`] = data[i]
+
+        switch (i) {
+
+            case 0:
+                delete mediaResponseObject[`res${i}`].data.id;
+                break;
+
+        }
 
     }
-    
+
+    res.send(mediaResponseObject);
+
+})
+    .post('/', (req, res)=>{
+
+})
+
+app.get('/facebook', async (req, res, next)=>{
+    let data = await mediaFunction(mediaRequestsObject.facebook, next)
+    res.send(data);
 })
     .post('/', (req, res)=>{
 
