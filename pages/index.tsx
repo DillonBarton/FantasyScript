@@ -18,14 +18,8 @@ import GlassPanelCarousel from '../components/Carousels/GlassPanelCarousel/Glass
 export default function Home() {
 
     const [ URL, setURL ] = useState('')
-    const [ data, Loading ] = useAxios(URL)
     const [ dispatch, payLoad ] = useStateManager({})
     const [ loaded, setLoaded, setLoading ] = usePageLoaderHook(false)
-
-    useEffect(()=>{
-        setURL('http://localhost:3000/api/Clients')
-        setURL('http://localhost:3000/api/Users')
-    }, [])
 
     useLayoutEffect(()=>{
         setLoaded()

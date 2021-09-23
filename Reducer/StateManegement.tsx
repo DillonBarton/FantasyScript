@@ -9,13 +9,6 @@ export const ACTIONS = {
 
 // check if can use constructor function in index.tsx
 
-export function ApiCall(baseURL, URI, page, component){
-    this.URL = baseURL;
-    this.URI = URI;
-    this.page = page;
-    this.component = component;
-    this.action = ACTIONS.DATA_LOCATION;
-}
 // return failed or success
 
 export default function useStateManager(params){

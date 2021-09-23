@@ -9,6 +9,7 @@ import { SiYoutube } from 'react-icons/si'
 import { GrLinkedin } from 'react-icons/gr'
 
 import styles from './footer.module.css'
+import useAxios from "../../hooks/useAxios";
 
 const sections = ['twitter', 'facebook', 'youtube', 'instagram', 'linkedin']
 
@@ -23,9 +24,6 @@ export default function Footer(){
     const slideOneSection = useRef(initialState);
     const slideTwo = useRef(null);
     const slideTwoSection = useRef(initialState - 1);
-
-
-
 
     const unMountFunc = () => {
 
@@ -208,54 +206,83 @@ export function InstagramSVG(props:{counter, section, mountHandlerFunction}){
 
 export function Section(props:{ section, identifier}){
 
+    const [ params, setParams ] = useState({
+        URL:``,
+        headers: {
+        } 
+    })
+    const [ data, isLoading ] = useAxios(params)
+
     switch (props.section){
 
         case sections[0]:
+            
+            setParams({URL: `http://localhost:4500/media/twitter`, headers: {
 
-                return(
-                    <div ref={props.identifier} className={`${styles.twitter} ${styles.section} boxW100 flexRow sc`}>
+            }})
 
-                        <div className={`${styles.imageContainer}`}>
+            return(
+                <div ref={props.identifier} className={`${styles.twitter} ${styles.section} boxW100 flexRow sc`}>
 
-                            <Image layout="fill" src={`/images/instagramProfilePic.jpeg`}/>
+                    <div className={`${styles.imageContainer}`}>
 
-                        </div>
+                        
+                        {/* <Image layout="fill" src={`https://pbs.twimg.com/media/${data.res1.data[0].attachments.media_keys[0]}?format=jpg&name=small`} alt=""/> */}
+                        
+                        
 
                     </div>
-                )
+
+                </div>
+            )
 
         case sections[1]:
 
-                return(
-                    <div ref={props.identifier} className={`${styles.facebook} ${styles.section} boxW100`}>
+            setParams({URL: `http://localhost:4500/media/facebook`, headers: {
 
-                    </div>
-                )
+            }})
+
+            return(
+                <div ref={props.identifier} className={`${styles.facebook} ${styles.section} boxW100`}>
+
+                </div>
+            )
 
         case sections[2]:
 
-                return(
-                    <div ref={props.identifier} className={`${styles.youtube} ${styles.section} boxW100`}>
+            setParams({URL: `http://localhost:4500/media/youtube`, headers: {
 
-                    </div>
-                )
+            }})
+
+            return(
+                <div ref={props.identifier} className={`${styles.youtube} ${styles.section} boxW100`}>
+
+                </div>
+            )
 
         case sections[3]:
 
-                return(
-                    <div ref={props.identifier} className={`${styles.instagram} ${styles.section} boxW100`}>
+            setParams({URL: `http://localhost:4500/media/instagram`, headers: {
 
-                    </div>
-                )
+            }})
 
+            return(
+                <div ref={props.identifier} className={`${styles.instagram} ${styles.section} boxW100`}>
+
+                </div>
+            )
 
         case sections[4]:
 
-                return(
-                    <div ref={props.identifier} className={`${styles.linkedin} ${styles.section} boxW100`}>
+            setParams({URL: `http://localhost:4500/media/linkedin`, headers: {
 
-                    </div>
-                )
+            }})
+
+            return(
+                <div ref={props.identifier} className={`${styles.linkedin} ${styles.section} boxW100`}>
+
+                </div>
+            )
 
         default:
             return (
