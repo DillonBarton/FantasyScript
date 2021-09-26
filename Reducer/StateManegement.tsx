@@ -3,49 +3,33 @@ import { useState, useEffect, useReducer} from "react";
 
 
 export const ACTIONS = {
-    DATA_LOCATION: 'axiosReq',
+    DATA_STORE: 'storeData',
     BASKET_ADD: 'addToBasket'
 }
 
-// check if can use constructor function in index.tsx
+export default function useStateManager(payLoad){
 
-// return failed or success
-
-export default function useStateManager(params){
-
-    const api = axios.create({
-        baseURL: `${params.URL}${params.URI}`
-    })
-
-    function reducer(payLoad, params) {
-        switch (params.action) {
-            case ACTIONS.DATA_LOCATION:
-                let response = axiosRequest()
-                if (params.component){
-                    return {...payLoad, [params.page]: { [params.component]: response}}
-                }
-                return {...payLoad, [params.page]: response};
+    function reducer(data, payLoad) {
+        switch (payLoad.action) {
+            case ACTIONS.DATA_STORE:
+                console.log("yo")
+                return {...data};
             case ACTIONS.BASKET_ADD:
 
-                return;
+                return {...data};
             default:
-                throw new Error();
+                console.log("error")
+                return;
         }
     }
 
-    const axiosRequest = () => {
-        try{
-            const response = () => {
-                return api.get('/')
-                    .then(res => res.data)
-            }
-            return [response, null]
-        }catch (err){
-            return [null, err]
+    const [ data, dispatch ] = useReducer(reducer, null)
+
+    useEffect(()=>{
+        if(payLoad){
+            dispatch(payLoad)
         }
-    }
+    }, [payLoad])
 
-    const [ payLoad, dispatch ] = useReducer(reducer, null)
-
-    return [dispatch, payLoad];
+    return [ data, dispatch ];
 }

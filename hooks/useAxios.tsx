@@ -1,16 +1,13 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
 
-export default function useAxios(params: {URL: string, headers: object}) {
+export default function useAxios(params: {baseUrl: string, pathParams: string, queryParams: string, headers: object}) {
 
-    const [payLoad, setPayLoad] = useState(null)
-    const [isLoading, setIsLoading] = useState(false)
-
-
-    console.log(params)
+    const [response, setResponse] = useState(null)
+    const [dataFetched, setDataFetched] = useState(false)
 
     const api = axios.create({
-        baseURL: `${ params.URL }`,
+        baseURL: `${ params.baseUrl }`,
         timeout: 10000,
         withCredentials: true,
         headers: params.headers
@@ -18,15 +15,15 @@ export default function useAxios(params: {URL: string, headers: object}) {
 
 
     useEffect(()=>{
-        api.get('/')
+        if(params.baseUrl){
+            api.get(params.pathParams + params.queryParams)
             .then( res => {
-                setIsLoading(true);
-                console.log(res)
-                setPayLoad(res);
-                console.log(res);
+                setDataFetched(true);
+                setResponse(res);
             })
             .catch(err => alert(err))
-    }, [params.URL])
+        }
+    }, [params.baseUrl])
 
-    return [ payLoad, isLoading ]
+    return [ response, dataFetched ]
 }

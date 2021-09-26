@@ -26,8 +26,8 @@ const corsOptions = {
             callback(null, true)
 
         } else {
-            
-            callback(new Error(`Invalid ORIGIN`))
+            callback(null, true)
+            // callback(new Error(`Invalid ORIGIN`))
 
         }
     },
