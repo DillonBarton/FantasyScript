@@ -27,12 +27,10 @@ const corsOptions = {
             callback(null, true)
 
         } else {
-            callback(null, true)
-            // callback(new Error(`Invalid ORIGIN`))
+            callback(new Error(`Invalid ORIGIN`))
 
         }
-    },
-    credentials: true
+    }
 }
 
 // Media endpoints object
@@ -46,7 +44,7 @@ const mediaRequestsObject = {
                 title: 'twitter profile Data',
                 baseUrl: 'https://api.twitter.com',
                 pathParams: `/2/users/${process.env.TWITTER_ID}`,
-                queryParams: '?user.fields=nme,username,description,profile_image_url',
+                queryParams: '?user.fields=name,username,description,profile_image_url',
             },
             {
                 title: 'twitter post Data',
@@ -141,7 +139,8 @@ router
     .catch( err => {
         console.error(err)
     })
-    data.title = 'twitter'
+    data.title = 'TwitterData';
+    console.log(data)
     res.send(data);
 
 })
@@ -160,7 +159,8 @@ router
                 return {...acc, [`res${cI}`]: obj.value}
             }, {})
         })
-        data.title = 'facebook'
+        data.title = 'FacebookData'
+        console.log(data)
         res.send(data);
     })
     .post( async (req, res)=>{

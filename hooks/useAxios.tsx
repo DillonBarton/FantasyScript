@@ -9,7 +9,6 @@ export default function useAxios(params: {baseUrl: string, pathParams: string, q
     const api = axios.create({
         baseURL: `${ params.baseUrl }`,
         timeout: 10000,
-        withCredentials: true,
         headers: params.headers
     })
 
@@ -19,11 +18,12 @@ export default function useAxios(params: {baseUrl: string, pathParams: string, q
             api.get(params.pathParams + params.queryParams)
             .then( res => {
                 setDataFetched(true);
-                setResponse({action: 'storeData', ...res});
+                console.log(res)
+                setResponse({action: 'storeData', res: {...res}});
             })
             .catch(err => alert(err))
         }
-    }, [params.baseUrl])
+    }, [params.pathParams, params.queryParams])
 
     return [ response, dataFetched ]
 }

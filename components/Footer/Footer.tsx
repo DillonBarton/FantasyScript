@@ -189,8 +189,8 @@ export default function Footer(){
             </div>
 
                 <div className={`${styles.sectionContainer} boxW100 flexColumn sc`}>
-                    <Section fetchedData={fetchedData.current} identifier={slideOne} section={sections[slideOneSection.current]}/>
-                    <Section fetchedData={fetchedData.current} identifier={slideTwo} section={sections[slideTwoSection.current]}/>
+                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideOne} section={sections[slideOneSection.current]}/>
+                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideTwo} section={sections[slideTwoSection.current]}/>
                 </div>
 
         </footer>
@@ -212,7 +212,7 @@ export function InstagramSVG(props:{counter, section, mountHandlerFunction}){
     )
 }
 
-export function Section(props:{ section, identifier, fetchedData}){
+export function Section(props:{ section, currentSection, identifier, fetchedData}){
 
     
     const params = useRef({
@@ -240,24 +240,9 @@ export function Section(props:{ section, identifier, fetchedData}){
     const [ CSMO, dispatch ] = useStateManager(response)
 
     useEffect(()=>{
-        console.log(props.section)
-        switch(props.section){
-            case `twitter`:
-                fetchData(props.section, `http://localhost:4500`, `/media/twitter`, '', {})
-                break;
-            case `facebook`:
-                fetchData(props.section, `http://localhost:4500`, `/media/facebook`, '', {})
-                break;
-            case `youtube`:
-                // fetchData(props.section, `http://localhost:4500`, `/media/youtube`, '', {})
-                break;
-            case `instagram`:
-                // fetchData(props.section, `http://localhost:4500`, `/media/instagram`, '', {})
-                break;
-            case `linkedin`:
-                // fetchData(props.section, `http://localhost:4500`, `/media/linkedin`, '', {})
-                break;
-        }
+        console.log(CSMO)
+        console.log(props.currentSection)
+        fetchData(props.section, `http://localhost:4500`, `/media/${props.section}`, '', {})
     })
 
     switch (props.section){

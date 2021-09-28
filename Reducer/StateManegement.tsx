@@ -9,16 +9,22 @@ export const ACTIONS = {
 
 export default function useStateManager(payLoad){
 
+
+    
+
     function reducer(data, payLoad) {
+
         switch (payLoad.action) {
+
             case ACTIONS.DATA_STORE:
-                
-                return {...data};
+                let newData = {...data, [`${payLoad.res.data.title}`]: { ...payLoad.res } }
+                console.log("newData = " + newData);
+                return {...newData};
             case ACTIONS.BASKET_ADD:
 
                 return {...data};
             default:
-                console.log("error")
+                console.error("error")
                 return;
         }
     }
@@ -27,7 +33,9 @@ export default function useStateManager(payLoad){
 
     useEffect(()=>{
         if(payLoad){
-            dispatch(payLoad)
+            if(payLoad.action){
+                dispatch(payLoad)
+            }
         }
     }, [payLoad])
 
