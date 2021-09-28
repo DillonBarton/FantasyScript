@@ -46,7 +46,7 @@ const mediaRequestsObject = {
                 title: 'twitter profile Data',
                 baseUrl: 'https://api.twitter.com',
                 pathParams: `/2/users/${process.env.TWITTER_ID}`,
-                queryParams: '?user.fields=nme,username,description,profile_image_url',
+                queryParams: '?user.fields=name,username,description,profile_image_url',
             },
             {
                 title: 'twitter post Data',
@@ -102,15 +102,16 @@ const mediaFunction = async (mediaType, next) => {
                     if(res.status >= 200 && res.status < 300) {
                         return res.json();
                     } else {
+                        console.log(res)
                         // return res.json();
                         // {status: res.status, statusText: res.statusText, message: `${mediaType.title} data could not be retrieved`, }
                         // next(createError(res.status, `${mediaType.title} data could not be retrieved`, { cause: res.statusText} ))
-                        throw createError(res.status, `${mediaType.title} data could not be retrieved`, { cause: res.statusText } )
+                        throw createError(res.status, `${mediaType.title} data could not be retrieved`, { statusText: res.statusText, date: res.headers.get('Date') } )
                     }
                 })
                 .catch( err => {
-                    console.log("myErr" + err)
-                    return err;
+                    console.error(err)
+                    return {status: err.status, statusText: err.statusText, message: err.message, date: err.date};
                 })
                 return payLoad;
             }
@@ -129,10 +130,10 @@ router
     let data = await mediaFunction(mediaRequestsObject.twitter, next)
     .then( res => {
         return res.reduce( (acc, obj, cI) => {
-            if(obj.value.data){
-                return {...acc, [`res${cI}`] : obj.value.data};
+            if(obj.value.data.id){
+                delete obj.value.data.id
             }
-            console.log(obj)
+            return {...acc, [`res${cI}`] : obj.value};
         }, {})
     })
     // console.log(req.headers)
@@ -191,8 +192,6 @@ router
 
 
 router.use((err, req, res, next) => {
-    console.log("yo error " + err)
-    // next()
 })
 
 export default router
