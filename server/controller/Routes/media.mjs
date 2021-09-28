@@ -4,6 +4,7 @@ import cors from 'cors';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 dotenv.config();
+import createError from 'http-errors'
 
 
 // ARRAYS
@@ -42,11 +43,13 @@ const mediaRequestsObject = {
         title: 'twitter',
         endPoints: [
             {
+                title: 'twitter profile Data',
                 baseUrl: 'https://api.twitter.com',
                 pathParams: `/2/users/${process.env.TWITTER_ID}`,
-                queryParams: '?user.fields=name,username,description,profile_image_url',
+                queryParams: '?user.fields=nme,username,description,profile_image_url',
             },
             {
+                title: 'twitter post Data',
                 baseUrl: 'https://api.twitter.com/2',
                 pathParams: `/users/${process.env.TWITTER_ID}/tweets`,
                 queryParams: '?tweet.fields=attachments,created_at,public_metrics&max_results=5',
@@ -58,18 +61,13 @@ const mediaRequestsObject = {
         title: 'facebook',
         endPoints: [
             {
+                title: 'facebook data',
                 baseUrl: 'https://graph.facebook.com',
                 pathParams: '/102963895477102',
                 queryParams: `?fields=name,description,about,category,followers_count,link,username,picture{url},posts.limit(1){full_picture,likes.limit(0).summary(true),comments.limit(1).summary(true),created_time,message,message_tags}&access_token=${process.env.PAGE_ACCESS_TOKEN}`,
             }
         ]
     }
-}
-
-// Media data storage
-
-const mediaResponseObject = {
-
 }
 
 
@@ -86,7 +84,7 @@ const footerMediaLog = (mediaFunction) => {
 // Media information Request
 
 const mediaFunction = async (mediaType, next) => {
-    try{
+
         let options = {
             method: 'GET',
             headers: {
@@ -96,25 +94,29 @@ const mediaFunction = async (mediaType, next) => {
 
         mediaType.auth ? options.headers['Authorization'] = `Bearer ${mediaType.auth}` : null
 
-        let data = await Promise.all(mediaType.endPoints.map(
+        let data = await Promise.allSettled(mediaType.endPoints.map(
 
             async (obj) => {
                 let payLoad = await fetch(`${obj.baseUrl}${obj.pathParams}${obj.queryParams}`, options)
-                .then(res => res.json())
-                .catch(err => err)
-
+                .then(res => {
+                    if(res.status >= 200 && res.status < 300) {
+                        return res.json();
+                    } else {
+                        // return res.json();
+                        // {status: res.status, statusText: res.statusText, message: `${mediaType.title} data could not be retrieved`, }
+                        // next(createError(res.status, `${mediaType.title} data could not be retrieved`, { cause: res.statusText} ))
+                        throw createError(res.status, `${mediaType.title} data could not be retrieved`, { cause: res.statusText } )
+                    }
+                })
+                .catch( err => {
+                    console.log("myErr" + err)
+                    return err;
+                })
                 return payLoad;
             }
 
         ))
-
         return data;
-    }
-    catch(err){
-
-        return next(err);
-
-    }
     
 }
 
@@ -125,22 +127,16 @@ router
     .get(cors(corsOptions), async (req, res, next)=>{
 
     let data = await mediaFunction(mediaRequestsObject.twitter, next)
-
-    for (let i = 0; i < data.length; i++) {
-
-        mediaResponseObject[`res${i}`] = data[i]
-
-        switch (i) {
-
-            case 0:
-                delete mediaResponseObject[`res${i}`].data.id;
-                break;
-
-        }
-
-    }
-    console.log(req.headers)
-    res.send(mediaResponseObject);
+    .then( res => {
+        return res.reduce( (acc, obj, cI) => {
+            if(obj.value.data){
+                return {...acc, [`res${cI}`] : obj.value.data};
+            }
+            console.log(obj)
+        }, {})
+    })
+    // console.log(req.headers)
+    res.send(data);
 
 })
     .post( async (req, res)=>{
@@ -192,5 +188,11 @@ router
     .post(async (req, res, next) => {
 
     })
+
+
+router.use((err, req, res, next) => {
+    console.log("yo error " + err)
+    // next()
+})
 
 export default router
