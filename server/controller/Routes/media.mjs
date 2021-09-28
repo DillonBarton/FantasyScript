@@ -136,7 +136,7 @@ router
             return {...acc, [`res${cI}`] : obj.value};
         }, {})
     })
-    // console.log(req.headers)
+    data.title = 'twitter'
     res.send(data);
 
 })
@@ -150,6 +150,12 @@ router
     .route('/facebook')
     .get(cors(corsOptions), async (req, res, next)=>{
         let data = await mediaFunction(mediaRequestsObject.facebook, next)
+        .then( res => {
+            return res.reduce( (acc, obj, cI) => {
+                return {...acc, [`res${cI}`]: obj.value}
+            }, {})
+        })
+        data.title = 'facebook'
         res.send(data);
     })
     .post( async (req, res)=>{

@@ -32,8 +32,7 @@ const corsOptions = {
             callback(new Error('Invalid ORIGIN'))
 
         }
-    },
-    credentials: true
+    }
 }
 
 

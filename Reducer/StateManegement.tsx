@@ -12,7 +12,7 @@ export default function useStateManager(payLoad){
     function reducer(data, payLoad) {
         switch (payLoad.action) {
             case ACTIONS.DATA_STORE:
-                console.log("yo")
+
                 return {...data};
             case ACTIONS.BASKET_ADD:
 

@@ -226,7 +226,6 @@ export function Section(props:{ section, identifier, fetchedData}){
     const [ response, isLoading ] = useAxios(params.current)
 
     const fetchData = (section, baseUrl, pathParams, queryParams, headers) => {
-        console.log(props.fetchedData[section])
         if(props.fetchedData[section] === false){
             Object.assign(params.current, {
                 baseUrl: baseUrl,
@@ -235,9 +234,10 @@ export function Section(props:{ section, identifier, fetchedData}){
                 headers: headers
             })
             props.fetchedData[section] = true
-            console.log(params.current)
         }
     }
+
+    const [ CSMO, dispatch ] = useStateManager(response)
 
     useEffect(()=>{
         console.log(props.section)
@@ -249,20 +249,16 @@ export function Section(props:{ section, identifier, fetchedData}){
                 fetchData(props.section, `http://localhost:4500`, `/media/facebook`, '', {})
                 break;
             case `youtube`:
-                fetchData(props.section, `http://localhost:4500`, `/media/youtube`, '', {})
+                // fetchData(props.section, `http://localhost:4500`, `/media/youtube`, '', {})
                 break;
             case `instagram`:
-                fetchData(props.section, `http://localhost:4500`, `/media/instagram`, '', {})
+                // fetchData(props.section, `http://localhost:4500`, `/media/instagram`, '', {})
                 break;
             case `linkedin`:
-                fetchData(props.section, `http://localhost:4500`, `/media/linkedin`, '', {})
+                // fetchData(props.section, `http://localhost:4500`, `/media/linkedin`, '', {})
                 break;
         }
     })
-
-    
-
-    // const [ data, dispatch ] = useStateManager(response)
 
     switch (props.section){
 
