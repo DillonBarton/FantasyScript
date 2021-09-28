@@ -22,9 +22,9 @@ export default function Footer(){
     const [ section, setSection ] = useState( sections[initialState] );
     const [ sectionMounted, setSectionMounted ] = useState(true);
     const slideOne = useRef(null);
-    const slideOneSection = useRef(initialState);
+    const [ slideOneSection, setSlideOneSection ] = useState(initialState)
     const slideTwo = useRef(null);
-    const slideTwoSection = useRef(initialState - 1);
+    const [ slideTwoSection, setSlideTwoSection ] = useState(initialState - 1)
     const fetchedData = useRef({
         twitter: false,
         facebook: false,
@@ -96,13 +96,14 @@ export default function Footer(){
             if(counter.current === 4){
 
                 counter.current = 0
+
                 if(sectionMounted){
 
-                    slideTwoSection.current = counter.current;
+                    setSlideTwoSection(counter.current)
 
                 } else {
 
-                    slideOneSection.current = counter.current;
+                    setSlideOneSection(counter.current)
 
                 }
 
@@ -115,11 +116,11 @@ export default function Footer(){
 
                 if(sectionMounted){
 
-                    slideTwoSection.current = counter.current;
-
+                    setSlideTwoSection(counter.current)
+                    
                 } else {
 
-                    slideOneSection.current = counter.current;
+                    setSlideOneSection(counter.current)
 
                 }
 
@@ -189,8 +190,8 @@ export default function Footer(){
             </div>
 
                 <div className={`${styles.sectionContainer} boxW100 flexColumn sc`}>
-                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideOne} section={sections[slideOneSection.current]}/>
-                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideTwo} section={sections[slideTwoSection.current]}/>
+                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideOne} section={sections[slideOneSection]}/>
+                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideTwo} section={sections[slideTwoSection]}/>
                 </div>
 
         </footer>
@@ -227,12 +228,12 @@ export function Section(props:{ section, currentSection, identifier, fetchedData
 
     const fetchData = (section, baseUrl, pathParams, queryParams, headers) => {
         if(props.fetchedData[section] === false){
-            Object.assign(params.current, {
+            params.current = {
                 baseUrl: baseUrl,
                 pathParams: pathParams,
                 queryParams: queryParams,
                 headers: headers
-            })
+            }
             props.fetchedData[section] = true
         }
     }
@@ -240,10 +241,8 @@ export function Section(props:{ section, currentSection, identifier, fetchedData
     const [ CSMO, dispatch ] = useStateManager(response)
 
     useEffect(()=>{
-        console.log(CSMO)
-        console.log(props.currentSection)
         fetchData(props.section, `http://localhost:4500`, `/media/${props.section}`, '', {})
-    })
+    }, [props.section])
 
     switch (props.section){
 

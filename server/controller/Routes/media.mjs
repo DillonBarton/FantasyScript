@@ -172,7 +172,7 @@ router
 router
     .route('/youtube')
     .get(cors(corsOptions), async (req, res, next)=>{
-        res.send({data: 'youtube'});
+        res.send({data: 'youtube', title: 'YoutubeData'});
     })
     .post(async (req, res, next) =>{
 
@@ -184,7 +184,7 @@ router
 router
     .route('/instagram')
     .get(cors(corsOptions), async (req, res, next) =>{
-    res.send({data: 'instagram'});
+    res.send({data: 'instagram',  title: 'InstagramData'});
 })
     .post(async (req, res, next) =>{
 
@@ -195,7 +195,7 @@ router
 router
     .route('/linkedin')
     .get(cors(corsOptions), async (req, res, next) => {
-    res.send({data: 'linkedin'});
+    res.send({data: 'linkedin',  title: 'LinkedinData'});
 })
     .post(async (req, res, next) => {
 

@@ -32,6 +32,7 @@ export default function useStateManager(payLoad){
     const [ data, dispatch ] = useReducer(reducer, null)
 
     useEffect(()=>{
+        console.log(data)
         if(payLoad){
             if(payLoad.action){
                 dispatch(payLoad)

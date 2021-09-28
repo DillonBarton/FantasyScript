@@ -18,7 +18,6 @@ export default function useAxios(params: {baseUrl: string, pathParams: string, q
             api.get(params.pathParams + params.queryParams)
             .then( res => {
                 setDataFetched(true);
-                console.log(res)
                 setResponse({action: 'storeData', res: {...res}});
             })
             .catch(err => alert(err))
