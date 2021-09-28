@@ -106,7 +106,7 @@ const mediaFunction = async (mediaType, next) => {
                         // return res.json();
                         // {status: res.status, statusText: res.statusText, message: `${mediaType.title} data could not be retrieved`, }
                         // next(createError(res.status, `${mediaType.title} data could not be retrieved`, { cause: res.statusText} ))
-                        throw createError(res.status, `${mediaType.title} data could not be retrieved`, { statusText: res.statusText, date: res.headers.get('Date') } )
+                        throw createError(res.status, `${obj.title} data could not be retrieved`, { statusText: res.statusText, date: res.headers.get('Date') } )
                     }
                 })
                 .catch( err => {
