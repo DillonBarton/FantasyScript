@@ -46,7 +46,7 @@ const mediaRequestsObject = {
                 title: 'twitter profile Data',
                 baseUrl: 'https://api.twitter.com',
                 pathParams: `/2/users/${process.env.TWITTER_ID}`,
-                queryParams: '?user.fields=name,username,description,profile_image_url',
+                queryParams: '?user.fields=nme,username,description,profile_image_url',
             },
             {
                 title: 'twitter post Data',
@@ -130,11 +130,16 @@ router
     let data = await mediaFunction(mediaRequestsObject.twitter, next)
     .then( res => {
         return res.reduce( (acc, obj, cI) => {
-            if(obj.value.data.id){
-                delete obj.value.data.id
+            if(obj.value.data){
+                if(obj.value.data.id){
+                    delete obj.value.data.id
+                }
             }
             return {...acc, [`res${cI}`] : obj.value};
         }, {})
+    })
+    .catch( err => {
+        console.error(err)
     })
     data.title = 'twitter'
     res.send(data);
