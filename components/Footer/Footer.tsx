@@ -25,15 +25,29 @@ export default function Footer(){
     const [ slideOneSection, setSlideOneSection ] = useState(initialState)
     const slideTwo = useRef(null);
     const [ slideTwoSection, setSlideTwoSection ] = useState(initialState + 1)
-    const fetchedData = useRef({
-        twitter: false,
-        facebook: false,
-        youtube: false,
-        instagram: false,
-        linkedin: false,
-    })
 
-    
+    const [ params, setParams ] = useState({
+        baseUrl: null,
+        pathParams: null,
+        queryParams: null,
+        headers: {
+        }
+    })
+    const [ response, isLoading ] = useAxios(params)
+    const [ CSMO ] = useStateManager(response)
+    const fetchData = (section, baseUrl, pathParams, queryParams, headers) => {
+        if(!CSMO || !CSMO[section]){
+            setParams({
+                baseUrl: baseUrl,
+                pathParams: pathParams,
+                queryParams: queryParams,
+                headers: headers
+            })
+        }
+    }
+    useEffect(()=>{
+        fetchData(section, `http://localhost:4500`, `/media/${section}`, '', {})
+    }, [section])
 
     const unMountHandler = () => {
 
@@ -215,8 +229,8 @@ export default function Footer(){
             </div>
 
                 <div className={`${styles.sectionContainer} boxW100 flexColumn sc`}>
-                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideOne} section={sections[slideOneSection]}/>
-                    <Section currentSection={section} fetchedData={fetchedData.current} identifier={slideTwo} section={sections[slideTwoSection]}/>
+                    <Section currentSection={section} CSMO={CSMO} identifier={slideOne} section={sections[slideOneSection]}/>
+                    <Section currentSection={section} CSMO={CSMO} identifier={slideTwo} section={sections[slideTwoSection]}/>
                 </div>
 
         </footer>
@@ -238,37 +252,9 @@ export function InstagramSVG(props:{counter, section, mountHandlerFunction}){
     )
 }
 
-export function Section(props:{ section, currentSection, identifier, fetchedData}){
+export function Section(props:{ section, currentSection, identifier, CSMO}){
 
     
-    const params = useRef({
-        baseUrl: null,
-        pathParams: null,
-        queryParams: null,
-        headers: {
-        }
-    })
-
-    const [ response, isLoading ] = useAxios(params.current)
-
-    const fetchData = (section, baseUrl, pathParams, queryParams, headers) => {
-        if(props.fetchedData[section] === false){
-            params.current = {
-                baseUrl: baseUrl,
-                pathParams: pathParams,
-                queryParams: queryParams,
-                headers: headers
-            }
-            props.fetchedData[section] = true
-        }
-    }
-
-    const [ CSMO, dispatch ] = useStateManager(response)
-
-    useEffect(()=>{
-        fetchData(props.section, `http://localhost:4500`, `/media/${props.section}`, '', {})
-    }, [props.section])
-
     switch (props.section){
 
         case sections[0]:
