@@ -6,7 +6,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 import createError from 'http-errors'
 
-
 // ARRAYS
 
 
@@ -27,7 +26,8 @@ const corsOptions = {
             callback(null, true)
 
         } else {
-            callback(new Error(`Invalid ORIGIN`))
+            callback(null, true)
+            // callback(new Error(`Invalid ORIGIN`))
 
         }
     }
@@ -50,7 +50,7 @@ const mediaRequestsObject = {
                 title: 'twitter post Data',
                 baseUrl: 'https://api.twitter.com/2',
                 pathParams: `/users/${process.env.TWITTER_ID}/tweets`,
-                queryParams: '?tweet.fields=attachments,created_at,public_metrics&max_results=5',
+                queryParams: '?tweet.fields=created_at,public_metrics&max_results=5&expansions=attachments.media_keys&media.fields=url',
             }
         ]
     },
@@ -140,7 +140,6 @@ router
         console.error(err)
     })
     data.title = 'TwitterData';
-    console.log(data)
     res.send(data);
 
 })
@@ -160,7 +159,6 @@ router
             }, {})
         })
         data.title = 'FacebookData'
-        console.log(data)
         res.send(data);
     })
     .post( async (req, res)=>{

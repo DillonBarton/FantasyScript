@@ -35,7 +35,7 @@ export default function Footer(){
     })
     const [ response, isLoading ] = useAxios(params)
     const [ CSMO ] = useStateManager(response)
-    const fetchData = (section, baseUrl, pathParams, queryParams, headers) => {
+    const fetchData = (baseUrl, pathParams, queryParams, headers) => {
         if(!CSMO || !CSMO[section]){
             setParams({
                 baseUrl: baseUrl,
@@ -46,7 +46,8 @@ export default function Footer(){
         }
     }
     useEffect(()=>{
-        fetchData(section, `http://localhost:4500`, `/media/${section}`, '', {})
+        console.log(CSMO)
+        fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
     }, [section])
 
     const unMountHandler = () => {
