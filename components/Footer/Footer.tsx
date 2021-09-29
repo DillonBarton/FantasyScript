@@ -24,7 +24,7 @@ export default function Footer(){
     const slideOne = useRef(null);
     const [ slideOneSection, setSlideOneSection ] = useState(initialState)
     const slideTwo = useRef(null);
-    const [ slideTwoSection, setSlideTwoSection ] = useState(initialState - 1)
+    const [ slideTwoSection, setSlideTwoSection ] = useState(initialState + 1)
     const fetchedData = useRef({
         twitter: false,
         facebook: false,
@@ -33,12 +33,20 @@ export default function Footer(){
         linkedin: false,
     })
 
-    const unMountFunc = () => {
+    
+
+    const unMountHandler = () => {
+
+        let slideOneTimeout;
+        let slideTwoTimeout;
+        clearTimeout(slideOneTimeout)
+        clearTimeout(slideTwoTimeout)
+        
 
         if(sectionMounted === true){
 
             slideOne.current.classList.add(`${styles.sectionUnMountAnimation}`)
-            setTimeout(()=>{
+            slideOneTimeout = setTimeout(()=>{
                 slideOne.current.classList.replace(`${styles.sectionUnMountAnimation}`, `${styles.displayNone}`)
                 slideOne.current.classList.remove(`${styles.sectionOnMountAnimation2}`)
             }, 1000)
@@ -46,7 +54,7 @@ export default function Footer(){
         }else{
 
             slideTwo.current.classList.add(`${styles.sectionUnMountAnimation}`)
-            setTimeout(()=>{
+            slideTwoTimeout = setTimeout(()=>{
                 slideTwo.current.classList.replace(`${styles.sectionUnMountAnimation}`, `${styles.displayNone}`)
                 slideTwo.current.classList.remove(`${styles.sectionOnMountAnimation2}`)
             }, 1000)
@@ -65,19 +73,26 @@ export default function Footer(){
             setSectionMounted(!sectionMounted)
         }
 
-        setTimeout(()=>{
+        let mountTimout;
+        let slideTwoMountTimeout;
+        let slideOneMountTimeout;
+        clearTimeout(mountTimout);
+        clearTimeout(slideTwoMountTimeout);
+        clearTimeout(slideOneMountTimeout);
+
+        mountTimout = setTimeout(()=>{
 
             if(sectionMounted){
 
                 slideTwo.current.classList.add(`${styles.sectionOnMountAnimation}`)
-                setTimeout(()=>{
+                slideTwoMountTimeout = setTimeout(()=>{
                     slideTwo.current.classList.replace(`${styles.sectionOnMountAnimation}`,`${styles.sectionOnMountAnimation2}`)
                 }, 600)
 
 
             } else {
 
-                slideOne.current.classList.add(`${styles.sectionOnMountAnimation}`)
+                slideOneMountTimeout = slideOne.current.classList.add(`${styles.sectionOnMountAnimation}`)
                 setTimeout(()=>{
                     slideOne.current.classList.replace(`${styles.sectionOnMountAnimation}`,`${styles.sectionOnMountAnimation2}`)
                 }, 600)
@@ -89,45 +104,55 @@ export default function Footer(){
 
     }
 
+
     const counterFunc = () => {
 
-        setTimeout(()=>{
+        let countTimout;
+
+        clearTimeout(countTimout)
+
+        const countTimoutFunc = () => {
 
             if(counter.current === 4){
-
+    
                 counter.current = 0
-
+    
                 if(sectionMounted){
-
+    
                     setSlideTwoSection(counter.current)
-
+                    setSlideOneSection(counter.current + 1)
+    
                 } else {
-
+    
                     setSlideOneSection(counter.current)
-
+                    setSlideTwoSection(counter.current + 1)
                 }
-
+    
                 setSection( sections[counter.current] )
-
-
+    
+    
             } else {
-
+    
                 counter.current++
-
+    
                 if(sectionMounted){
-
+    
                     setSlideTwoSection(counter.current)
+                    setSlideOneSection(counter.current + 1)
                     
                 } else {
-
+    
                     setSlideOneSection(counter.current)
-
+                    setSlideTwoSection(counter.current + 1)
+    
                 }
-
+    
                 setSection( sections[counter.current] )
-
+    
             }
-        }, 600)
+    
+        }
+        countTimout = setTimeout(countTimoutFunc, 600)
     }
 
     const mountHandlerFunction = (section) => {
@@ -135,7 +160,7 @@ export default function Footer(){
             counter.current = section;
         }
         counterFunc();
-        unMountFunc();
+        unMountHandler();
         mountFunc();
     }
 
@@ -149,7 +174,7 @@ export default function Footer(){
             setIsMounted(true)
         }
 
-        let interval = setInterval(mountHandlerFunction, 9000);
+        let interval = setInterval(mountHandlerFunction, 13000);
 
         return () => clearInterval(interval)
 
@@ -247,7 +272,7 @@ export function Section(props:{ section, currentSection, identifier, fetchedData
     switch (props.section){
 
         case sections[0]:
-            
+
             return(
                 <div ref={props.identifier} className={`${styles.twitter} ${styles.section} boxW100 flexRow sc`}>
 
