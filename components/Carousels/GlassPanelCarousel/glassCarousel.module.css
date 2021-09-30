@@ -73,7 +73,8 @@
 
 .leftPanel{
     opacity: 1 !important;
-    box-shadow: 0 0 15px 1px rgb(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+    background-color:rgba(0, 0, 0, 0.05);
     transform: translateZ(-1px) rotateX(0.15deg);
 }
 
@@ -101,6 +102,7 @@
 .centerPanel{
     opacity: 1 !important;
     box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.2);
     transform: translateZ(-0.1px) rotateX(0.05deg);
 }
 
@@ -124,6 +126,7 @@
 .rightPanel{
     opacity: 1 !important;
     box-shadow: 0 0 15px 1px rgb(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.33);
     transform: translateZ(-1px) rotateX(0.15deg);
 }
 

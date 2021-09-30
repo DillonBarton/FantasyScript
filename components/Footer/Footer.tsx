@@ -135,12 +135,10 @@ export default function Footer(){
                 if(sectionMounted){
     
                     setSlideTwoSection(counter.current)
-                    setSlideOneSection(counter.current + 1)
     
                 } else {
     
                     setSlideOneSection(counter.current)
-                    setSlideTwoSection(counter.current + 1)
                 }
     
                 setSection( sections[counter.current] )
@@ -153,12 +151,10 @@ export default function Footer(){
                 if(sectionMounted){
     
                     setSlideTwoSection(counter.current)
-                    setSlideOneSection(counter.current + 1)
                     
                 } else {
     
                     setSlideOneSection(counter.current)
-                    setSlideTwoSection(counter.current + 1)
     
                 }
     
@@ -263,10 +259,14 @@ export function Section(props:{ section, currentSection, identifier, CSMO}){
             return(
                 <div ref={props.identifier} className={`${styles.twitter} ${styles.section} boxW100 flexRow sc`}>
 
-                    <div className={`${styles.imageContainer}`}>
+                    <div className={`${styles.imageContainer} flexRow currentSection`}>
 
                         
-                        {/* <Image layout="fill" src={`https://pbs.twimg.com/media/${data.res1.data[0].attachments.media_keys[0]}?format=jpg&name=small`} alt=""/> */}
+
+                        {
+                            props.CSMO.TwitterData ? <img src={props.CSMO.TwitterData.data.res1.includes.media[1].url} alt=""/> : null
+                        }
+                        
                         
 
                     </div>
