@@ -13,10 +13,12 @@ export default function FSPageLoader(){
         min-height: 100%;
         background-color: rgb(15, 15, 15);
         opacity: 1;
+        font-size: 5rem;
         z-index: 1000000;
     `
 
     return(
-        <Pageloader/>
+        <Pageloader>
+        </Pageloader>
     )
 }

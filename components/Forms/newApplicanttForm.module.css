@@ -37,7 +37,7 @@
     max-height: calc(100% - 200px);
 }
 
-#applicantForm{
+.applicantForm{
     width: 10px;
     height: 100%;
     flex-grow: 1.9;
@@ -59,7 +59,7 @@
     margin-right: 30px;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 5px 3px 10px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
 }
 
 .inputContainer label.requiredInput{
@@ -130,7 +130,7 @@
     top: 0;
     right: 0;
     width: 50px;
-    height: 50px;
+    height: 100%;
     background-color: rgb(0, 0, 0);
     border-radius: 0 3px 0 3px;
     z-index: 3;
@@ -142,10 +142,6 @@
     right: 50%;
     transform: translate(50%, -50%);
     z-index: 4;
-}
-
-.inputContainer.description .inputCover{
-    width: 100%;
 }
 
 .fileInputContainer{
@@ -165,7 +161,7 @@
     color: white;
     backdrop-filter: blur(4px) brightness(2) saturate(2.8);
     border-radius: 3px 0 0 3px;
-    box-shadow: 5px 3px 10px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     z-index: 3;
 }
@@ -212,6 +208,10 @@
     z-index: 1;
 }
 
+.inputContainer.description .inputCover{
+    width: 100%;
+}
+
 .inputCover::after{
     content: '';
     position: absolute;
@@ -229,6 +229,34 @@
     right: -25px;
     transform: translate(50%, -50%);
     z-index: 5;
+}
+
+.nullInput svg{
+    opacity: 0;
+    transform: translate(calc(50% + 8px), -50%);
+    animation: svgenter 0.35s ease-in forwards;
+}
+
+.validInput svg{
+    width: 26px;
+    height: 26px;
+    opacity: 0;
+    transform: translate(50%, calc(-50% + 8px));
+    animation: valid 0.3s ease-in forwards;
+}
+
+.inValidInput svg{
+    width: 23px;
+    height: 23px;
+    opacity: 0;
+    animation: error 0.3s ease-in forwards;
+}
+
+.submitButton{
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 4;
 }
 
 .blank{
@@ -251,4 +279,50 @@
 
 .imageContainer img{
     padding: 20px !important;
+}
+
+@keyframes svgenter {
+    from{
+        opacity: 0;
+        transform: translate(calc(50% + 8px), -50%)
+    }
+    to{
+        opacity: 1;
+        transform: translate(50%, -50%)
+    }
+}
+
+@keyframes valid {
+    from {
+        opacity: 0;
+        transform: translate(50%, calc(-50% + 8px));
+    }
+    to{
+        opacity: 1;
+        transform: translate(50%, -50%);
+    }
+}
+
+@keyframes error {
+    0%{
+        opacity: 0;
+        transform: translate(50%, -50%);
+    }
+    20%{
+        opacity: 1;
+        transform: translate(50%, calc(-50% - 4px));
+    }
+    40%{
+        transform: translate(50%, calc(-50% + 4px));
+    }
+    60%{
+        transform: translate(50%, calc(-50% - 4px));
+    }
+    80%{
+        transform: translate(50%, calc(-50% + 4px));
+    }
+    100%{
+        opacity: 1;
+        transform: translate(50%, -50%);
+    }
 }

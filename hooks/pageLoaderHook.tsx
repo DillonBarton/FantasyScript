@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-
 import styles from '../components/LoadingScreens/PuzzleAnimation/puzzleAnimation.module.css'
 
-const usePageLoaderHook = (initialValue: boolean) => {
-    const [loaded, setLoaded] = useState(initialValue)
+// try making the stylesheet global
 
-    return [loaded ? null : <LoadingAnimation/>, ()=> setLoaded(true), () => setLoaded(false)]
+const usePageLoaderHook = (initialValue: boolean) => {
+    const [loading, setLoading] = useState(initialValue)
+
+    return [loading ? null : <LoadingAnimation/>, ()=> setLoading(true), () => setLoading(false)]
 }
 
 export function LoadingAnimation(){
