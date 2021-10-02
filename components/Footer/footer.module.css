@@ -152,7 +152,7 @@
     height: 100%;
     width: 270px;
 }
-.imageContainer img{
-    width: 100%;
+.imageContainer video{
+    height: 100%;
     object-fit: contain;
 }

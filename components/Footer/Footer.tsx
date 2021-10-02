@@ -45,10 +45,9 @@ export default function Footer(){
             })
         }
     }
-    useEffect(()=>{
-        console.log(CSMO)
-        fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
-    }, [section])
+    // useEffect(()=>{
+    //     fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
+    // }, [section])
 
     const unMountHandler = () => {
 
@@ -185,9 +184,9 @@ export default function Footer(){
             setIsMounted(true)
         }
 
-        let interval = setInterval(mountHandlerFunction, 13000);
+        // let interval = setInterval(mountHandlerFunction, 13000);
 
-        return () => clearInterval(interval)
+        // return () => clearInterval(interval)
 
     }, [section]);
 
@@ -263,9 +262,7 @@ export function Section(props:{ section, currentSection, identifier, CSMO}){
 
                         
 
-                        {
-                            props.CSMO.TwitterData ? <img src={props.CSMO.TwitterData.data.res1.includes.media[1].url} alt=""/> : null
-                        }
+                        
                         
                         
 

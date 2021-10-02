@@ -50,7 +50,7 @@ const mediaRequestsObject = {
                 title: 'twitter post Data',
                 baseUrl: 'https://api.twitter.com/2',
                 pathParams: `/users/${process.env.TWITTER_ID}/tweets`,
-                queryParams: '?tweet.fields=created_at,public_metrics&max_results=5&expansions=attachments.media_keys&media.fields=url,preview_image_url',
+                queryParams: '?tweet.fields=created_at,public_metrics&max_results=5&expansions=attachments.media_keys&media.fields=url',
             }
         ]
     },
