@@ -26,14 +26,14 @@ export default function FSHero() {
                     </p>
                     <div className={`flexRow sc`}>
 
-                        <button className={`flexRow cc`}>
+                        <button className={`${styles.buttonOne} flexRow cc`}>
 
                             <div>View Portfolio</div>
                             <FaArrowAltCircleRight/>
 
                         </button>
 
-                        <button className={`flexRow cc`}>
+                        <button className={`${styles.buttonTwo} flexRow cc`}>
 
                             <div>Start Project</div>
                             <FaArrowAltCircleRight/>

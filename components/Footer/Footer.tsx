@@ -46,6 +46,7 @@ export default function Footer(){
         }
     }
     // useEffect(()=>{
+    //     console.log(CSMO)
     //     fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
     // }, [section])
 
@@ -166,7 +167,7 @@ export default function Footer(){
     }
 
     const mountHandlerFunction = (section) => {
-        if(section){
+        if(section !== null){
             counter.current = section;
         }
         counterFunc();
@@ -184,7 +185,7 @@ export default function Footer(){
             setIsMounted(true)
         }
 
-        // let interval = setInterval(mountHandlerFunction, 13000);
+        // let interval = setInterval(mountHandlerFunction, 13000, null);
 
         // return () => clearInterval(interval)
 
@@ -258,16 +259,26 @@ export function Section(props:{ section, currentSection, identifier, CSMO}){
             return(
                 <div ref={props.identifier} className={`${styles.twitter} ${styles.section} boxW100 flexRow sc`}>
 
-                    <div className={`${styles.imageContainer} flexRow currentSection`}>
-
+                    <div className={`${styles.imageContainer} flexRow`}>
                         
-
-                        
-                        
-                        
+                        {
+                            props.CSMO.TwitterData && <img src={props.CSMO.TwitterData.data.res1.includes.media[0].url} alt="" />
+                        }
 
                     </div>
 
+                    <div className={`boxW100H100 flexColumn cc ${styles.mediaData}`}>
+                        
+                        <div className={`${styles.profileData} flexColumn sc boxW100`}>
+
+                        </div>
+
+                        <div className={`${styles.postData} flexColumn sc boxW100`}>
+
+                        </div>
+
+                    </div>
+                    
                 </div>
             )
 
