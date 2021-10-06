@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
 #footerContainer{
     position: absolute;
     bottom: 0;
@@ -7,21 +9,105 @@
     background-color: rgba(15, 15, 15, 0.99);
     z-index: 997;
     padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.titleContainer{
+    position: absolute;
+    opacity: 0;
+    
+}
+
+.titleContainerAnimation{
+    opacity: 1 !important;  
+    transition: 1.5s ease;  
+}
+
+.floatingTitle{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    user-select: none;
+    font-family: 'Merriweather', serif;
+}
+
+.titleOne{
+    font-size: 36rem;
+    opacity: 0.1;
+    transform: translate(-30%, -55%);
+}
+
+.titleOneAnimation{
+    animation: ttlOne 60s linear infinite;
+}
+
+.titleTwo{
+    transform: translate(140%, -15%);
+    font-size: 12rem;
+    opacity: 0.15;
+}
+
+.titleTwoAnimation{
+    animation: ttlTwo 60s linear infinite;
+}
+
+.titleThree{
+    transform: translate(0, 100%);
+    font-size: 7rem;
+    opacity: 0.25;
+}
+
+.titleThreeAnimation{
+    animation: ttlThree 30s linear infinite;
+}
+
+.reverseAnimation{
+    animation-direction: reverse !important;
+}
+
+.twitterTitle{
+    color: rgb(29, 161, 242);
+}
+.twitterTitle.titleOne{
+    font-size: 34rem !important;
+}
+
+.facebookTitle{
+    color: rgb(66, 103, 178);
+}
+
+h1.facebookTitle{
+    font-size: 30rem !important;
+}
+
+.youtubeTitle{
+    color: rgb(196, 48, 43);
+}
+h1.youtubeTitle{
+
+}
+
+.instagramTitle{
+    background: radial-gradient(circle at 10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.linkedinTitle{
+    color: rgb(40, 103, 178);
 }
 
 .socialMediaIconsContainer{
     flex-shrink: 0;
     padding: 12px 0;
-}
-
-.socialMediaIcons{
     max-width: 1200px;
     justify-content: space-evenly !important;
 }
 
-.socialMediaIcons svg{
+.socialMediaIconsContainer svg{
     padding: 8px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
@@ -73,9 +159,8 @@
 }
 
 .iconSelected{
-    box-shadow: 0 0 10px 1px rgba(40, 40, 40, 0.4);
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: brightness(2.3) saturate(6);
+    background-color: rgba(0, 0, 0, 0.424);
+    box-shadow: 0 2px 2px 1px rgba(70, 70, 70, 0.2);
     opacity: 1 !important;
 }
 
@@ -85,18 +170,21 @@
     max-width: 1200px;
     height: 280px;
     border-radius: 6px;
-    backdrop-filter: saturate(2.8) brightness(6);
+    backdrop-filter: saturate(2.8) brightness(4);
     overflow: hidden;
 }
 
 .section{
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    grid-template-rows: 8fr 6fr 2fr;
     position: absolute;
     top: 0;
     left: 0;
     transform: translateY(-400px) translateZ(-1px);
     height: 280px;
-    padding: 0.9em;
-    box-shadow: 0 0 20px 1px rgba(40, 40, 40, 0.3);
+    padding: 1.3em;
+    box-shadow: 0 0 10px 1px rgba(40, 40, 40, 0.5);
     border-radius: 6px;
 }
 
@@ -124,42 +212,129 @@
 
 .twitter{
     /* background-color: rgb(29, 161, 242); */
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(202, 202, 202);
 }
 
 .facebook{
     /* background-color: rgb(66, 103, 178); */
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(212, 212, 212);
 }
 
 .youtube{
     /* background-color: rgb(196, 48, 43); */
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(212, 212, 212);
 }
 
 .instagram{
     /* background: radial-gradient(circle at 10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(212, 212, 212);
 }
 
 .linkedin{
     /* background-color: rgb(40, 103, 178); */
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(212, 212, 212);
 }
 
 .imageContainer{
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
     position: relative;
-    /* height: 100%; */
-    width: 350px;
+    height: 100%;
     flex-shrink: 0;
+    margin-right: 0.9em;
+    overflow: hidden;
+    border-radius: 6px 0 0 6px;
 }
 
 .imageContainer img{
-    width: 100%;
-    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
 }
 
-.mediaData{
-    flex-grow: 1;
-    flex-shrink: 1;
+.profileDataContainer{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    grid-template-rows: 3fr 4fr;
+}
+.profileImgContainer{
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    position: relative;
+}
+
+.profileImgContainer img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profileData{
+    padding: 5px 0;
+}
+
+.profileData *{
+    margin-right: 11px;
+}
+
+.profileData div:first-child{
+    color: rgb(20, 20, 20);
+}
+
+.profileData a:last-child{
+    color: rgb(98, 98, 98);
+}
+
+.profileDescription{
+    margin: 0;
+    color: rgb(20, 20, 20);
+    line-height: 1.4em;
+}
+
+.postTextContainer{
+    color: rgb(20, 20, 20);
+    font-size: 1rem;
+}
+
+.postData{
+    color: rgb(98, 98, 98);
+}
+
+.postData *{
+    margin-left: 15px;
+}
+
+.postData svg{
+    width: 25px;
+    height: 100%;
+    margin-right: 3px;
+}
+
+@keyframes ttlOne {
+    from{
+        transform: translate(-30%, -55%);
+    }
+    to{
+        transform: translate(20%, -55%);
+    }
+}
+
+@keyframes ttlTwo {
+    from{
+        transform: translate(140%, -15%);
+    }
+    to{
+        transform: translate(20%, -15%);
+    }
+}
+
+@keyframes ttlThree {
+    from{
+        transform: translate(0, 100%);
+    }
+    to{
+        transform: translate(300%, 100%);
+    }
 }

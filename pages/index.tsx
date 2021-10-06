@@ -8,7 +8,7 @@ import usePageLoaderHook from '../hooks/pageLoaderHook'
 import Layout from '../components/Layout'
 import DreamSpace from '../styled-components/DreamSpace'
 import FSHero from '../components/FSHero'
-import PhaseDisplay from '../components/InformationDisplay/PhaseDisplay/PhaseDisplay'
+import SectionDivider from '../components/InformationDisplay/SectionDivider/SectionDivider'
 import NewApplicantForm from "../components/Forms/NewApplicantForm";
 import useAxios from "../hooks/useAxios";
 import GlassScrollBar from "../components/scrollBars/GlassScrollBar/GlassScrollBar";
@@ -28,7 +28,7 @@ export default function Home() {
             {loaded}
             <DreamSpace/>
             <FSHero/>
-            <PhaseDisplay/>
+            <SectionDivider direction={false}/>
             <NewApplicantForm/>
         </Layout>
       )

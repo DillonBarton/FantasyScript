@@ -7,6 +7,8 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 import { FaFacebook } from 'react-icons/fa'
 import { SiYoutube } from 'react-icons/si'
 import { GrLinkedin } from 'react-icons/gr'
+import { IoHeartOutline } from 'react-icons/io5'
+import { VscComment } from 'react-icons/vsc'
 
 import styles from './footer.module.css'
 import useAxios from "../../hooks/useAxios";
@@ -16,15 +18,16 @@ const sections = ['twitter', 'facebook', 'youtube', 'instagram', 'linkedin']
 
 export default function Footer(){
 
-    const [ isMounted, setIsMounted ] = useState(false)
+    const [ titleRerender, setTitleRerender ] = useState(false);
+    const [ isMounted, setIsMounted ] = useState(false);
     const initialState = 2;
     const counter = useRef(initialState);
     const [ section, setSection ] = useState( sections[initialState] );
     const [ sectionMounted, setSectionMounted ] = useState(true);
     const slideOne = useRef(null);
-    const [ slideOneSection, setSlideOneSection ] = useState(initialState)
+    const [ slideOneSection, setSlideOneSection ] = useState(initialState);
     const slideTwo = useRef(null);
-    const [ slideTwoSection, setSlideTwoSection ] = useState(initialState + 1)
+    const [ slideTwoSection, setSlideTwoSection ] = useState(initialState + 1);
 
     const [ params, setParams ] = useState({
         baseUrl: null,
@@ -45,10 +48,10 @@ export default function Footer(){
             })
         }
     }
-    // useEffect(()=>{
-    //     console.log(CSMO)
-    //     fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
-    // }, [section])
+    useEffect(()=>{
+        console.log(CSMO)
+        fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
+    }, [section])
 
     const unMountHandler = () => {
 
@@ -57,7 +60,7 @@ export default function Footer(){
         clearTimeout(slideOneTimeout)
         clearTimeout(slideTwoTimeout)
         
-
+        setTitleRerender(false)
         if(sectionMounted === true){
 
             slideOne.current.classList.add(`${styles.sectionUnMountAnimation}`)
@@ -91,9 +94,11 @@ export default function Footer(){
         let mountTimout;
         let slideTwoMountTimeout;
         let slideOneMountTimeout;
+        let titleTimout;
         clearTimeout(mountTimout);
         clearTimeout(slideTwoMountTimeout);
         clearTimeout(slideOneMountTimeout);
+        clearTimeout(titleTimout);
 
         mountTimout = setTimeout(()=>{
 
@@ -106,7 +111,7 @@ export default function Footer(){
 
 
             } else {
-
+   
                 slideOneMountTimeout = slideOne.current.classList.add(`${styles.sectionOnMountAnimation}`)
                 setTimeout(()=>{
                     slideOne.current.classList.replace(`${styles.sectionOnMountAnimation}`,`${styles.sectionOnMountAnimation2}`)
@@ -116,6 +121,10 @@ export default function Footer(){
 
 
         }, 600)
+
+        titleTimout = setTimeout(() => {
+            setTitleRerender(true)
+        }, 1600)
 
     }
 
@@ -182,6 +191,7 @@ export default function Footer(){
         } else {
             slideOne.current.classList.add(`${styles.sectionOnMountAnimation2}`)
             slideTwo.current.classList.add(`${styles.displayNone}`)
+            setTitleRerender(true)
             setIsMounted(true)
         }
 
@@ -193,8 +203,30 @@ export default function Footer(){
 
     return(
         <footer id={`${styles.footerContainer}`} className={`flexColumn sc`}>
+
+                <div className={`${styles.titleContainer} ${titleRerender ? styles.titleContainerAnimation : null} boxW100H100`}>
+                    
+                    <h1 className={`${styles.floatingTitle} ${styles.titleOne} ${ titleRerender ? styles.titleOneAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                        {
+                            `${section}`
+                        }
+                    </h1>
+
+                    <div className={`${styles.floatingTitle} ${styles.titleTwo} ${ titleRerender ? styles.titleTwoAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                        {
+                            `${section}`
+                        }
+                    </div>
+
+                    <div className={`${styles.floatingTitle} ${styles.titleThree} ${ titleRerender ? styles.titleThreeAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                        {
+                            `${section}`
+                        }
+                    </div>
+
+                </div>
+
             <div className={`${styles.socialMediaIconsContainer} boxW100 flexRow cc`}>
-                <div className={`${styles.socialMediaIcons} boxW100 flexRow sc`}>
 
                     <AiFillTwitterCircle
                         onClick={ () => { mountHandlerFunction(4)} }
@@ -222,22 +254,21 @@ export default function Footer(){
                         className={`${styles.linkedinIcon} ${section == 'linkedin' ? styles.iconSelected : null}`}
                     />
 
-                </div>
             </div>
 
-                <div className={`${styles.sectionContainer} boxW100 flexColumn sc`}>
-                    <Section currentSection={section} CSMO={CSMO} identifier={slideOne} section={sections[slideOneSection]}/>
-                    <Section currentSection={section} CSMO={CSMO} identifier={slideTwo} section={sections[slideTwoSection]}/>
-                </div>
+            <div className={`${styles.sectionContainer} boxW100 flexColumn sc`}>
+                <Section CSMO={CSMO} identifier={slideOne} section={sections[slideOneSection]}/>
+                <Section CSMO={CSMO} identifier={slideTwo} section={sections[slideTwoSection]}/>
+            </div>
 
         </footer>
     )
 }
 
-export function InstagramSVG(props:{counter, section, mountHandlerFunction}){
+export function InstagramSVG({counter, section, mountHandlerFunction}){
 
     return(
-        <svg onClick={() => {props.mountHandlerFunction(2)} } className={`${styles.instagramIcon} ${props.section == 'instagram' ? styles.iconSelected : null}`} enableBackground="new 0 0 24 24" viewBox="0 0 24 24">
+        <svg onClick={() => {mountHandlerFunction(2)} } className={`${styles.instagramIcon} ${section == 'instagram' ? styles.iconSelected : null}`} enableBackground="new 0 0 24 24" viewBox="0 0 24 24">
             <linearGradient id="myGradient" gradientTransform="matrix(0 -1.982 -1.844 0 -132.522 -51.077)" gradientUnits="userSpaceOnUse" x1="-37.106" x2="-26.555" y1="-72.705" y2="-84.047">
                 <stop offset="0" stopColor="#fd5"/>
                 <stop offset=".5" stopColor="#ff543e"/>
@@ -249,43 +280,72 @@ export function InstagramSVG(props:{counter, section, mountHandlerFunction}){
     )
 }
 
-export function Section(props:{ section, currentSection, identifier, CSMO}){
+export function Section({ section, identifier, CSMO}){
 
-    
-    switch (props.section){
+    console.log(CSMO)    
+    switch (section){
 
         case sections[0]:
 
             return(
-                <div ref={props.identifier} className={`${styles.twitter} ${styles.section} boxW100 flexRow sc`}>
+                <div ref={identifier} className={`${styles.twitter} ${styles.section} boxW100`}>
 
-                    <div className={`${styles.imageContainer} flexRow`}>
+                    <a href="/" className={`${styles.imageContainer} flexRow sc`}>
                         
                         {
-                            props.CSMO.TwitterData && <img src={props.CSMO.TwitterData.data.res1.includes.media[0].url} alt="" />
+                            CSMO ? CSMO.TwitterData && <img src={CSMO.TwitterData.data.res1.includes.media[0].url} alt="" /> : null
                         }
 
-                    </div>
-
-                    <div className={`boxW100H100 flexColumn cc ${styles.mediaData}`}>
+                    </a>
                         
-                        <div className={`${styles.profileData} flexColumn sc boxW100`}>
-
+                    <div className={`${styles.profileDataContainer}`}>
+                        <a href="" className={`${styles.profileImgContainer} flexRow ss`}>
+                            <img src={CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res0.data.profile_image_url : null} alt="" />
+                        </a>
+                        <div className={`${styles.profileData} flexRow se`}>
+                            <div>
+                                {
+                                    CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res0.data.name : null
+                                }
+                            </div>
+                            <a href="/">
+                                @{
+                                    CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res0.data.username : null
+                                }
+                            </a>
                         </div>
-
-                        <div className={`${styles.postData} flexColumn sc boxW100`}>
-
-                        </div>
-
+                        <p className={`${styles.profileDescription}`}>
+                            {
+                                CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res0.data.description : null
+                            }
+                        </p>
                     </div>
-                    
+
+                    <div className={`${styles.postTextContainer}`}>
+                        {
+                            CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res1.data[0].text : null
+                        }
+                    </div>
+                    <div className={`${styles.postData} flexRow ec`}>
+                            <IoHeartOutline/> {
+                                CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res1.data[0].public_metrics.like_count : null
+                            }
+                            <VscComment/> {
+                                CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res1.data[0].public_metrics.reply_count : null
+                            }
+                        <div>
+                        {
+                                CSMO ? CSMO.TwitterData && CSMO.TwitterData.data.res1.data[0].created_at : null
+                            }
+                        </div>
+                    </div>
                 </div>
             )
 
         case sections[1]:
 
             return(
-                <div ref={props.identifier} className={`${styles.facebook} ${styles.section} boxW100`}>
+                <div ref={identifier} className={`${styles.facebook} ${styles.section} boxW100`}>
 
                 </div>
             )
@@ -293,7 +353,7 @@ export function Section(props:{ section, currentSection, identifier, CSMO}){
         case sections[2]:
 
             return(
-                <div ref={props.identifier} className={`${styles.youtube} ${styles.section} boxW100`}>
+                <div ref={identifier} className={`${styles.youtube} ${styles.section} boxW100`}>
 
                 </div>
             )
@@ -301,7 +361,7 @@ export function Section(props:{ section, currentSection, identifier, CSMO}){
         case sections[3]:
 
             return(
-                <div ref={props.identifier} className={`${styles.instagram} ${styles.section} boxW100`}>
+                <div ref={identifier} className={`${styles.instagram} ${styles.section} boxW100`}>
 
                 </div>
             )
@@ -309,14 +369,14 @@ export function Section(props:{ section, currentSection, identifier, CSMO}){
         case sections[4]:
 
             return(
-                <div ref={props.identifier} className={`${styles.linkedin} ${styles.section} boxW100`}>
+                <div ref={identifier} className={`${styles.linkedin} ${styles.section} boxW100`}>
 
                 </div>
             )
 
         default:
             return (
-                <div ref={props.identifier} />
+                <div ref={identifier} />
             )
     }
 
