@@ -48,10 +48,10 @@ export default function Footer(){
             })
         }
     }
-    useEffect(()=>{
-        console.log(CSMO)
-        fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
-    }, [section])
+    // useEffect(()=>{
+    //     console.log(CSMO)
+    //     fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
+    // }, [section])
 
     const unMountHandler = () => {
 
@@ -204,27 +204,46 @@ export default function Footer(){
     return(
         <footer id={`${styles.footerContainer}`} className={`flexColumn sc`}>
 
-                <div className={`${styles.titleContainer} ${titleRerender ? styles.titleContainerAnimation : null} boxW100H100`}>
-                    
-                    <h1 className={`${styles.floatingTitle} ${styles.titleOne} ${ titleRerender ? styles.titleOneAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
-                        {
-                            `${section}`
-                        }
-                    </h1>
+            <div className={`${styles.footerBackground} boxW100`}/>
 
-                    <div className={`${styles.floatingTitle} ${styles.titleTwo} ${ titleRerender ? styles.titleTwoAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
-                        {
-                            `${section}`
-                        }
-                    </div>
+            <div className={`${styles.titleContainer} ${titleRerender ? styles.titleContainerAnimation : null} boxW100H100`}>
+                
+                <h1 className={`${styles.floatingTitle} ${styles.titleOne} ${ titleRerender ? styles.titleOneAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                    {
+                        `${section}`
+                    }
+                </h1>
 
-                    <div className={`${styles.floatingTitle} ${styles.titleThree} ${ titleRerender ? styles.titleThreeAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
-                        {
-                            `${section}`
-                        }
-                    </div>
-
+                <div className={`${styles.floatingTitle} ${styles.titleTwo} ${ titleRerender ? styles.titleTwoAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                    {
+                        `${section}`
+                    }
                 </div>
+
+                <div className={`${styles.floatingTitle} ${styles.titleThree} ${ titleRerender ? styles.titleThreeAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                    {
+                        `${section}`
+                    }
+                </div>
+
+                <div className={`${styles.floatingTitle} ${styles.titleFour} ${ titleRerender ? styles.titleFourAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                    {
+                        `${section}`
+                    }
+                </div>
+
+            </div>
+
+            <div className={`${styles.shapeDividerContainer} boxW100`}>
+                <div className={styles.shapeDividerLayer1}>
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                        preserveAspectRatio="none">
+                        <path fill="rgba(15, 15, 15, 0.99)" x="0" y="0"
+                            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                            className={styles.shapeFillLayer1}/>
+                    </svg>
+                </div>
+            </div>
 
             <div className={`${styles.socialMediaIconsContainer} boxW100 flexRow cc`}>
 

@@ -27,7 +27,7 @@ export default function Home() {
         <Layout pageTitle={`Home`} metaTags={{keyWords: ' Index, Home', description: ''}}>
             {loaded}
             <DreamSpace/>
-            <FSHero/>
+            {/* <FSHero/> */}
             <SectionDivider direction={false}/>
             <NewApplicantForm/>
         </Layout>
