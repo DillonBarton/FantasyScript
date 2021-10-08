@@ -26,7 +26,7 @@ export default function Home() {
 
     return (
         <Layout pageTitle={`Home`} metaTags={{keyWords: ' Index, Home', description: ''}}>
-            {loaded}
+            {/* {loaded} */}
             <DreamSpace/>
             <FSHero/>
             <SectionDivider direction={false}/>

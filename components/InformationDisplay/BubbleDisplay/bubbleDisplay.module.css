@@ -21,8 +21,10 @@ clump the bubbles together so they are easier to position
 
 .bubbleDisplay{
     border-radius: 50%;
+    background-color:rgb(10, 10, 10);
     position: relative;
     overflow: hidden;
+    animation: bubbleDisplay 0.5s ease forwards;
 }
 
 .bubble{
@@ -32,58 +34,56 @@ clump the bubbles together so they are easier to position
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 0 20px 3px rgb(0, 0, 0);
-    animation: bubbleShadow 1.7s ease forwards;
+    animation: bubble 1.4s 0.3s ease forwards;
 }
 
 .bubbleOne.bubble{
-    animation-delay: 0.2s;
-    animation-duration: 2s;
+    animation-duration: 1.75s;
 }
 
 .bubbleTwo.bubble{
-    animation-delay: 0.3s;
-    animation-duration: 2s;
+    animation-duration: 2.1s;
 }
 
 .bubbleThree.bubble{
-    animation-delay: 0.47s;
+    animation-duration: 1.9s;
 }
 
 .bubbleFour.bubble{
-    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.15, 1);
 }
 
 .bubbleFive.bubble{
-    
+    animation-duration: 2.2s;
 }
 
 .bubbleSix.bubble{
-    
+    animation-duration: 2.1s;
 }
 
 .bubbleSeven.bubble{
-    animation-duration: 2s;
+    animation-duration: 2.4s;
 }
 
 .bubbleEight.bubble{
-    
+    animation-duration: 2.5s;
 }
 
 .bubbleNine.bubble{
-    animation-delay: 0.4s;
-
+    animation-duration: 1.65s;
 }
 
 .bubbleTen.bubble{
-    
+    animation-duration: 1.85s;
 }
 
 .bubbleEleven.bubble{
-    
+    animation-duration: 2.1s;
 }
 
 .bubbleTwelve.bubble{
-    animation-delay: 0.5s;
+    animation-duration: 1.55s;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.18, 1);
 }
 
 .bubbleBackground{
@@ -322,13 +322,23 @@ clump the bubbles together so they are easier to position
     z-index: 1;
 }
 
-@keyframes bubbleShadow {
+@keyframes bubbleDisplay {
+    from{
+        box-shadow: 0 0 25px 3px rgb(0, 0, 0, 0);
+    }
+    to{
+        box-shadow: 0 0 25px 3px rgb(0, 0, 0);
+    }
+}
+
+
+@keyframes bubble {
     from {
-        /* filter: blur(7px) brightness(1.2); */
+        filter: blur(7px) brightness(3);
         top: 150%;
     }
     to{
-        /* filter: blur(7px) brightness(3); */
+        filter: blur(0) brightness(1);
         top: 50%;
     }
 }
