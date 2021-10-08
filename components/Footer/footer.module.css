@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 636px;
+    height: 596px;
     z-index: 997;
     padding-bottom: 20px;
     overflow: hidden;
@@ -42,6 +42,7 @@
 .titleOne{
     font-size: 36rem;
     opacity: 0.1;
+    margin: 0;
     transform: translate(-30%, -55%);
 }
 
@@ -54,11 +55,11 @@
 }
 
 .titleOne.youtubeTitle{
-    font-size: 32rem !important;
+    font-size: 30rem !important;
 }
 
 .titleOne.instagramTitle{
-    font-size: 34rem;
+    font-size: 30rem !important;
     opacity: 0.08 !important;
 }
 
@@ -77,13 +78,13 @@
 }
 
 .titleTwoAnimation{
-    animation: ttlTwo 60s linear infinite;
+    animation: ttlTwo 50s linear infinite;
 }
 
 .titleThree{
-    transform: translate(0, 100%);
+    transform: translate(0, 150%);
     font-size: 7rem;
-    opacity: 0.25;
+    opacity: 0.2;
 }
 
 .titleThree.instagramTitle{
@@ -91,17 +92,27 @@
 }
 
 .titleThreeAnimation{
-    animation: ttlThree 30s linear infinite;
+    animation: ttlThree 35s linear infinite;
 }
 
 .titleFour{
-    transform: translate(0, 200%);
-    font-size: 3rem;
-    opacity: 0.3;
+    transform: translate(0, 350%);
+    font-size: 5rem;
+    opacity: 0.25;
 }
 
 .titleFourAnimation{
     animation: ttlFour 45s linear infinite;
+}
+
+.titleFive{
+    transform: translate(0, 200%);
+    font-size: 2.5rem;
+    opacity: 0.3;
+}
+
+.titleFiveAnimation{
+    animation: ttlFive 45s linear infinite;
 }
 
 .reverseAnimation{
@@ -144,6 +155,7 @@
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 1;
 }
 
 .shapeDividerLayer1 svg {
@@ -362,10 +374,10 @@
 
 @keyframes ttlOne {
     from{
-        transform: translate(-30%, -17%);
+        transform: translate(-30%, 27%);
     }
     to{
-        transform: translate(20%, -17%);
+        transform: translate(10%, 27%);
     }
 }
 
@@ -380,18 +392,28 @@
 
 @keyframes ttlThree {
     from{
-        transform: translate(0, 100%);
+        transform: translate(0, 150%);
     }
     to{
-        transform: translate(300%, 100%);
+        transform: translate(400%, 150%);
     }
 }
 
 @keyframes ttlFour {
     from{
+        transform: translate(0, 350%)
+    }
+    to{
+        transform: translate(430%, 350%)
+    }
+}
+
+@keyframes ttlFive {
+    from{
         transform: translate(0, 200%);
     }
     to{
-        transform: translate(600%, 200%);
+        transform: translate(400%, 200%);
     }
 }
+

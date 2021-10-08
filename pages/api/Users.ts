@@ -1,4 +1,4 @@
-export default async (req, res) => {
+const Users = async (req, res) => {
     switch (req.method){
         case 'POST':
             break;
@@ -7,3 +7,5 @@ export default async (req, res) => {
             break;
     }
 }
+
+export default Users;

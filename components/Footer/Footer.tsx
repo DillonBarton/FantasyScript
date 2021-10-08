@@ -49,7 +49,6 @@ export default function Footer(){
         }
     }
     // useEffect(()=>{
-    //     console.log(CSMO)
     //     fetchData(`http://localhost:4500`, `/media/${section}`, '', {})
     // }, [section])
 
@@ -195,9 +194,9 @@ export default function Footer(){
             setIsMounted(true)
         }
 
-        // let interval = setInterval(mountHandlerFunction, 13000, null);
+        let interval = setInterval(mountHandlerFunction, 20000, null);
 
-        // return () => clearInterval(interval)
+        return () => clearInterval(interval)
 
     }, [section]);
 
@@ -232,15 +231,27 @@ export default function Footer(){
                     }
                 </div>
 
+                <div className={`${styles.floatingTitle} ${styles.titleFive} ${ titleRerender ? styles.titleFiveAnimation : null } ${styles[`${section}Title`]} ${sectionMounted ? styles.reverseAnimation : null}`}>
+                    {
+                        `${section}`
+                    }
+                </div>
+
             </div>
 
             <div className={`${styles.shapeDividerContainer} boxW100`}>
                 <div className={styles.shapeDividerLayer1}>
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                         preserveAspectRatio="none">
-                        <path fill="rgba(15, 15, 15, 0.99)" x="0" y="0"
+                        <path fill="url(#footerGradient)" x="0" y="0"
                             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
                             className={styles.shapeFillLayer1}/>
+                        <defs>
+                            <linearGradient id="footerGradient" gradientTransform="rotate(90)">
+                                <stop offset="0%" stopColor="rgba(15, 15, 15, 0.05)"/>
+                                <stop offset="100%" stopColor="rgba(15, 15, 15, 0.99)"/>
+                            </linearGradient>
+                        </defs>
                     </svg>
                 </div>
             </div>
@@ -300,8 +311,7 @@ export function InstagramSVG({counter, section, mountHandlerFunction}){
 }
 
 export function Section({ section, identifier, CSMO}){
-
-    console.log(CSMO)    
+ 
     switch (section){
 
         case sections[0]:

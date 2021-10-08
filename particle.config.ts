@@ -1,3 +1,5 @@
+import { InteractivityDetect, OutMode } from "tsparticles"
+
 const particleParams = {
     particles: {
         number: {
@@ -55,10 +57,10 @@ const particleParams = {
         move: {
             enable: true,
             speed: 2,
-            direction: "none",
+            direction: null,
             random: true,
             straight: false,
-            out_mode: "out",
+            out_mode: OutMode.out,
             bounce: false,
             attract: {
                 enable: false,
@@ -68,7 +70,7 @@ const particleParams = {
         }
     },
     interactivity: {
-        detect_on: "canvas",
+        detect_on: InteractivityDetect.canvas,
         events: {
             onhover: {
                 enable: true,

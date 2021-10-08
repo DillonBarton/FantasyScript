@@ -273,7 +273,7 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 139px;
+    height: 161px;
     animation: waveLayer3 1.8s ease-out forwards;
 }
 
@@ -291,7 +291,7 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 139px;
+    height: 161px;
     animation: waveLayer3 1.8s ease-out forwards;
 }
 
@@ -301,7 +301,7 @@
         width: calc(100% + 1.3px);
     }
     to{
-        width: calc(180% + 1.3px);
+        width: calc(230% + 1.3px);
     }
 }
 
@@ -310,6 +310,6 @@
         width: calc(100% + 1.3px);
     }
     to{
-        width: calc(180% + 1.3px);
+        width: calc(230% + 1.3px);
     }
 }

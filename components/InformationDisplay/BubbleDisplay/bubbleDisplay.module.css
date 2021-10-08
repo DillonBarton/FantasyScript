@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+.bubbleDisplayContainer{
+    position: relative;
+    width: 50em;
+    height: 50em;
+    border-radius: 50%;
+    /* background-color: rgba(22, 22, 22, 0.8) */
+}
+/*
+clump the bubbles together so they are easier to position
+*/
+
+.bubbleDisplayShadow{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.bubbleDisplay{
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bubble{
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 20px 3px rgb(0, 0, 0);
+    animation: bubbleShadow 1.7s ease forwards;
+}
+
+.bubbleOne.bubble{
+    animation-delay: 0.2s;
+    animation-duration: 2s;
+}
+
+.bubbleTwo.bubble{
+    animation-delay: 0.3s;
+    animation-duration: 2s;
+}
+
+.bubbleThree.bubble{
+    animation-delay: 0.47s;
+}
+
+.bubbleFour.bubble{
+    animation-duration: 2s;
+}
+
+.bubbleFive.bubble{
+    
+}
+
+.bubbleSix.bubble{
+    
+}
+
+.bubbleSeven.bubble{
+    animation-duration: 2s;
+}
+
+.bubbleEight.bubble{
+    
+}
+
+.bubbleNine.bubble{
+    animation-delay: 0.4s;
+
+}
+
+.bubbleTen.bubble{
+    
+}
+
+.bubbleEleven.bubble{
+    
+}
+
+.bubbleTwelve.bubble{
+    animation-delay: 0.5s;
+}
+
+.bubbleBackground{
+
+}
+
+.bubbleShadow{
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    border-radius: 50%;
+    filter: blur(7px) brightness(1.2);
+    background: radial-gradient(circle, rgba(15, 15, 15, 0) 0%, rgba(15,15,15,0.4) 40%, rgba(15,15,15,0.8) 70%, rgba(15,15,15,0.99) 91%, rgba(15,15,15,1) 100%);
+    z-index: 3;
+    
+    cursor: pointer;
+}
+
+.text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.bubble img{
+    z-index: 2;
+}
+
+.bubbleImage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.bubbleOne{
+    width: 15em;
+    height: 15em;
+    transform: translate(-18%, -70%);
+    border-radius: 50%;
+    z-index: 7;
+}
+
+.bubbleOne .bubbleBackground{
+    background-color: rgb(40, 40, 40);
+}
+
+.shadowOne{
+    
+}
+
+.bubbleOne .text{
+    font-size: 3.3rem;
+    color: rgb(175, 175, 175);
+    letter-spacing: 8px;
+}
+
+.bubbleTwo{
+    width: 28em;
+    height: 28em;
+    transform: translate(-35%, 10%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.5) !important;
+    z-index: 0;
+}
+
+.shadowTwo{
+}
+
+.bubbleThree{
+    width: 12em;
+    height: 12em;
+    transform: translate(-153%, -10%);
+    border-radius: 50%; 
+    z-index: 6;
+}
+
+.bubbleThree .bubbleBackground{
+    background-color: rgb(161, 152, 133);
+}
+
+.shadowThree{
+}
+
+.bubbleThree .text{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color:aliceblue;
+}
+
+
+.bubbleFour{
+    width: 6em;
+    height: 6em;
+    transform: translate(85%, -415%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.5) !important;
+    z-index: 7;
+}
+
+.shadowFour{
+}
+
+.bubbleFive{
+    width: 29em;
+    height: 29em;
+    transform: translate(-120%, 15%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.5) !important;
+    z-index: 2;
+}
+
+.bubbleFive .bubbleImage{
+    height: 100%;
+}
+
+.shadowFive{
+}
+
+.bubbleSix{
+    width: 13em;
+    height: 13em;
+    transform: translate(0, 130%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.7);
+    z-index: 11;
+}
+
+.bubbleSix .bubbleImage{
+    height: 100%;
+}
+
+.shadowSix{
+
+}
+
+.bubbleSeven{
+    width: 14em;
+    height: 14em;
+    transform: translate(-150%, 80%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.7);
+    z-index: 4;
+}
+
+.bubbleSeven .bubbleImage{
+    height: 100%;
+}
+
+.shadowSeven{
+
+}
+
+.bubbleEight{
+    width: 15em;
+    height: 15em;
+    transform: translate(-15%, 50%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.65);
+    z-index: 10;
+}
+
+.shadowEight{
+
+}
+
+.bubbleNine{
+    width: 12em;
+    height: 12em;
+    transform: translate(100%, -130%);
+    border-radius: 50%;
+    z-index: 8;
+}
+
+.bubbleNine .bubbleBackground{
+    background-color: rgb(192,192,192);
+}
+
+.shadowNine{
+
+}
+
+.bubbleNine .text{
+    font-size: 1.3rem;
+}
+
+
+
+.bubbleTen{
+    width: 20em;
+    height: 20em;
+    transform: translate(30%, -20%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.8);
+    z-index: 7;
+}
+
+.bubbleTen .bubbleBackground{
+    background-color: lightblue;
+}
+
+.shadowTen{
+
+}
+
+.bubbleTen .text{
+    font-size: 2.2rem;
+    color: rgb(70, 70, 70);
+    /* font-family: 'Poppins', sans-serif; */
+    letter-spacing: 5px;
+}
+
+.bubbleEleven{
+    width: 3em;
+    height: 3em;
+    transform: translate(-250%, -130%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.8);
+    z-index: 6;
+}
+
+.bubbleTwelve{
+    width: 17em;
+    height: 17em;
+    transform: translate(-150%, -120%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+@keyframes bubbleShadow {
+    from {
+        /* filter: blur(7px) brightness(1.2); */
+        top: 150%;
+    }
+    to{
+        /* filter: blur(7px) brightness(3); */
+        top: 50%;
+    }
+}
