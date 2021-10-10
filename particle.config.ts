@@ -3,7 +3,7 @@ import { InteractivityDetect, OutMode } from "tsparticles"
 const particleParams = {
     particles: {
         number: {
-            value: 60,
+            value: 50,
             density: {
                 enable: true,
                 value_area: 370

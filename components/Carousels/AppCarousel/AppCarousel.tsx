@@ -8,24 +8,14 @@ import { useEffect, useRef, useState } from "react";
 
 import styles from './appCarousel.module.css'
 
-export default function AppCarousel (props:{title: string, page: string, section: string}) {
+export default function AppCarousel (props:{title: string, section: string}) {
 
     return(
-        <div className={`${styles.AppCarousel} ${props.page == `profile` ? ` ${styles.profileDisplayCarousel} ` : ` `} ${props.section == `profile`? `${styles.profilePageSectionCarousel}`: ``} boxW100`}>
-            {
-                props.page == `profile` ?
-
-                <div>
-                    
-                </div>
-
-                :
-
-                <h1 className={`${styles.carouselTitle} boxW100 flexRow`}>
-                    {props.title}
-                </h1>
-            }
+        <div className={`${styles.AppCarousel} boxW100`}>
             
+            <h1 className={`${styles.carouselTitle} boxW100 flexRow`}>
+                {props.title}
+            </h1>
             
             <div className={`${styles.carouselItemsContainer} boxW100 flexRow sc`}>
                 <AppCarouselCard
@@ -78,7 +68,7 @@ export function AppCarouselCard(props:{
     const [modalAnimation, setModalAnimation] = useState(false);
     const [valueChange, setValue] = useState(false)
     return(
-        <div className={`${styles.carouselItemAndModalContainer} ${props.section == `profile` ? ` ${styles.profilePageItemAndModalContainer} ` : ``} flexColumn cc`}>
+        <div className={`${styles.carouselItemAndModalContainer} flexColumn cc`}>
             <AppCarouselModal
                     valueChange={valueChange}
                     setValue={setValue}

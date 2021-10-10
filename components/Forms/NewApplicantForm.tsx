@@ -12,7 +12,10 @@ import styles from './newApplicanttForm.module.css'
 
 import LoaderSVG from '../../public/icons/SVGComponents/dualRingLoader'
 
-
+/**
+ * fullName validation allows no space.
+ * show which files have been added. validation for file size.
+ */
 
 export default function NewApplicantForm() {
 
@@ -42,6 +45,8 @@ export default function NewApplicantForm() {
     }
 
     const validityChecker = (regexp, value, inputFunc, minLength, maxLength) => {
+
+        console.log(value)
         let regex = new RegExp(regexp)
         let len = value.split(' ').reduce( (acc, val) => {
             return acc + val.length
@@ -88,6 +93,7 @@ export default function NewApplicantForm() {
                         setCompanyName(null)
                     }, 800)
                 }
+                break;
             case inputFeilds.EMAIL:
                 let Einterval;
                 clearInterval(Einterval)

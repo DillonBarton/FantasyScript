@@ -56,7 +56,7 @@ export default function FSHero() {
                           className={styles.shapeFillLayer1}/>
                     <defs>
                         <linearGradient id="MyGradient" gradientTransform="rotate(90)">
-                            <stop offset="5%" stopColor="rgba(15, 15, 15, 0.99)"/>
+                            <stop offset="5%" stopColor="rgba(15, 15, 15, 0.05)"/>
                             <stop offset="95%" stopColor="rgba(15, 15, 15, 0.99)"/>
                         </linearGradient>
                     </defs>

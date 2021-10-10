@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+.sectionContainer{
+    position: relative;
+    height: 900px;
+    background-color: rgba(15, 15, 15, 1);
+    z-index: 3;
+}
+
+.wrapper{
+    max-width: 1600px;
+}
+
+.order1{
+    order: 1;
+}
+
+.order1 .text{
+    transform: translateX(-200px);
+}
+
+.order1 .textAnimation{
+    animation: textAnimation2 0.7s ease-out forwards;
+}
+
+.order2{
+    order: 2;
+}
+
+.display{
+    width: 57%;
+}
+
+.display.order2{
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+.textContainer{
+    color: rgb(230, 230, 230);
+    width: 43%;
+}
+
+.textContainer *{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.textContainer.order1 .classicBtn{
+    align-self: flex-start !important;
+}
+
+.textContainer.order1 .text{
+    justify-content: flex-start !important;
+    align-items: flex-end !important;
+    margin: 100px 0 0 0;
+}
+
+.text{
+    margin: 0 0 200px 0;
+    opacity: 0;
+    transform: translateX(200px);
+}
+
+.textAnimation{
+    animation: textAnimation 0.7s ease-out forwards;
+}
+
+h2.textHeader{
+    text-transform: uppercase;
+    letter-spacing: 0.7rem;
+    margin: 0.2em 0;
+    font-size: 2.7rem;
+    font-weight: 300;
+    text-shadow: 0 0 8px rgb(255, 255, 255);
+}
+
+h4.textHeader{
+    text-transform: uppercase;
+    font-family:'Poppins' , sans-serif;
+    color: rgb(172, 172, 172);
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.4rem;
+    margin: 0.1em 0;
+}
+
+.textParagraph{
+    font-size: 1.05rem;
+    max-width: 68ch;
+    line-height: 1.5rem;    
+}
+
+.classicBtn{
+    align-self: flex-end;
+    padding: 0.8rem 3rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: 1.1rem;
+}
+
+.shapeDividerLayer1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: rotate(180deg);
+    overflow: hidden;
+    z-index: 5;
+    line-height: 0;
+}
+
+.shapeDividerLayer1 svg {
+    position: relative;
+    display: block;
+    width: calc(282% + 1.3px);
+    height: 161px;
+}
+
+@keyframes textAnimation {
+    from{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes textAnimation2 {
+    from{
+        opacity: 0;
+        transform: translate(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
