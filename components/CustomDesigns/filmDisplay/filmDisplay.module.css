@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 200px;
-    grid-gap: 2em;
+    grid-gap: 4em;
     overflow: hidden;
     z-index: 0;
     opacity: 0;
@@ -57,7 +57,7 @@
 @keyframes rotate {
     from{
         transform: rotate(-60deg);
-        grid-gap: 3em;
+        grid-gap: 4em;
         opacity: 0;
     }
     to{

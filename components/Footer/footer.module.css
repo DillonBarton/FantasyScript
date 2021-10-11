@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Style+Script&family=Merriweather&family=PT+Sans&family=Roboto&family=Source+Sans+Pro&family=Righteous&display=swap');
 
 #footerContainer{
     position: absolute;
@@ -36,7 +36,32 @@
     left: 0%;
     z-index: -1;
     user-select: none;
-    font-family: 'Merriweather', serif;
+}
+
+.floatingTitle.twitterTitle{
+    font-family: 'Righteous', cursive;
+}
+
+.floatingTitle.facebookTitle{
+    font-weight: 700;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.floatingTitle.youtubeTitle{
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+}
+
+.floatingTitle.instagramTitle{
+    font-weight: 500;
+    font-family: 'Style Script', cursive;
+}
+
+.floatingTitle.linkedinTitle{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .titleOne{

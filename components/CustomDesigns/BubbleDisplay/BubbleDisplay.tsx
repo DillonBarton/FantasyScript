@@ -7,7 +7,10 @@ import useScrollFade from '../../../hooks/useScrollFade';
 
 export default function BubbleDisplay(){
 
-    
+    /**
+     * make bubble come out of top but not bottom
+     */
+
     const bubbleDisplay = useRef(null);
     const [ animated, setAnimated ] = useState(false);
     const bubbleAnimated = useScrollFade(bubbleDisplay, animated, setAnimated);
