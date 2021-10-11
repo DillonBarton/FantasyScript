@@ -51,7 +51,7 @@ export default function DreamSpace(){
 
             <DreamWorldContainer className={`flexColumn sc boxW100`}>
         
-                <img src="/images/dreamWorld.jpg" alt="dreamWorld"/>
+                <img src="/images/dreamWorld_50.jpg" alt="dreamWorld"/>
 
             </DreamWorldContainer>
 
