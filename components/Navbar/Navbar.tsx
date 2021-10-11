@@ -23,27 +23,8 @@ export default function Navbar(){
 
                         <div id={styles.forms} className={`flexRow es`}>
                             
-                            <form action="" id={styles.formsearch} className={`flexRow cc`}>
-                                
-                                <input id={styles.search} type="text" name="searchbar"/>
-
-                                <button id={styles.searchsubmit} type="submit">
-                                    <img className={`${styles.iconContainer}`} src="/icons/iconmonstr-search-thin.svg" alt=""/>
-                                </button>
-                            
-                            </form>
-
-                            <a className="profilebtn" href="">
-                                <img className={`${styles.iconContainer}`} src="/icons/iconmonstr-user-male-thin.svg" alt=""/>
-                            </a>
 
                         </div>
-
-                        <svg id={styles.burger} className="flexRow cc" viewBox="0 0 100 59" width="32" height="32">
-                            <line x1="0" y1="0" x2="100" y2="0" width="100" fill="white" stroke="white" strokeWidth="2"></line>
-                            <line x1="0" y1="30" x2="100" y2="30" width="100" fill="white" stroke="white" strokeWidth="2"></line>
-                            <line x1="0" y1="60" x2="100" y2="60" width="100" fill="white" stroke="white" strokeWidth="2"></line>
-                        </svg>
 
                     </div>
 
@@ -62,16 +43,6 @@ export default function Navbar(){
                             </Link>
 
                         </li>
-
-                        {/* <li className={`${styles.data} flexRow cc`}>
-
-                            <Link href="/designs">
-                                <a className={`${styles.navLink}`}>
-                                    DESIGNS
-                                </a>
-                            </Link>
-
-                        </li> */}
 
                         <li className={`${styles.data} flexRow cc`}>
                             

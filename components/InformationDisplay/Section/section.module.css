@@ -3,7 +3,7 @@
 
 .sectionContainer{
     position: relative;
-    height: 900px;
+    height: 1100px;
     background-color: rgba(15, 15, 15, 1);
     z-index: 3;
 }
@@ -118,6 +118,31 @@ h4.textHeader{
     display: block;
     width: calc(282% + 1.3px);
     height: 161px;
+}
+
+.shapeDivider{
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.shapeDividerTop{
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.shapeDividerTop path{
+    fill: rgb(29, 29, 29);
+}
+
+.shapeDividerBottom{
+    bottom: 0;
+    transform: rotateZ(0deg);
+}
+
+.shapeDividerBottom path{
+    fill: rgb(29, 29, 29);
 }
 
 @keyframes textAnimation {

@@ -41,7 +41,8 @@ export default function Home() {
             <FSHero/>
             <Section
             reversed={false}
-            dividerBottom={'none'}
+            dividerBottom={'section'}
+            dividerTop={'none'}
             section={bubble}
             inViewport={bblAnimation}
             key={'bubble'}
@@ -50,10 +51,11 @@ export default function Home() {
             paragraphs={["Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.", "Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip."]}>
                 <BubbleDisplay/>
             </Section>
-            
+            <SectionDivider/>
             <Section
             reversed={true}
             dividerBottom={'page'}
+            dividerTop={'section'}
             section={film}
             inViewport={flmAnimation}
             key={'film'}

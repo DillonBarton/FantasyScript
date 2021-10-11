@@ -1,14 +1,6 @@
 .sectionDivider{
-    height: 800px;
-    background-color: rgba(20, 37, 55, 0.5);
+    height: 700px;
+    background-color: rgb(29, 29, 29);
     backdrop-filter: blur(5px);
     z-index: 2;
 }
-
-/* .toTop{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.5));
-}
-
-.toBottom{
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.5));
-} */

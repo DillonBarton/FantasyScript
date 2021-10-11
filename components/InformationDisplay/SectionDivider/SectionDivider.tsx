@@ -2,10 +2,11 @@ import styles from './sectionDivider.module.css'
 
 
 
-export default function SectionDivider({direction}) {
+export default function SectionDivider() {
 
     return(
-        <section className={`${direction === true ? styles.toTop : styles.toBottom}  ${styles.sectionDivider} boxW100`}>
+        <section className={`${styles.sectionDivider} boxW100`}>
+            
         </section>
     )
 }
