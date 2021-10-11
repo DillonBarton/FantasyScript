@@ -22,49 +22,49 @@ export default function FilmDisplay(){
     return (
         <div ref={filmDisplay} className={`${styles.filmDisplayContainer}`}>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working_50.jpeg"}/>
             </div>
         </div>
     )

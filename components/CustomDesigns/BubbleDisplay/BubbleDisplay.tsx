@@ -49,22 +49,22 @@ export default function BubbleDisplay(){
 
                 <div className={`${styles.bubble} ${styles.bubbleFive}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowFive}`}/>
-                    <img className={styles.bubbleImage} src="/images/linkedin.jpeg" alt="" />
+                    <img className={styles.bubbleImage} src="/images/linkedin_50.jpeg" alt="" />
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleSix}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowSix}`}/>
-                    <img className={styles.bubbleImage} src="/images/twitter.jpeg" alt="" />
+                    <img className={styles.bubbleImage} src="/images/twitter_50.jpeg" alt="" />
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleSeven}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowSeven}`}/>
-                    <img className={styles.bubbleImage} src="/images/instagram.jpeg" alt="" />
+                    <img className={styles.bubbleImage} src="/images/instagram_50.jpeg" alt="" />
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleEight}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowEight}`}/>
-                    <img className={styles.bubbleImage} src="/images/dataVIZ.jpeg" alt="" />
+                   
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleNine}`}>
@@ -85,6 +85,7 @@ export default function BubbleDisplay(){
 
                 <div className={`${styles.bubble} ${styles.bubbleTwelve}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowTwelve}`}/>
+                    {/* <img className={styles.bubbleImage} src="/images/dataVIZ.png" alt="" /> */}
                 </div>
 
             </div>
