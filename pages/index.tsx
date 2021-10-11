@@ -28,7 +28,10 @@ export default function Home() {
     const flmAnimation = useScrollFade( film, filmAnimation, setFilmAnimation);
 
     useLayoutEffect(()=>{
-        setLoading(true)  
+        setTimeout(()=>{
+            setLoading(true)
+        }, 800)
+        
     })
 
     return (
