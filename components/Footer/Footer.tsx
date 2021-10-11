@@ -194,9 +194,9 @@ export default function Footer(){
             setIsMounted(true)
         }
 
-        // let interval = setInterval(mountHandlerFunction, 20000, null);
+        let interval = setInterval(mountHandlerFunction, 20000, null);
 
-        // return () => clearInterval(interval)
+        return () => clearInterval(interval)
 
     }, [section]);
 
