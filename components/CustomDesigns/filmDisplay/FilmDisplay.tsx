@@ -22,58 +22,49 @@ export default function FilmDisplay(){
     return (
         <div ref={filmDisplay} className={`${styles.filmDisplayContainer}`}>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
             <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
-            </div>
-            <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
-            </div>
-            <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
-            </div>
-            <div className={`${styles.box}`}>
-                <Image layout="fill" src={"/images/working.jpeg"}/>
+                <img className={`${styles.filmBoxImage} ${styles.yo}`} src={"/images/working.jpeg"}/>
             </div>
         </div>
     )

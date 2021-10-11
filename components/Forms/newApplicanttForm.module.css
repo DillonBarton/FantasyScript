@@ -292,7 +292,12 @@
 }
 
 .imageContainer img{
-    padding: 20px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(100% - 40px);
+    min-width: calc(100% - 40px);
 }
 
 @keyframes svgenter {
