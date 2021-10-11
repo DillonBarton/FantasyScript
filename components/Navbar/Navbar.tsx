@@ -63,7 +63,7 @@ export default function Navbar(){
 
                         </li>
 
-                        <li className={`${styles.data} flexRow cc`}>
+                        {/* <li className={`${styles.data} flexRow cc`}>
 
                             <Link href="/designs">
                                 <a className={`${styles.navLink}`}>
@@ -71,7 +71,7 @@ export default function Navbar(){
                                 </a>
                             </Link>
 
-                        </li>
+                        </li> */}
 
                         <li className={`${styles.data} flexRow cc`}>
                             
@@ -93,17 +93,11 @@ export default function Navbar(){
 
                         </li>
 
-                        {/* <li className={`${styles.data} flexRow cc`}>
-                            <a href="javascript: void(0);" className={`${styles.navLink}`}>
-                                PORTFOLIO
-                            </a>
-                        </li> */}
-
                         <li className={`${styles.data} flexRow cc`}>
 
-                            <Link  href="/components">
+                            <Link  href="/portfolio">
                                 <a className={`${styles.navLink}`}>
-                                    COMPONENTS
+                                    PORTFOLIO
                                 </a>
                             </Link>
 
@@ -119,7 +113,7 @@ export default function Navbar(){
 
                         </li>
 
-                        <li className={`${styles.data} flexRow cc`}>
+                        {/* <li className={`${styles.data} flexRow cc`}>
 
                             <Link href="/bespoke-Websites">
                                 <a className={`${styles.navLink}`}>
@@ -127,7 +121,7 @@ export default function Navbar(){
                                 </a>
                             </Link>
 
-                        </li>
+                        </li> */}
 
                     </div>
 

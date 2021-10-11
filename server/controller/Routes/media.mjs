@@ -26,8 +26,8 @@ const corsOptions = {
             callback(null, true)
 
         } else {
-            callback(null, true)
-            // callback(new Error(`Invalid ORIGIN`))
+
+            callback(new Error(`Invalid ORIGIN`))
 
         }
     }
@@ -101,9 +101,6 @@ const mediaFunction = async (mediaType, next) => {
                         return res.json();
                     } else {
                         console.log(res)
-                        // return res.json();
-                        // {status: res.status, statusText: res.statusText, message: `${mediaType.title} data could not be retrieved`, }
-                        // next(createError(res.status, `${mediaType.title} data could not be retrieved`, { cause: res.statusText} ))
                         throw createError(res.status, `${obj.title} data could not be retrieved`, { statusText: res.statusText, date: res.headers.get('Date') } )
                     }
                 })
@@ -199,9 +196,5 @@ router
     .post(async (req, res, next) => {
 
     })
-
-
-router.use((err, req, res, next) => {
-})
 
 export default router

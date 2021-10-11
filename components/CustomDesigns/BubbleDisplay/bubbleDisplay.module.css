@@ -8,10 +8,6 @@
     border-radius: 50%;
 }
 
-/*
-clump the bubbles together so they are easier to position
-*/
-
 .bubbleDisplayShadow{
     position: absolute;
     bottom: 0;
@@ -316,7 +312,6 @@ clump the bubbles together so they are easier to position
 .bubbleTen .text{
     font-size: 2.2rem;
     color: rgb(70, 70, 70);
-    /* font-family: 'Poppins', sans-serif; */
     letter-spacing: 5px;
 }
 

@@ -28,19 +28,14 @@ export default function Home() {
     const flmAnimation = useScrollFade( film, filmAnimation, setFilmAnimation);
 
     useLayoutEffect(()=>{
-        setTimeout(()=>{
-            setLoading(true)
-        }, 0)
-        
+        setLoading(true)  
     })
 
     return (
         <Layout pageTitle={`Home`} metaTags={{keyWords: ' Index, Home', description: ''}}>
-            {/* {loaded} */}
+            {loaded}
             <DreamSpace/>
             <FSHero/>
-            
-
             <Section
             reversed={false}
             dividerBottom={'none'}
@@ -64,9 +59,7 @@ export default function Home() {
             paragraphs={["Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.", "Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip."]}>
                 <FilmDisplay/>
             </Section>
-            <SectionDivider direction={false}/>
-            {/* <Hero/> */}
-            {/* <NewApplicantForm/> */}
+            <NewApplicantForm/>
         </Layout>
       )
 }
