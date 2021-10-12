@@ -25,7 +25,6 @@ export default function BubbleDisplay(){
 
     return(
         <div className={`${styles.bubbleDisplayContainer}`}>
-            <div className={`${styles.bubbleDisplayShadow} boxW100`}/>
 
             <div ref={bubbleDisplay} className={`${styles.bubbleDisplay} boxW100H100`}>
 

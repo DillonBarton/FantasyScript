@@ -4,6 +4,10 @@ import styles from './section.module.css'
 
 export default function Section({children, reversed, dividerBottom, dividerTop, section, inViewport, title, subtitle, paragraphs}){
 
+    /**
+     * transfrom rotateY the section divider svg 180deg every other dection divider.
+     */
+
     useEffect(()=>{
             if( inViewport ) {
                 section.current.classList.add(`${styles.textAnimation}`)

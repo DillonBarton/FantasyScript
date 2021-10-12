@@ -72,47 +72,40 @@ const mediaRequestsObject = {
 // FUNCTIONS
 
 
-// async Wrapper function for footerMedia
-const footerMediaLog = (mediaFunction) => {
-    return function(req, res, next){
-
-    }
-}
-
 // Media information Request
 
 const mediaFunction = async (mediaType, next) => {
 
-        let options = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8',
-            }
+    let options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+        }
+    }
+
+    mediaType.auth ? options.headers['Authorization'] = `Bearer ${mediaType.auth}` : null
+
+    let data = await Promise.allSettled(mediaType.endPoints.map(
+
+        async (obj) => {
+            let payLoad = await fetch(`${obj.baseUrl}${obj.pathParams}${obj.queryParams}`, options)
+            .then(res => {
+                if(res.status >= 200 && res.status < 300) {
+                    return res.json();
+                } else {
+                    console.log(res)
+                    throw createError(res.status, `${obj.title} data could not be retrieved`, { statusText: res.statusText, date: res.headers.get('Date') } )
+                }
+            })
+            .catch( err => {
+                console.error(err)
+                return {status: err.status, statusText: err.statusText, message: err.message, date: err.date};
+            })
+            return payLoad;
         }
 
-        mediaType.auth ? options.headers['Authorization'] = `Bearer ${mediaType.auth}` : null
-
-        let data = await Promise.allSettled(mediaType.endPoints.map(
-
-            async (obj) => {
-                let payLoad = await fetch(`${obj.baseUrl}${obj.pathParams}${obj.queryParams}`, options)
-                .then(res => {
-                    if(res.status >= 200 && res.status < 300) {
-                        return res.json();
-                    } else {
-                        console.log(res)
-                        throw createError(res.status, `${obj.title} data could not be retrieved`, { statusText: res.statusText, date: res.headers.get('Date') } )
-                    }
-                })
-                .catch( err => {
-                    console.error(err)
-                    return {status: err.status, statusText: err.statusText, message: err.message, date: err.date};
-                })
-                return payLoad;
-            }
-
-        ))
-        return data;
+    ))
+    return data;
     
 }
 

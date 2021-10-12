@@ -32,8 +32,7 @@
 
 .floatingTitle{
     position: absolute;
-    top: 0%;
-    left: 0%;
+    transform: translate(-50%, -50%);
     z-index: -1;
     user-select: none;
 }
@@ -65,14 +64,15 @@
 }
 
 .titleOne{
+    top: 85%;
+    left: 50%;
     font-size: 36rem;
-    opacity: 0.1;
+    opacity: 0.07;
     margin: 0;
-    transform: translate(-30%, -55%);
 }
 
 .titleOne.twitterTitle{
-    font-size: 34rem !important;
+    font-size: 32rem !important;
 }
 
 .titleOne.facebookTitle{
@@ -88,12 +88,17 @@
     opacity: 0.08 !important;
 }
 
+.titleOne.linkedinTitle{
+    font-size: 30rem !important;
+}
+
 .titleOneAnimation{
     animation: ttlOne 60s linear infinite;
 }
 
 .titleTwo{
-    transform: translate(140%, -15%);
+    top: 25%;
+    left: 95%;
     font-size: 12rem;
     opacity: 0.15;
 }
@@ -107,7 +112,8 @@
 }
 
 .titleThree{
-    transform: translate(0, 150%);
+    top: 40%;
+    left: 20%;
     font-size: 7rem;
     opacity: 0.2;
 }
@@ -117,27 +123,29 @@
 }
 
 .titleThreeAnimation{
-    animation: ttlThree 35s linear infinite;
+    animation: ttlThree 30s linear infinite;
 }
 
 .titleFour{
-    transform: translate(0, 350%);
+    top: 80%;
+    left: 90%;
     font-size: 5rem;
     opacity: 0.25;
 }
 
 .titleFourAnimation{
-    animation: ttlFour 45s linear infinite;
+    animation: ttlFour 35s linear infinite;
 }
 
 .titleFive{
-    transform: translate(0, 200%);
+    top: 70%;
+    left: 10%;
     font-size: 2.5rem;
     opacity: 0.3;
 }
 
 .titleFiveAnimation{
-    animation: ttlFive 45s linear infinite;
+    animation: ttlFive 40s linear infinite;
 }
 
 .reverseAnimation{
@@ -399,46 +407,46 @@
 
 @keyframes ttlOne {
     from{
-        transform: translate(-30%, 27%);
+        left: 20%;
     }
     to{
-        transform: translate(10%, 27%);
+        left: 95%;
     }
 }
 
 @keyframes ttlTwo {
     from{
-        transform: translate(140%, 20%);
+        left: 95%;
     }
     to{
-        transform: translate(20%, 20%);
+        left: 10%
     }
 }
 
 @keyframes ttlThree {
     from{
-        transform: translate(0, 150%);
+        left: 0%;
     }
     to{
-        transform: translate(400%, 150%);
+        left: 90%;
     }
 }
 
 @keyframes ttlFour {
     from{
-        transform: translate(0, 350%)
+        left: 90%;
     }
     to{
-        transform: translate(430%, 350%)
+        left: 10%;
     }
 }
 
 @keyframes ttlFive {
     from{
-        transform: translate(0, 200%);
+        left: 10%;
     }
     to{
-        transform: translate(400%, 200%);
+        left: 90%;
     }
 }
 
