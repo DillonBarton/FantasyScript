@@ -183,7 +183,11 @@ export default function GlassCarousel(){
 
                             <div className={styles.panelMediaContainer}>
 
-                                <img src="/images/dataVIZ.png" alt="designVariety"/>
+                                <picture>
+                                    <source srcSet='/images/dataViz.avif'/>
+                                    <source srcSet='/images/dataViz.webp'/>
+                                    <img src="/images/dataViz.png" alt="dataViz"/>
+                                </picture> 
                             
                             </div>
 
@@ -201,7 +205,11 @@ export default function GlassCarousel(){
 
                             <div className={styles.panelMediaContainer}>
 
-                                <img src="/images/designVariety.png" alt="designVariety"/>
+                                <picture>
+                                    <source srcSet='/images/designVariety.avif'/>
+                                    <source srcSet='/images/designVariety.webp'/>
+                                    <img src="/images/designVariety.png" alt="designVariety"/>
+                                </picture>
                             
                             </div>
 
@@ -242,7 +250,11 @@ export default function GlassCarousel(){
 
                             <div className={styles.panelMediaContainer}>
 
-                                <img src="/images/responsiveDesign.webp" alt="responsiveDesign"/>
+                                <picture>
+                                    <source srcSet='/images/responsiveDesign.avif'/>
+                                    <source srcSet='/images/responsiveDesign.webp'/>
+                                    <img src="/images/responsiveDesign.jpg" alt="responsiveDesign"/>
+                                </picture>
                             
                             </div>
                             
@@ -259,8 +271,12 @@ export default function GlassCarousel(){
 
                             <div className={styles.panelMediaContainer}>
 
-                                <img src="/images/dataVIZ.png" alt="responsiveDesign"/>
-                            
+                                <picture>
+                                    <source srcSet='/images/dataViz.avif'/>
+                                    <source srcSet='/images/dataViz.webp'/>
+                                    <img src="/images/dataViz.png" alt="dataViz"/>
+                                </picture>                    
+
                             </div>
                             
                         </div>
@@ -277,7 +293,12 @@ export default function GlassCarousel(){
 
                             <div className={styles.panelMediaContainer}>
 
-                                <img src="/images/responsiveDesign.webp" alt="responsiveDesign"/>
+                            <picture>
+                                <source srcSet='/images/responsiveDesign.avif'/>
+                                <source srcSet='/images/responsiveDesign.webp'/>
+                                <img src="/images/responsiveDesign.jpg" alt="responsiveDesign"/>
+                            </picture>
+                                
                             
                             </div>
                             

@@ -259,7 +259,11 @@ export default function NewApplicantForm() {
                 </form>
                 <div className={styles.blank}>
                     <div className={`${styles.imageContainer} boxW100H100`}>
-                        <img src="/images/photo-1608303588026-884930af2559.jpeg" alt=""/>
+                        <picture>
+                            <source srcSet="/images/projectOverview.avif" />
+                            <source srcSet="/images/projectOverview.webp" />
+                            <img src="/images/projectOverview.jpeg" alt="project overview image"/>
+                        </picture>    
                     </div>
                 </div>
             </div>

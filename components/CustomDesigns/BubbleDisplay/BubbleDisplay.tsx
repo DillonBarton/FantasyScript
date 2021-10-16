@@ -36,7 +36,11 @@ export default function BubbleDisplay(){
 
                 <div className={`${styles.bubble} ${styles.bubbleTwo}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowTwo}`}/>
-                    <img className={styles.bubbleImage} src="/images/youtube.jpeg" alt="" />
+                    <picture>
+                        <source srcSet="/images/youtube.avif"/>
+                        <source srcSet="/images/youtube.webp"/>
+                        <img className={styles.bubbleImage} src="/images/youtube_50.jpeg" alt="youtube icon image" />
+                    </picture>
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleThree}`}>
@@ -51,17 +55,29 @@ export default function BubbleDisplay(){
 
                 <div className={`${styles.bubble} ${styles.bubbleFive}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowFive}`}/>
-                    <img className={styles.bubbleImage} src="/images/linkedin_50.jpeg" alt="" />
+                    <picture>
+                        <source srcSet="/images/linkedin.avif"/>
+                        <source srcSet="/images/linkedin.webp"/>
+                        <img className={styles.bubbleImage} src="/images/linkedin_50.jpeg" alt="linkedin icon image" />
+                    </picture>
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleSix}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowSix}`}/>
-                    <img className={styles.bubbleImage} src="/images/twitter_50.jpeg" alt="" />
+                    <picture>
+                        <source srcSet="/images/twitter.avif"/>
+                        <source srcSet="/images/twitter.webp"/>
+                        <img className={styles.bubbleImage} src="/images/twitter_50.jpeg" alt="twitter icon image" />
+                    </picture>
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleSeven}`}>
                     <div className={`${styles.bubbleShadow} ${styles.shadowSeven}`}/>
-                    <img className={styles.bubbleImage} src="/images/instagram_50.jpeg" alt="" />
+                    <picture>
+                        <source srcSet="/images/instagram.avif"/>
+                        <source srcSet="/images/instagram.webp"/>
+                        <img className={styles.bubbleImage} src="/images/instagram_50.jpeg" alt="instagram icon image" />
+                    </picture>
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleEight}`}>

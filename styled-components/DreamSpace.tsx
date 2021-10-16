@@ -43,15 +43,14 @@ export default function DreamSpace(){
     
     return(
         <div className={`boxW100H100`}>
-            {/* <DreamContainer className={`boxW100H100`}>
-
-                <img src="/images/dream.png" alt="dreamBackground"/>
-
-            </DreamContainer> */}
 
             <DreamWorldContainer className={`flexColumn sc boxW100`}>
-        
-                <img src="/images/dreamWorld_50.jpg" alt="dreamWorld"/>
+
+                <picture>
+                    <source srcSet='/images/dreamWorld.avif'/>
+                    <source srcSet='/images/dreamWorld_50.webp'/>
+                    <img src="/images/dreamWorld_50.jpg" alt="dreamWorld"/>
+                </picture>
 
             </DreamWorldContainer>
 

@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import React, { useLayoutEffect, useState, useRef, useEffect } from 'react'
+import dynamic from 'next/dynamic';
+import { useLayoutEffect, useState, useRef } from 'react'
 
 import styles from '../styles/index.module.css'
 
@@ -7,14 +7,13 @@ import styles from '../styles/index.module.css'
 import usePageLoaderHook from '../hooks/pageLoaderHook'
 import Layout from '../components/Layout'
 import DreamSpace from '../styled-components/DreamSpace'
-import FSHero from '../components/FSHero'
+const FSHero = dynamic( ()=> import('../components/FSHero'))
 import Section from '../components/InformationDisplay/Section/Section'
 import SectionDivider from '../components/InformationDisplay/SectionDivider/SectionDivider'
-import BubbleDisplay from '../components/CustomDesigns/BubbleDisplay/BubbleDisplay'
+const BubbleDisplay = dynamic( ()=> import('../components/CustomDesigns/BubbleDisplay/BubbleDisplay'))
 import useScrollFade from '../hooks/useScrollFade';
-import NewApplicantForm from "../components/Forms/NewApplicantForm";
-import Hero from '../components/Hero';
-import FilmDisplay from '../components/CustomDesigns/filmDisplay/FilmDisplay';
+const NewApplicantForm = dynamic( ()=> import('../components/Forms/NewApplicantForm'))
+const FilmDisplay = dynamic( ()=> import('../components/CustomDesigns/filmDisplay/FilmDisplay'))
 
 export default function Home() {
 

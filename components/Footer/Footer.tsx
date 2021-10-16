@@ -1,7 +1,4 @@
-import {useCallback, useEffect, useRef, useState} from "react";
-
-import Image from 'next/image'
-import Link from 'next/link'
+import { useEffect, useRef, useState } from "react";
 
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { FaFacebook } from 'react-icons/fa'

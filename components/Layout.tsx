@@ -1,10 +1,10 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic';
 
 import styles from '../styles/layout.module.css'
 
 import Navbar from './Navbar/Navbar'
-import Footer from './Footer/Footer'
-
+const Footer = dynamic(()=> import('./Footer/Footer'))
     /*
     * google analytics
     * keyWords meta tag

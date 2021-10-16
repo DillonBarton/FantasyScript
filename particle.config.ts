@@ -32,7 +32,7 @@ const particleParams = {
             random: true,
             anim: {
                 enable: true,
-                speed: 10,
+                speed: 6,
                 opacity_min: 1,
                 sync: true
             }
