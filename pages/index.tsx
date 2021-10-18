@@ -12,6 +12,7 @@ import Section from '../components/InformationDisplay/Section/Section'
 import SectionDivider from '../components/InformationDisplay/SectionDivider/SectionDivider'
 const BubbleDisplay = dynamic( ()=> import('../components/CustomDesigns/BubbleDisplay/BubbleDisplay'))
 import useScrollFade from '../hooks/useScrollFade';
+const ScrollPhase = dynamic( ()=> import('../components/CustomDesigns/scrollPhase/ScrollPhase'))
 const NewApplicantForm = dynamic( ()=> import('../components/Forms/NewApplicantForm'))
 const FilmDisplay = dynamic( ()=> import('../components/CustomDesigns/filmDisplay/FilmDisplay'))
 
@@ -50,7 +51,11 @@ export default function Home() {
             paragraphs={["Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.", "Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip."]}>
                 <BubbleDisplay/>
             </Section>
-            <SectionDivider/>
+
+            <SectionDivider>
+                <ScrollPhase/>
+            </SectionDivider>
+            
             <Section
             reversed={true}
             dividerBottom={'page'}

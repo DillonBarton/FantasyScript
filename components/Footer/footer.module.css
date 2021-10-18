@@ -67,7 +67,7 @@
     top: 85%;
     left: 50%;
     font-size: 36rem;
-    opacity: 0.07;
+    opacity: 0.05;
     margin: 0;
 }
 
@@ -100,11 +100,7 @@
     top: 25%;
     left: 95%;
     font-size: 12rem;
-    opacity: 0.15;
-}
-
-.titleTwo.instagramTitle{
-    opacity: 0.1 !important;
+    opacity: 0.1;
 }
 
 .titleTwoAnimation{
@@ -115,11 +111,7 @@
     top: 40%;
     left: 20%;
     font-size: 7rem;
-    opacity: 0.2;
-}
-
-.titleThree.instagramTitle{
-    opacity: 0.2 !important;
+    opacity: 0.15;
 }
 
 .titleThreeAnimation{
@@ -130,7 +122,7 @@
     top: 80%;
     left: 90%;
     font-size: 5rem;
-    opacity: 0.25;
+    opacity: 0.2;
 }
 
 .titleFourAnimation{
@@ -141,7 +133,7 @@
     top: 70%;
     left: 10%;
     font-size: 2.5rem;
-    opacity: 0.3;
+    opacity: 0.25;
 }
 
 .titleFiveAnimation{
