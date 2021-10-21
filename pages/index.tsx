@@ -13,6 +13,7 @@ import SectionDivider from '../components/InformationDisplay/SectionDivider/Sect
 const BubbleDisplay = dynamic( ()=> import('../components/CustomDesigns/BubbleDisplay/BubbleDisplay'))
 import useScrollFade from '../hooks/useScrollFade';
 const ScrollPhase = dynamic( ()=> import('../components/CustomDesigns/scrollPhase/ScrollPhase'))
+import { useScrollHeightTracker } from '../components/CustomDesigns/scrollPhase/ScrollPhase'
 const NewApplicantForm = dynamic( ()=> import('../components/Forms/NewApplicantForm'))
 const FilmDisplay = dynamic( ()=> import('../components/CustomDesigns/filmDisplay/FilmDisplay'))
 
@@ -26,6 +27,7 @@ export default function Home() {
     const [ filmAnimation, setFilmAnimation ] = useState(false)
     const bblAnimation = useScrollFade( bubble, bubbleAnimation, setBubbleAnimation);
     const flmAnimation = useScrollFade( film, filmAnimation, setFilmAnimation);
+    const [phaseContainer, phaseImage, sectionNumber] = useScrollHeightTracker()
 
     useLayoutEffect(()=>{
         setTimeout(()=>{
@@ -52,10 +54,10 @@ export default function Home() {
                 <BubbleDisplay/>
             </Section>
 
-            <SectionDivider>
-                <ScrollPhase/>
+            <SectionDivider reference={phaseContainer}>
+                <ScrollPhase reference={phaseImage} section={sectionNumber}/>
             </SectionDivider>
-            
+
             <Section
             reversed={true}
             dividerBottom={'page'}

@@ -32,14 +32,50 @@ export default function FilmDisplay(){
                     <source srcSet="/images/working.avif" />
                     <source srcSet="/images/working.webp" />
                     <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
+                </picture>
             </div>
             <div className={`${styles.box}`}>
                 <picture>
                     <source srcSet="/images/working.avif" />
                     <source srcSet="/images/working.webp" />
                     <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
+                </picture>
+            </div><div className={`${styles.box}`}>
+                <picture>
+                    <source srcSet="/images/working.avif" />
+                    <source srcSet="/images/working.webp" />
+                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
+                </picture>
+            </div><div className={`${styles.box}`}>
+                <picture>
+                    <source srcSet="/images/working.avif" />
+                    <source srcSet="/images/working.webp" />
+                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
+                </picture>
+            </div><div className={`${styles.box}`}>
+                <picture>
+                    <source srcSet="/images/working.avif" />
+                    <source srcSet="/images/working.webp" />
+                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
+                </picture>
+            </div><div className={`${styles.box}`}>
+                <picture>
+                    <source srcSet="/images/working.avif" />
+                    <source srcSet="/images/working.webp" />
+                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
+                </picture>
+            </div><div className={`${styles.box}`}>
+                <picture>
+                    <source srcSet="/images/working.avif" />
+                    <source srcSet="/images/working.webp" />
+                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
+                </picture>
+            </div><div className={`${styles.box}`}>
+                <picture>
+                    <source srcSet="/images/working.avif" />
+                    <source srcSet="/images/working.webp" />
+                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
+                </picture>
             </div><div className={`${styles.box}`}>
                 <picture>
                     <source srcSet="/images/working.avif" />
@@ -57,49 +93,13 @@ export default function FilmDisplay(){
                     <source srcSet="/images/working.avif" />
                     <source srcSet="/images/working.webp" />
                     <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
+                </picture>
             </div><div className={`${styles.box}`}>
                 <picture>
                     <source srcSet="/images/working.avif" />
                     <source srcSet="/images/working.webp" />
                     <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
-            </div><div className={`${styles.box}`}>
-                <picture>
-                    <source srcSet="/images/working.avif" />
-                    <source srcSet="/images/working.webp" />
-                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
-            </div><div className={`${styles.box}`}>
-                <picture>
-                    <source srcSet="/images/working.avif" />
-                    <source srcSet="/images/working.webp" />
-                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
-            </div><div className={`${styles.box}`}>
-                <picture>
-                    <source srcSet="/images/working.avif" />
-                    <source srcSet="/images/working.webp" />
-                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
-            </div><div className={`${styles.box}`}>
-                <picture>
-                    <source srcSet="/images/working.avif" />
-                    <source srcSet="/images/working.webp" />
-                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
-            </div><div className={`${styles.box}`}>
-                <picture>
-                    <source srcSet="/images/working.avif" />
-                    <source srcSet="/images/working.webp" />
-                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
-            </div><div className={`${styles.box}`}>
-                <picture>
-                    <source srcSet="/images/working.avif" />
-                    <source srcSet="/images/working.webp" />
-                    <img className={`${styles.filmBoxImage}`} src={"/images/working_50.jpeg"} alt="working on project"/>
-                </picture>     
+                </picture>
             </div>
             <div className={`${styles.box}`}>
                 <picture>

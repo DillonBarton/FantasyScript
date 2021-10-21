@@ -8,10 +8,10 @@
 
 .phaseImageContainer{
     position: absolute;
-    top: 50%;
-    right: 20%;
-    transform: translate(20%, -50%);
+    top: 0;
+    right: 24%;
     width: 500px;
     height: 500px;
     background-color: white;
+    transition: 0.1s ease;
 }
