@@ -54,8 +54,16 @@ export default function Home() {
             </Section>
 
             <SectionDivider reference={null}>
-                <GlideSliderReverse/>
-                <GlideSlider/>
+                <GlideSliderReverse
+                unitOfMeasurement={'vw'}
+                duration={60}
+                width={80}
+                />
+                <GlideSlider
+                unitOfMeasurement={'vw'}
+                duration={60}
+                width={80}
+                />
             </SectionDivider>
 
             <Section

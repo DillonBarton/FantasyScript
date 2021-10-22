@@ -1,15 +1,15 @@
 .sliderContainer{
     position: relative;
-    height: 280px;
-    margin: 50px 0;
+    height: 300px;
+    padding: 30px 0;
     overflow: hidden;
 }
 
 .backgroundBlender{
     position: absolute;
     top: 0;
-    width: 200px;
-    height: 100%;
+    width: 100px;
+    height: 280px;
     z-index: 10;
 }
 
@@ -19,155 +19,12 @@
 }
 
 .rightBlender{
-    right: 0;
+    left: 100vw;
+    transform: translateX(-100%);
     background-image: linear-gradient(to left, rgb(29, 29, 29) 0%, rgb(255, 255, 255, 0) 100%);
 }
 
 .sliderTrack{
-    z-index: 1;
+    z-index: 4;
     transition-timing-function: linear !important;
-}
-
-.sliderItemContainer{
-    width: 80vw;
-    flex-shrink: 0;
-    z-index: inherit;
-}
-
-.sliderItem{
-    position: relative;
-    width: 80%;
-    background-position: center;
-    background-size: cover;
-    z-index: inherit;
-    cursor: pointer;
-    font-size: 3rem;
-}
-
-.sliderItem h2{
-    text-transform: uppercase;
-}
-
-.sliderItem::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, 0.3);
-    transition: 0.3s ease-in-out;
-}
-
-.sliderItem:hover::after{
-    background-color: rgb(0, 0, 0, 0);
-}
-
-.sliderOne{
-    background-image: url('http://cdn.cnn.com/cnnnext/dam/assets/200624071823-01-paris-fashion-week-2019.jpg');
-    background-position: center 40% !important;
-    color: white;
-    font-family: 'Belleza', sans-serif;
-}
-
-.sliderTwo{
-    background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q.jpg');
-    background-position: center 40%;
-    color: white;
-    font-family: 'Work Sans', sans-serif;
-}
-
-.sliderThree{
-    background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
-    color: white;
-    font-family: 'Karla', sans-serif;
-}
-
-.sliderFour{
-    background-image: url('https://socialh.com/wp-content/uploads/2019/01/Website.jpg');
-    color: black;
-    font-family: 'Recursive', sans-serif;
-}
-
-.sliderFive{
-    background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1113&q=80');
-    color: white;
-    font-size: 2.5rem;
-    font-family: 'Crimson Text', serif;
-}
-
-.sliderSix{
-    background-image: url('https://image.freepik.com/free-vector/food-restaurant-web-banner-template-with-modern-elegant-3d-design-yellow_115083-151.jpg');
-    background-position: center 20%;
-    color: white;
-    font-family: 'Belleza', sans-serif;
-}
-
-.sliderSeven{
-    background-image: url('http://cdn.cnn.com/cnnnext/dam/assets/200624071823-01-paris-fashion-week-2019.jpg');
-    color: white;
-    font-family: 'Belleza', sans-serif;
-}
-
-.sliderEight{
-    background-image: url('http://cdn.cnn.com/cnnnext/dam/assets/200624071823-01-paris-fashion-week-2019.jpg');
-    color: white;
-    font-family: 'Belleza', sans-serif;
-}
-
-.sliderNine{
-    background-image: url('http://cdn.cnn.com/cnnnext/dam/assets/200624071823-01-paris-fashion-week-2019.jpg');
-    color: white;
-    font-family: 'Belleza', sans-serif;
-}
-
-.sliderTen{
-    background-image: url('http://cdn.cnn.com/cnnnext/dam/assets/200624071823-01-paris-fashion-week-2019.jpg');
-    color: white;
-    font-family: 'Belleza', sans-serif;
-}
-
-@media screen and (max-width: 1200px){
-    .sliderContainer{
-        height: 190px;
-    }
-    .sliderItem{
-        font-size: 2rem;
-    }
-}
-
-@media screen and (max-width: 930px){
-    .sliderContainer{
-        height: 170px;
-    }
-    .sliderItem{
-        font-size: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 770px){
-    .sliderContainer{
-        height: 140px;
-    }
-    .sliderItem{
-        font-size: 1.2rem;
-    }
-}
-
-@media screen and (max-width: 605px){
-    .sliderContainer{
-        height: 100px;
-    }
-    .sliderItem{
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 376px){
-    .sliderContainer{
-        height: 70px;
-    }
-    .sliderItem{
-        font-size: 0.7rem;
-    }
 }
