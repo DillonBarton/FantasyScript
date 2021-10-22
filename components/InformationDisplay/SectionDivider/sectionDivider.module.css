@@ -2,48 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
 
 .sectionDivider{
-    /* padding: 6em 0; */
     background-color: rgb(29, 29, 29);
     z-index: 2;
 }
 
 .sectionWrapper{
-    max-width: 1600px;
-    justify-content: space-between !important;
-}
-
-.informationContainer{
-    max-width: 70ch;
-    color: rgb(205, 205, 205);
-}
-
-.infomationSection{
-    height: 500px;
-    padding-bottom: 2em;
-    scroll-snap-align: start;
-}
-
-.infomationSection:last-child{
-    margin: 0;
-}
-
-.infomationSection h3{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    margin: 0 0 0.6em 0;
-}
-
-.infomationSection h4{
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin: 0 0 0.3em 0;
-}
-
-.informationContainer p{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem; 
 }
