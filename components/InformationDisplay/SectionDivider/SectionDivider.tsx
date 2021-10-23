@@ -5,10 +5,6 @@ import styles from './sectionDivider.module.css'
 
 export default function SectionDivider({children, reference}) {
 
-    useEffect(()=>{
-       console.log(children) 
-    }, [])
-
     return(
         <section className={`${styles.sectionDivider} boxW100 flexRow cc`}>
             <div ref={reference} className={`${styles.sectionWrapper} boxW100 flexColumn cs`}>

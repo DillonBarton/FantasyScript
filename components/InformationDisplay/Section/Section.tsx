@@ -6,6 +6,7 @@ export default function Section({children, reversed, dividerBottom, dividerTop, 
 
     /**
      * transfrom rotateY the section divider svg 180deg every other dection divider.
+     * make sectionContainer flexColumn and svg elements position relative so elements dont overlap
      */
 
     useEffect(()=>{
@@ -17,7 +18,7 @@ export default function Section({children, reversed, dividerBottom, dividerTop, 
         })
 
     return(
-        <section className={`${styles.sectionContainer} flexRow cc boxW100`}>
+        <section className={`${styles.sectionContainer} flexColumn cc boxW100`}>
             {
                 dividerTop === 'page' ?
 
@@ -49,7 +50,7 @@ export default function Section({children, reversed, dividerBottom, dividerTop, 
 
                 null
             }
-            <div className={`${styles.wrapper} flexRow cc boxW100H100`}>
+            <div className={`${styles.wrapper} flexRow flexGrow cc boxW100H100`}>
 
                 <div className={`${styles.display} ${reversed ? styles.order2 : styles.order1} flexRow sc boxH100`}>
                     {children}

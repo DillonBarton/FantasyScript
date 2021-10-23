@@ -29,15 +29,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient( to center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
-    background-color: rgba(0, 0, 0, 0.1);
+    background: radial-gradient( to center, rgba(20, 20, 20, 0.3), rgba(20, 20, 20, 0.8));
+    background-color: rgba(10, 10, 10, 0.1);
     background-size: 100%;
     background-position: center center;
     transition: 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 .screenSliderItem:hover::after{
-    background-size: 200%;
+    background-size: 300%;
     background-color: rgba(0, 0, 0, 0);
     
 }

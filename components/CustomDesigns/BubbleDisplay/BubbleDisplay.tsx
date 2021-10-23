@@ -9,6 +9,10 @@ export default function BubbleDisplay(){
 
     /**
      * make bubble come out of top but not bottom
+     * BUBBLE EFFECTS
+     * when bubble is hovered z-index comes to top layer and scale 1.01.
+     * when clicked covers whole bubble section and changes text.
+     * maybe also runs a slide show
      */
 
     const bubbleDisplay = useRef(null);

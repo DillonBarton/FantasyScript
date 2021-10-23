@@ -2,7 +2,6 @@
     position: relative;
     width: 56em;
     height: 56em;
-    margin-top: 100px;
     border-radius: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
