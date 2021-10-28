@@ -12,7 +12,7 @@ import Section from '../components/InformationDisplay/Section/Section'
 import SectionDivider from '../components/InformationDisplay/SectionDivider/SectionDivider'
 const BubbleDisplay = dynamic( ()=> import('../components/CustomDesigns/BubbleDisplay/BubbleDisplay'))
 import useScrollFade from '../hooks/useScrollFade';
-import GlideSliderReverse from '../components/Carousels/GlideSlider/GlideSliderReverse';
+const GlideSliderReverse = dynamic(() => import('../components/Carousels/GlideSlider/GlideSliderReverse'))
 const GlideSlider = dynamic(() => import('../components/Carousels/GlideSlider/GlideSlider'))
 const NewApplicantForm = dynamic( ()=> import('../components/Forms/NewApplicantForm'))
 const FilmDisplay = dynamic( ()=> import('../components/CustomDesigns/filmDisplay/FilmDisplay'))
@@ -56,13 +56,13 @@ export default function Home() {
             <SectionDivider reference={null}>
                 <GlideSliderReverse
                 unitOfMeasurement={'vw'}
-                duration={60}
+                duration={70}
                 width={80}
                 />
                 <GlideSlider
-                unitOfMeasurement={'vw'}
-                duration={60}
-                width={80}
+                unitOfMeasurement={'px'}
+                duration={30}
+                width={330}
                 />
             </SectionDivider>
 

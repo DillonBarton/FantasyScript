@@ -16,6 +16,7 @@
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    user-select: none;
     z-index: 15;
 }
 

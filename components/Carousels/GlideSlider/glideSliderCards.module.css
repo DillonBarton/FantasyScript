@@ -1,5 +1,6 @@
 .screenSliderItemContainer{
     width: 80vw;
+    height: 280px;
     flex-shrink: 0;
 }
 
@@ -13,9 +14,9 @@
     position: relative;
     background-position: center;
     background-size: cover;
-    z-index: inherit;
     cursor: pointer;
     font-size: 3rem;
+    z-index: 5;
 }
 
 .screenSliderItem h2{
@@ -40,7 +41,6 @@
 .screenSliderItem:hover::after{
     background-size: 300%;
     background-color: rgba(0, 0, 0, 0);
-    
 }
 
 .screenSlider0{
@@ -152,4 +152,50 @@
     .screenSliderItem{
         font-size: 0.7rem;
     }
+}
+
+.cardSliderItemContainer{
+    width: 330px;
+    height: 330px;
+    flex-shrink: 0;
+}
+
+.cardSlidetItemShadow{
+    padding: 0.8em;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.cardSliderItem{
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.cardSliderItem::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient( to center, rgba(20, 20, 20, 0.3), rgba(20, 20, 20, 0.8));
+    background-color: rgba(10, 10, 10, 0.1);
+    background-size: 100%;
+    background-position: center center;
+    transition: 0.3s ease-in-out;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.cardSliderItem:hover::after{
+    background-size: 300%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.cardSliderItem h2{
+    text-transform: uppercase;
+    color: white;
 }

@@ -9,8 +9,11 @@ export default function SectionDivider({children, reference}) {
         <section className={`${styles.sectionDivider} boxW100 flexRow cc`}>
             <div ref={reference} className={`${styles.sectionWrapper} boxW100 flexColumn cs`}>
                 {
-                    children.map(
-                        (elem) => <div key={1}>{elem}</div>)
+                    children === typeof [] ? children.map(
+                        (elem, index) => <div key={index}>{elem}</div>)
+                    :
+
+                    children
                 }
             </div>
         </section>
