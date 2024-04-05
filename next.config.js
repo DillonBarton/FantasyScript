@@ -3,8 +3,9 @@ module.exports = {
   "compilerOptions": {
     "baseUrl": "src/",
     "paths": {
-      "@/styles/*": ["styles/*"],
+      "@/features/*": ["features/*"],
       "@/components/*": ["components/*"],
+      "@/styles/*": ["styles/*"],
       "@/hooks/*": ["hooks/*"],
       "@/lib/*": ["lib/*"],
     }

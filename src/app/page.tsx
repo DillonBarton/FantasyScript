@@ -6,10 +6,11 @@ import { useLayoutEffect, useState, useRef } from 'react'
 import usePageLoaderHook from "@/hooks/pageLoaderHook"
 import DreamSpace from '../styled-components/DreamSpace'
 const FSHero = dynamic( ()=> import('../components/FSHero'))
-import Section from '../components/Section/Section'
+import PageSection from '@/components/pageSection/PageSection'
 import SectionDivider from '../components/SectionDivider/SectionDivider'
 const BubbleDisplay = dynamic( ()=> import('@/components/bubbleDisplay/BubbleDisplay'))
 import useAnimateOnScroll from "@/hooks/useAnimateOnScroll";
+import styles from "@/components/SectionDivider/sectionDivider.module.css";
 const GlideSliderReverse = dynamic(() => import('../components/GlideSlider/GlideSliderReverse'))
 const GlideSlider = dynamic(() => import('../components/GlideSlider/GlideSlider'))
 const NewApplicantForm = dynamic( ()=> import('../components/Forms/NewApplicantForm'))
@@ -30,7 +31,6 @@ export default function HomePage() {
         setTimeout(()=>{
             setLoading(true)
         }, 800)
-
     })
 
     return (
@@ -38,40 +38,43 @@ export default function HomePage() {
             {loaded}
             <DreamSpace/>
             <FSHero/>
-            <Section
-                reversed={false}
-                dividerBottom={'section'}
-                dividerTop={'none'}
-                key={'bubble'}
+            <PageSection
+                isReversed={false}
                 title={"about us"}
                 subtitle={"London web design specialists"}
-                paragraphs={["Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.", "Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip."]}>
+                paragraphs={["Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, " +
+                "consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.Lorem ipsum dolor sit amet, " +
+                "consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, " +
+                "consectetur adip.", "Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, " +
+                "consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, " +
+                "consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, " +
+                "consectetur adip."]}
+            >
                 <BubbleDisplay/>
-            </Section>
+            </PageSection>
 
-            <SectionDivider reference={null}>
-                <GlideSliderReverse
-                    unitOfMeasurement={'vw'}
-                    duration={70}
-                    width={80}
-                />
-                <GlideSlider
-                    unitOfMeasurement={'px'}
-                    duration={30}
-                    width={330}
-                />
-            </SectionDivider>
+            <section className="z-[2] bg-[rgb(29, 29, 29)] w-full flex flex-row justify-center items-center">
+                <div className="w-full flex flex-col justify-center items-start">
+                    <GlideSliderReverse
+                        unitOfMeasurement={'vw'}
+                        duration={70}
+                        width={80}
+                    />
+                    <GlideSlider
+                        unitOfMeasurement={'px'}
+                        duration={30}
+                        width={330}
+                    />
+                </div>
+            </section>
 
-            <Section
-                reversed={true}
-                dividerBottom={'page'}
-                dividerTop={'section'}
-                key={'film'}
+            <PageSection
+                isReversed={true}
                 title={"our services"}
                 subtitle={"building your digital image"}
                 paragraphs={["Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip.", "Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip. Lorem ipsum dolor sit amet, consectetur adip."]}>
                 <FilmDisplay/>
-            </Section>
+            </PageSection>
             <NewApplicantForm/>
         </>
     )

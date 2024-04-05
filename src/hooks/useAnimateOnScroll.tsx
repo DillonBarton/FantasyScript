@@ -1,5 +1,5 @@
 import {useState, RefObject, useEffect} from 'react'
-import styles from "@/components/Section/section.module.css";
+import styles from "@/components/pageSection/pageSection.module.css";
 
 export default function useAnimateOnScroll(ref: RefObject<any>, classes?: string[]){
 

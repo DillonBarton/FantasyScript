@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 
 import { useLayoutEffect, useRef, useState } from 'react'

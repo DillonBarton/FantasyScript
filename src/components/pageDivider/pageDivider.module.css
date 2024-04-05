@@ -1,0 +1,17 @@
+.shapeDividerLayer1 {
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    width: 100%;
+    transform: rotate(180deg);
+    overflow: hidden;
+    z-index: 5;
+    line-height: 0;
+}
+
+.shapeDividerLayer1 svg {
+    position: relative;
+    display: block;
+    width: calc(282% + 1.3px);
+    height: 161px;
+}

@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useRef, useState, useLayoutEffect } from 'react'
 
 import Image from 'next/image'
@@ -28,7 +29,7 @@ export default function BubbleDisplay(){
                     <div className={styles.bubbleShadow}/>
                     <div className={`${styles.bubbleBackground} w-full h-full`}/>
                     <div
-                        className={`${styles.text} w-full h-full flex flex-row justify-center items-center`}
+                        className={`${styles.text} w-full h-full flex justify-center items-center`}
                     >
                         seo
                     </div>
@@ -46,7 +47,9 @@ export default function BubbleDisplay(){
                 <div className={`${styles.bubble} ${styles.bubbleThree}`}>
                     <div className={styles.bubbleShadow}/>
                     <div className={`${styles.bubbleBackground} w-full h-full`}/>
-                    <div className={`${styles.text} w-full h-full flex flex-row justify-center items-center`}>digital marketing</div>
+                    <div className={`${styles.text} w-full h-full flex justify-center items-center`}>
+                        digital marketing
+                    </div>
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleFour}`}>
@@ -87,14 +90,14 @@ export default function BubbleDisplay(){
 
                 <div className={`${styles.bubble} ${styles.bubbleNine}`}>
                     <div className={styles.bubbleShadow}/>
-                    <div className={`${styles.bubbleBackground} boxW100H100`}/>
-                    <div className={`${styles.text} flexRow cc boxW100H100`}>data visualisation</div>
+                    <div className={`${styles.bubbleBackground} w-full h-full`}/>
+                    <div className={`${styles.text} w-full h-full flex justify-center items-center`}>data visualisation</div>
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleTen}`}>
                     <div className={styles.bubbleShadow}/>
-                    <div className={`${styles.bubbleBackground} boxW100H100`}/>
-                    <div className={`${styles.text} flexRow cc boxW100H100`}>web design</div>
+                    <div className={`${styles.bubbleBackground} w-full h-full`}/>
+                    <div className={`${styles.text} w-full h-full flex justify-center items-center`}>web design</div>
                 </div>
 
                 <div className={`${styles.bubble} ${styles.bubbleEleven}`}>
