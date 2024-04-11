@@ -1,42 +1,37 @@
 import axios from "axios";
-import { useState, useEffect, useReducer} from "react";
-
+import { useState, useEffect, useReducer } from "react";
 
 export const ACTIONS = {
-    DATA_STORE: 'storeData',
-    BASKET_ADD: 'addToBasket'
-}
+  DATA_STORE: "storeData",
+  BASKET_ADD: "addToBasket",
+};
 
-export default function useStateManager(payLoad){
-
-
-    
-
-    function reducer(data, payLoad) {
-
-        switch (payLoad.action) {
-
-            case ACTIONS.DATA_STORE:
-                let newData = {...data, [`${payLoad.res.data.title}`]: { ...payLoad.res } }
-                return {...newData};
-            case ACTIONS.BASKET_ADD:
-
-                return {...data};
-            default:
-                console.error("error")
-                return;
-        }
+export default function useStateManager(payLoad) {
+  function reducer(data, payLoad) {
+    switch (payLoad.action) {
+      case ACTIONS.DATA_STORE:
+        let newData = {
+          ...data,
+          [`${payLoad.res.data.title}`]: { ...payLoad.res },
+        };
+        return { ...newData };
+      case ACTIONS.BASKET_ADD:
+        return { ...data };
+      default:
+        console.error("error");
+        return;
     }
+  }
 
-    const [ data, dispatch ] = useReducer(reducer, null)
+  const [data, dispatch] = useReducer(reducer, null);
 
-    useEffect(()=>{
-        if(payLoad){
-            if(payLoad.action){
-                dispatch(payLoad)
-            }
-        }
-    }, [payLoad])
+  useEffect(() => {
+    if (payLoad) {
+      if (payLoad.action) {
+        dispatch(payLoad);
+      }
+    }
+  }, [payLoad]);
 
-    return [ data ];
+  return [data];
 }

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -18,11 +18,22 @@ body {
   scrollbar-width: none !important;
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
 }
 
-html::-webkit-scrollbar ,body::-webkit-scrollbar{
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -31,144 +42,144 @@ a {
   text-decoration: none;
 }
 
-a:active{
+a:active {
   outline: none;
 }
 
-a:focus{
+a:focus {
   outline: none;
 }
 
-button{
+button {
   padding: 0;
   margin: 0;
   background-color: transparent;
   border: none;
 }
 
-button:focus{
+button:focus {
   outline: none;
 }
 
-ul{
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li{
+li {
   padding: 0;
   margin: 0;
 }
 
-.boxW100{
+.boxW100 {
   width: 100%;
 }
 
-.boxH100{
+.boxH100 {
   height: 100%;
 }
 
-.boxW100H100{
+.boxW100H100 {
   width: 100%;
   height: 100%;
 }
 
-.flexRow{
+.flexRow {
   display: flex;
   flex-direction: row;
 }
 
-.flexColumn{
+.flexColumn {
   display: flex;
   flex-direction: column;
 }
 
-.flexGrow{
+.flexGrow {
   flex-grow: 1;
 }
 
-.flexGrow2{
+.flexGrow2 {
   flex-grow: 2;
 }
 
-.flexGrow3{
+.flexGrow3 {
   flex-grow: 3;
 }
 
-.flexGrow4{
+.flexGrow4 {
   flex-grow: 4;
 }
 
-.flexGrow5{
+.flexGrow5 {
   flex-grow: 5;
 }
 
-.flexGrow6{
+.flexGrow6 {
   flex-grow: 6;
 }
 
-.flexGrow7{
+.flexGrow7 {
   flex-grow: 7;
 }
-.flexGrow8{
+.flexGrow8 {
   flex-grow: 8;
 }
 
-.flexGrow9{
+.flexGrow9 {
   flex-grow: 9;
 }
 
-.flexGrow10{
+.flexGrow10 {
   flex-grow: 10;
 }
 
-.ss{
+.ss {
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.sc{
+.sc {
   justify-content: flex-start;
   align-items: center;
 }
 
-.se{
+.se {
   justify-content: flex-start;
   align-items: flex-end;
 }
 
-.cs{
+.cs {
   justify-content: center;
   align-items: flex-start;
 }
 
-.cc{
+.cc {
   justify-content: center;
   align-items: center;
 }
 
-.ce{
+.ce {
   justify-content: center;
   align-items: flex-end;
 }
 
-.es{
+.es {
   justify-content: flex-end;
   align-items: flex-start;
 }
 
-.ec{
+.ec {
   justify-content: flex-end;
   align-items: center;
 }
 
-.ee{
+.ee {
   justify-content: flex-end;
   align-items: flex-end;
 }
 
-#pageContainer{
+#pageContainer {
   position: relative;
   width: 100%;
   min-width: 100%;
@@ -176,9 +187,9 @@ li{
   margin-top: 125px;
   padding-bottom: 435px;
 }
-#center{
+#center {
   max-width: 1200px;
 }
 #center * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }

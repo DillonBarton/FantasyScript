@@ -1,69 +1,69 @@
-.filmDisplayContainer{
-    position: relative;
-    width: 56em;
-    height: 56em;
-    border-radius: 50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 200px;
-    grid-gap: 4em;
-    box-shadow: 0 0 13px 3px rgba(141, 141, 141, 0.4);
-    overflow: hidden;
-    z-index: 0;
-    opacity: 0;
-    transform: rotate(-60deg);
+.filmDisplayContainer {
+  position: relative;
+  width: 56em;
+  height: 56em;
+  border-radius: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 200px;
+  grid-gap: 4em;
+  box-shadow: 0 0 13px 3px rgba(141, 141, 141, 0.4);
+  overflow: hidden;
+  z-index: 0;
+  opacity: 0;
+  transform: rotate(-60deg);
 }
 
-.filmDisplayContainer::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: rgb(41, 41, 41);
+.filmDisplayContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgb(41, 41, 41);
 }
 
-.filmDisplayContainer::after{
-    content: "";
-    position: absolute;
-    top: -1%;
-    left: -1%;
-    width: 103%;
-    height: 103%;
-    border-radius: 50%;
-    box-shadow: inset 0 0 30px 15px rgb(5, 5, 5);
-    z-index: 2;
+.filmDisplayContainer::after {
+  content: "";
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  width: 103%;
+  height: 103%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px 15px rgb(5, 5, 5);
+  z-index: 2;
 }
 
-.filmDisplayAnimation{
-    animation: rotate ease-out 1.3s forwards;
+.filmDisplayAnimation {
+  animation: rotate ease-out 1.3s forwards;
 }
 
-.box{
-    position: relative;
-    z-index: 1;
+.box {
+  position: relative;
+  z-index: 1;
 }
 
-.filmBoxImage{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 100%;
-    min-height: 100%;
+.filmBoxImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
 }
 
 @keyframes rotate {
-    from{
-        transform: rotate(-60deg);
-        grid-gap: 4em;
-        opacity: 0;
-    }
-    to{
-        transform: rotate(0deg);
-        grid-gap: 0.9em;
-        opacity: 1;
-    }
+  from {
+    transform: rotate(-60deg);
+    grid-gap: 4em;
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    grid-gap: 0.9em;
+    opacity: 1;
+  }
 }

@@ -1,33 +1,31 @@
-import Image from 'next/image'
-import styled from 'styled-components'
+"use client"
 
-import { DreamWorld, Dream } from './Keyframes'
+import styled from "styled-components";
+
+import { DreamWorld, Dream } from "./Keyframes";
 
 const DreamContainer = styled.div`
     position: fixed;
     top: 0;
     left: 40%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 3 !important;
-    -webkit-perspective: 1px;
     perspective: 1px;
-    -webkit-perspective-origin: center center 0;
-    perspective-origin: center center 0;
-        img {
-            width: 120vw;
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            -webkit-transform-origin: 50% 100%;
-            -ms-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-            -webkit-animation: ${Dream} 2s ease-out forwards;
-            animation: ${Dream} 2s ease-out forwards;
-        }
+    perspective-origin: center center;
+    img {
+        width: 120vw;
+        transform-style: preserve-3d;
+        transform-origin: 50% 100%;
+        animation: ${Dream} 2s ease-out forwards;
+    }
 `;
 
 const DreamWorldContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
     img {
         position: fixed;
         top: 110%;
@@ -38,22 +36,16 @@ const DreamWorldContainer = styled.div`
     }
 `;
 
-export default function DreamSpace(){
-
-    
-    return(
-        <div className={`boxW100H100`}>
-
-            <DreamWorldContainer className={`flexColumn sc boxW100`}>
-
-                <picture>
-                    <source srcSet='/images/dreamWorld.avif'/>
-                    <source srcSet='/images/dreamWorld_50.webp'/>
-                    <img src="/images/dreamWorld_50.jpg" alt="dreamWorld"/>
-                </picture>
-
-            </DreamWorldContainer>
-
-        </div>
-    )
+export default function DreamSpace() {
+  return (
+    <div className="w-full h-full">
+      <DreamWorldContainer>
+        <picture>
+          <source srcSet="/images/dreamWorld.avif" />
+          <source srcSet="/images/dreamWorld_50.webp" />
+          <img src="/images/dreamWorld_50.jpg" alt="dreamWorld" />
+        </picture>
+      </DreamWorldContainer>
+    </div>
+  );
 }

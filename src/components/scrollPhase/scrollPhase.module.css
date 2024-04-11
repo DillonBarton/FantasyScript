@@ -1,17 +1,17 @@
-.scrollPhase{
-    position: sticky;
-    top: 40%;
-    right: 0;
-    height: 500px;
-    z-index: 3;
+.scrollPhase {
+  position: sticky;
+  top: 40%;
+  right: 0;
+  height: 500px;
+  z-index: 3;
 }
 
-.phaseImageContainer{
-    position: absolute;
-    top: 0;
-    right: 24%;
-    width: 500px;
-    height: 500px;
-    background-color: white;
-    transition: 0.1s ease;
+.phaseImageContainer {
+  position: absolute;
+  top: 0;
+  right: 24%;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  transition: 0.1s ease;
 }

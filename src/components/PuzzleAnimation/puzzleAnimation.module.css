@@ -1,175 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
 
-#loadingScreen{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    background-color: black;
-    z-index: 10000;
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: black;
+  z-index: 10000;
 }
 
-#loading{
-    display: block;
-    width: 20rem;
-    height: auto;
-    opacity: 0;
-    transform: translateX(-43px);
-    animation: fadeIn 0.6s 0.3s ease-out forwards;
+#loading {
+  display: block;
+  width: 20rem;
+  height: auto;
+  opacity: 0;
+  transform: translateX(-43px);
+  animation: fadeIn 0.6s 0.3s ease-out forwards;
 }
 
-.gradient{
-
+.gradient {
 }
 
-.gradient stop[offset = "0%"]{
-    animation: gradient1 10s ease 0s infinite;
+.gradient stop[offset="0%"] {
+  animation: gradient1 10s ease 0s infinite;
 }
 
 @keyframes gradient1 {
-    from {
-        stop-color: rgb(0, 0, 0);
-    }
-    50% {
-        stop-color: rgb(0, 0, 0);
-    }
-    to {
-        stop-color: rgb(0, 0, 0);
-    }
+  from {
+    stop-color: rgb(0, 0, 0);
+  }
+  50% {
+    stop-color: rgb(0, 0, 0);
+  }
+  to {
+    stop-color: rgb(0, 0, 0);
+  }
 }
 
-.gradient stop[offset = "100%"]{
-    animation: gradient2 10s ease 0s infinite;
+.gradient stop[offset="100%"] {
+  animation: gradient2 10s ease 0s infinite;
 }
 
 @keyframes gradient2 {
-    from {
-        stop-color: rgb(255, 255, 255);
-    }
-    50% {
-        stop-color: rgb(255, 255, 255);
-    }
-    to {
-        stop-color:  rgb(255, 255, 255);
-    }
+  from {
+    stop-color: rgb(255, 255, 255);
+  }
+  50% {
+    stop-color: rgb(255, 255, 255);
+  }
+  to {
+    stop-color: rgb(255, 255, 255);
+  }
 }
 
-#container{
-    transform: translate(50%, 0) scale(0.707, 0.707) rotate(45deg);
+#container {
+  transform: translate(50%, 0) scale(0.707, 0.707) rotate(45deg);
 }
 
 svg#loading .rect {
-    animation: slide 15s ease infinite;
-    z-index: 10001;
+  animation: slide 15s ease infinite;
+  z-index: 10001;
 }
 
 svg#loading #rect1 {
-    animation-delay: 0s;
+  animation-delay: 0s;
 }
 
 svg#loading #rect2 {
-    animation-delay: -2.14285714s;
+  animation-delay: -2.14285714s;
 }
 
 svg#loading #rect3 {
-    animation-delay: -4.28571429s;
+  animation-delay: -4.28571429s;
 }
 svg#loading #rect4 {
-    animation-delay: -6.42857143s;
+  animation-delay: -6.42857143s;
 }
 
 svg#loading #rect5 {
-    animation-delay: -8.57142857s;
+  animation-delay: -8.57142857s;
 }
 
 svg#loading #rect6 {
-    animation-delay: -10.71428571s;
+  animation-delay: -10.71428571s;
 }
 
 svg#loading #rect7 {
-    animation-delay: -12.85714286s;
+  animation-delay: -12.85714286s;
 }
 
 @keyframes slide {
-    0% {
-        transform: translate(0, 0);
-    }
-    2% {
-        transform: translate(33px, 0);
-    }
-    12.5% {
-        transform: translate(33px, 0);
-    }
-    15.5% {
-        transform: translate(66px, 0);
-    }
-    25% {
-        transform: translate(66px, 0);
-    }
-    27% {
-        transform: translate(66px, 33px);
-    }
-    37.5% {
-        transform: translate(66px, 33px);
-    }
-    39.5% {
-        transform: translate(33px, 33px);
-    }
-    50% {
-        transform: translate(33px, 33px);
-    }
-    52% {
-        transform: translate(33px, 66px);
-    }
-    62.5% {
-        transform: translate(33px, 66px);
-    }
-    64.5% {
-        transform: translate(0, 66px);
-    }
-    75% {
-        transform: translate(0, 66px);
-    }
-    77% {
-        transform: translate(0, 33px);
-    }
-    87.5% {
-        transform: translate(0, 33px);
-    }
-    89.5% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
+  0% {
+    transform: translate(0, 0);
+  }
+  2% {
+    transform: translate(33px, 0);
+  }
+  12.5% {
+    transform: translate(33px, 0);
+  }
+  15.5% {
+    transform: translate(66px, 0);
+  }
+  25% {
+    transform: translate(66px, 0);
+  }
+  27% {
+    transform: translate(66px, 33px);
+  }
+  37.5% {
+    transform: translate(66px, 33px);
+  }
+  39.5% {
+    transform: translate(33px, 33px);
+  }
+  50% {
+    transform: translate(33px, 33px);
+  }
+  52% {
+    transform: translate(33px, 66px);
+  }
+  62.5% {
+    transform: translate(33px, 66px);
+  }
+  64.5% {
+    transform: translate(0, 66px);
+  }
+  75% {
+    transform: translate(0, 66px);
+  }
+  77% {
+    transform: translate(0, 33px);
+  }
+  87.5% {
+    transform: translate(0, 33px);
+  }
+  89.5% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
-.loadingText{
-    position: relative;
-    font-size: 3rem;
-    font-weight: 200;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 15px;
-    background: linear-gradient(#eee, #333);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    user-select: none;
-    margin: 30px 0;
-    opacity: 0;
-    transform: translateX(-43px);
-    animation: fadeIn 0.6s ease-out forwards;
+.loadingText {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 15px;
+  background: linear-gradient(#eee, #333);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  user-select: none;
+  margin: 30px 0;
+  opacity: 0;
+  transform: translateX(-43px);
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 @keyframes fadeIn {
-    from{
-        opacity: 0;
-        transform: translateX(-43px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-43px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

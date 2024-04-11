@@ -1,444 +1,448 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Style+Script&family=Merriweather&family=PT+Sans&family=Roboto&family=Source+Sans+Pro&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Style+Script&family=Merriweather&family=PT+Sans&family=Roboto&family=Source+Sans+Pro&family=Righteous&display=swap");
 
-#footerContainer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 596px;
-    z-index: 997;
-    padding-bottom: 20px;
-    overflow: hidden;
+#footerContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 596px;
+  z-index: 997;
+  padding-bottom: 20px;
+  overflow: hidden;
 }
 
-.footerBackground{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -2;
-    background-color: rgba(15, 15, 15, 0.99);
-    height: calc(100% - 161px);
+.footerBackground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  background-color: rgba(15, 15, 15, 0.99);
+  height: calc(100% - 161px);
 }
 
-.titleContainer{
-    position: absolute;
-    opacity: 0;
+.titleContainer {
+  position: absolute;
+  opacity: 0;
 }
 
-.titleContainerAnimation{
-    opacity: 1 !important;  
-    transition: 1.5s ease;  
+.titleContainerAnimation {
+  opacity: 1 !important;
+  transition: 1.5s ease;
 }
 
-.floatingTitle{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    user-select: none;
+.floatingTitle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  user-select: none;
 }
 
-.floatingTitle.twitterTitle{
-    font-family: 'Righteous', cursive;
+.floatingTitle.twitterTitle {
+  font-family: "Righteous", cursive;
 }
 
-.floatingTitle.facebookTitle{
-    font-weight: 700;
-    font-family: 'PT Sans', sans-serif;
+.floatingTitle.facebookTitle {
+  font-weight: 700;
+  font-family: "PT Sans", sans-serif;
 }
 
-.floatingTitle.youtubeTitle{
-    font-weight: 600;
-    text-transform: capitalize;
-    font-family: 'Roboto', sans-serif;
+.floatingTitle.youtubeTitle {
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
 }
 
-.floatingTitle.instagramTitle{
-    font-weight: 500;
-    font-family: 'Style Script', cursive;
+.floatingTitle.instagramTitle {
+  font-weight: 500;
+  font-family: "Style Script", cursive;
 }
 
-.floatingTitle.linkedinTitle{
-    text-transform: capitalize;
-    font-weight: 600;
-    font-family: 'Source Sans Pro', sans-serif;
+.floatingTitle.linkedinTitle {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.titleOne{
-    top: 85%;
-    left: 50%;
-    font-size: 36rem;
-    opacity: 0.05;
-    margin: 0;
+.titleOne {
+  top: 85%;
+  left: 50%;
+  font-size: 36rem;
+  opacity: 0.05;
+  margin: 0;
 }
 
-.titleOne.twitterTitle{
-    font-size: 32rem !important;
+.titleOne.twitterTitle {
+  font-size: 32rem !important;
 }
 
-.titleOne.facebookTitle{
-    font-size: 30rem !important;
+.titleOne.facebookTitle {
+  font-size: 30rem !important;
 }
 
-.titleOne.youtubeTitle{
-    font-size: 30rem !important;
+.titleOne.youtubeTitle {
+  font-size: 30rem !important;
 }
 
-.titleOne.instagramTitle{
-    font-size: 30rem !important;
-    opacity: 0.08 !important;
+.titleOne.instagramTitle {
+  font-size: 30rem !important;
+  opacity: 0.08 !important;
 }
 
-.titleOne.linkedinTitle{
-    font-size: 30rem !important;
+.titleOne.linkedinTitle {
+  font-size: 30rem !important;
 }
 
-.titleOneAnimation{
-    animation: ttlOne 60s linear infinite;
+.titleOneAnimation {
+  animation: ttlOne 60s linear infinite;
 }
 
-.titleTwo{
-    top: 25%;
-    left: 95%;
-    font-size: 12rem;
-    opacity: 0.1;
+.titleTwo {
+  top: 25%;
+  left: 95%;
+  font-size: 12rem;
+  opacity: 0.1;
 }
 
-.titleTwoAnimation{
-    animation: ttlTwo 50s linear infinite;
+.titleTwoAnimation {
+  animation: ttlTwo 50s linear infinite;
 }
 
-.titleThree{
-    top: 40%;
-    left: 20%;
-    font-size: 7rem;
-    opacity: 0.15;
+.titleThree {
+  top: 40%;
+  left: 20%;
+  font-size: 7rem;
+  opacity: 0.15;
 }
 
-.titleThreeAnimation{
-    animation: ttlThree 30s linear infinite;
+.titleThreeAnimation {
+  animation: ttlThree 30s linear infinite;
 }
 
-.titleFour{
-    top: 80%;
-    left: 90%;
-    font-size: 5rem;
-    opacity: 0.2;
+.titleFour {
+  top: 80%;
+  left: 90%;
+  font-size: 5rem;
+  opacity: 0.2;
 }
 
-.titleFourAnimation{
-    animation: ttlFour 35s linear infinite;
+.titleFourAnimation {
+  animation: ttlFour 35s linear infinite;
 }
 
-.titleFive{
-    top: 70%;
-    left: 10%;
-    font-size: 2.5rem;
-    opacity: 0.25;
+.titleFive {
+  top: 70%;
+  left: 10%;
+  font-size: 2.5rem;
+  opacity: 0.25;
 }
 
-.titleFiveAnimation{
-    animation: ttlFive 40s linear infinite;
+.titleFiveAnimation {
+  animation: ttlFive 40s linear infinite;
 }
 
-.reverseAnimation{
-    animation-direction: reverse !important;
+.reverseAnimation {
+  animation-direction: reverse !important;
 }
 
-.twitterTitle{
-    color: rgb(29, 161, 242);
+.twitterTitle {
+  color: rgb(29, 161, 242);
 }
 
-.facebookTitle{
-    color: rgb(66, 103, 178);
+.facebookTitle {
+  color: rgb(66, 103, 178);
 }
 
-.youtubeTitle{
-    color: rgb(196, 48, 43);
+.youtubeTitle {
+  color: rgb(196, 48, 43);
 }
 
-
-.instagramTitle{
-    background: radial-gradient(circle at 10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.instagramTitle {
+  background: radial-gradient(
+    circle at 10% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.linkedinTitle{
-    color: rgb(40, 103, 178);
+.linkedinTitle {
+  color: rgb(40, 103, 178);
 }
 
-.shapeDividerContainer{
-    position: relative;
-    height: 161px;
-    z-index: -2;
+.shapeDividerContainer {
+  position: relative;
+  height: 161px;
+  z-index: -2;
 }
 
 .shapeDividerLayer1 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
 }
 
 .shapeDividerLayer1 svg {
-    position: relative;
-    display: block;
-    width: calc(282% + 1.3px);
-    height: 161px;
+  position: relative;
+  display: block;
+  width: calc(282% + 1.3px);
+  height: 161px;
 }
 
-.socialMediaIconsContainer{
-    flex-shrink: 0;
-    padding: 12px 0;
-    max-width: 1200px;
-    justify-content: space-evenly !important;
+.socialMediaIconsContainer {
+  flex-shrink: 0;
+  padding: 12px 0;
+  max-width: 1200px;
+  justify-content: space-evenly !important;
 }
 
-.socialMediaIconsContainer svg{
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
+.socialMediaIconsContainer svg {
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.twitterIcon{
-    width: 66px;
-    height: 66px;
-    color: rgb(29, 161, 242);
-    opacity: 0.45;
+.twitterIcon {
+  width: 66px;
+  height: 66px;
+  color: rgb(29, 161, 242);
+  opacity: 0.45;
 }
 
-.twitterIcon.iconSelected{
-    padding: 5px !important;
+.twitterIcon.iconSelected {
+  padding: 5px !important;
 }
 
-.instagramIcon{
-    width: 63px;
-    height: 63px;
-    opacity: 0.45;
+.instagramIcon {
+  width: 63px;
+  height: 63px;
+  opacity: 0.45;
 }
 
-.facebookIcon{
-    width: 64px;
-    height: 64px;
-    color: rgb(66, 103, 178);
-    opacity: 0.45;
+.facebookIcon {
+  width: 64px;
+  height: 64px;
+  color: rgb(66, 103, 178);
+  opacity: 0.45;
 }
 
-.youtubeIcon{
-    width: 66px;
-    height: 66px;
-    color: rgb(196, 48, 43);
-    overflow: visible;
-    opacity: 0.45;
+.youtubeIcon {
+  width: 66px;
+  height: 66px;
+  color: rgb(196, 48, 43);
+  overflow: visible;
+  opacity: 0.45;
 }
 
-.linkedinIcon{
-    width: 62px;
-    height: 62px;
-    color: rgb(40, 103, 178);
-    opacity: 0.45;
+.linkedinIcon {
+  width: 62px;
+  height: 62px;
+  color: rgb(40, 103, 178);
+  opacity: 0.45;
 }
 
-
-.iconSelected{
-    background-color: rgb(15, 15, 15, 0.4);
-    box-shadow: 0 2px 2px 1px rgba(70, 70, 70, 0.2);
-    opacity: 1 !important;
+.iconSelected {
+  background-color: rgb(15, 15, 15, 0.4);
+  box-shadow: 0 2px 2px 1px rgba(70, 70, 70, 0.2);
+  opacity: 1 !important;
 }
 
-.sectionContainer{
-    transform-style: preserve-3d;
-    perspective: 10px;
-    max-width: 1200px;
-    height: 280px;
-    border-radius: 6px;
-    backdrop-filter: saturate(2.8) brightness(4);
-    overflow: hidden;
+.sectionContainer {
+  transform-style: preserve-3d;
+  perspective: 10px;
+  max-width: 1200px;
+  height: 280px;
+  border-radius: 6px;
+  backdrop-filter: saturate(2.8) brightness(4);
+  overflow: hidden;
 }
 
-.section{
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    grid-template-rows: 8fr 6fr 2fr;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-400px) translateZ(-1px);
-    height: 280px;
-    padding: 1.3em;
-    box-shadow: 0 0 10px 1px rgba(40, 40, 40, 0.5);
-    border-radius: 6px;
+.section {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  grid-template-rows: 8fr 6fr 2fr;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-400px) translateZ(-1px);
+  height: 280px;
+  padding: 1.3em;
+  box-shadow: 0 0 10px 1px rgba(40, 40, 40, 0.5);
+  border-radius: 6px;
 }
 
-.sectionOnMountAnimation{
-    transform: translateY(0) translateZ(-1px) !important;
-    transition: 0.4s;
-    z-index: 3;
+.sectionOnMountAnimation {
+  transform: translateY(0) translateZ(-1px) !important;
+  transition: 0.4s;
+  z-index: 3;
 }
 
-.sectionOnMountAnimation2{
-    transform: translateY(0) translateZ(0) !important;
-    transition: 0.6s;
-    z-index: 3;
+.sectionOnMountAnimation2 {
+  transform: translateY(0) translateZ(0) !important;
+  transition: 0.6s;
+  z-index: 3;
 }
 
-.sectionUnMountAnimation{
-    transform: translateY(0) translateZ(-2px) !important;
-    transition: 0.6s;
-    z-index: 2;
+.sectionUnMountAnimation {
+  transform: translateY(0) translateZ(-2px) !important;
+  transition: 0.6s;
+  z-index: 2;
 }
 
-.displayNone{
-    display: none !important;
+.displayNone {
+  display: none !important;
 }
 
-.twitter{
-    /* background-color: rgb(29, 161, 242); */
-    background-color: rgb(202, 202, 202);
+.twitter {
+  /* background-color: rgb(29, 161, 242); */
+  background-color: rgb(202, 202, 202);
 }
 
-.facebook{
-    /* background-color: rgb(66, 103, 178); */
-    background-color: rgb(212, 212, 212);
+.facebook {
+  /* background-color: rgb(66, 103, 178); */
+  background-color: rgb(212, 212, 212);
 }
 
-.youtube{
-    /* background-color: rgb(196, 48, 43); */
-    background-color: rgb(212, 212, 212);
+.youtube {
+  /* background-color: rgb(196, 48, 43); */
+  background-color: rgb(212, 212, 212);
 }
 
-.instagram{
-    /* background: radial-gradient(circle at 10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
-    background-color: rgb(212, 212, 212);
+.instagram {
+  /* background: radial-gradient(circle at 10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
+  background-color: rgb(212, 212, 212);
 }
 
-.linkedin{
-    /* background-color: rgb(40, 103, 178); */
-    background-color: rgb(212, 212, 212);
+.linkedin {
+  /* background-color: rgb(40, 103, 178); */
+  background-color: rgb(212, 212, 212);
 }
 
-.imageContainer{
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
-    position: relative;
-    height: 100%;
-    flex-shrink: 0;
-    margin-right: 0.9em;
-    overflow: hidden;
-    border-radius: 6px 0 0 6px;
+.imageContainer {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  position: relative;
+  height: 100%;
+  flex-shrink: 0;
+  margin-right: 0.9em;
+  overflow: hidden;
+  border-radius: 6px 0 0 6px;
 }
 
-.imageContainer img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
+.imageContainer img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
 }
 
-.profileDataContainer{
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    grid-template-rows: 3fr 4fr;
+.profileDataContainer {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: 3fr 4fr;
 }
-.profileImgContainer{
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
-    position: relative;
-}
-
-.profileImgContainer img{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+.profileImgContainer {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  position: relative;
 }
 
-.profileData{
-    padding: 5px 0;
+.profileImgContainer img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
-.profileData *{
-    margin-right: 11px;
+.profileData {
+  padding: 5px 0;
 }
 
-.profileData div:first-child{
-    color: rgb(20, 20, 20);
+.profileData * {
+  margin-right: 11px;
 }
 
-.profileData a:last-child{
-    color: rgb(98, 98, 98);
+.profileData div:first-child {
+  color: rgb(20, 20, 20);
 }
 
-.profileDescription{
-    margin: 0;
-    color: rgb(20, 20, 20);
-    line-height: 1.4em;
+.profileData a:last-child {
+  color: rgb(98, 98, 98);
 }
 
-.postTextContainer{
-    color: rgb(20, 20, 20);
-    font-size: 1rem;
+.profileDescription {
+  margin: 0;
+  color: rgb(20, 20, 20);
+  line-height: 1.4em;
 }
 
-.postData{
-    color: rgb(98, 98, 98);
+.postTextContainer {
+  color: rgb(20, 20, 20);
+  font-size: 1rem;
 }
 
-.postData *{
-    margin-left: 15px;
+.postData {
+  color: rgb(98, 98, 98);
 }
 
-.postData svg{
-    width: 25px;
-    height: 100%;
-    margin-right: 3px;
+.postData * {
+  margin-left: 15px;
+}
+
+.postData svg {
+  width: 25px;
+  height: 100%;
+  margin-right: 3px;
 }
 
 @keyframes ttlOne {
-    from{
-        left: 20%;
-    }
-    to{
-        left: 95%;
-    }
+  from {
+    left: 20%;
+  }
+  to {
+    left: 95%;
+  }
 }
 
 @keyframes ttlTwo {
-    from{
-        left: 95%;
-    }
-    to{
-        left: 10%
-    }
+  from {
+    left: 95%;
+  }
+  to {
+    left: 10%;
+  }
 }
 
 @keyframes ttlThree {
-    from{
-        left: 0%;
-    }
-    to{
-        left: 90%;
-    }
+  from {
+    left: 0%;
+  }
+  to {
+    left: 90%;
+  }
 }
 
 @keyframes ttlFour {
-    from{
-        left: 90%;
-    }
-    to{
-        left: 10%;
-    }
+  from {
+    left: 90%;
+  }
+  to {
+    left: 10%;
+  }
 }
 
 @keyframes ttlFive {
-    from{
-        left: 10%;
-    }
-    to{
-        left: 90%;
-    }
+  from {
+    left: 10%;
+  }
+  to {
+    left: 90%;
+  }
 }
-

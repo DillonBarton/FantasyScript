@@ -1,5 +1,4 @@
-import { keyframes } from 'styled-components'
-
+import { keyframes } from "styled-components";
 
 export const Dream = keyframes`
     from{
@@ -10,7 +9,7 @@ export const Dream = keyframes`
         -webkit-transform: rotateZ(0deg);
                 transform: rotateZ(0deg);
     }
-`
+`;
 
 export const DreamWorld = keyframes`
     0%{
@@ -25,7 +24,7 @@ export const DreamWorld = keyframes`
         -webkit-transform-origin: 65% 60%;
                 transform-origin: 65% 60%;
     }
-`
+`;
 
 export const LeftWrapperKF = keyframes`
     from{
@@ -39,7 +38,7 @@ export const LeftWrapperKF = keyframes`
         transform: translate3d(-50%, 0, -1px) rotateY(360deg);
     }
     
-`
+`;
 
 export const CenterWrapperKF = keyframes`
     from{
@@ -52,7 +51,7 @@ export const CenterWrapperKF = keyframes`
         transform-origin: 50% 50% -100000px;
         transform: translate3d(200px, 0, -3px) rotateY(0.7deg);
     }
-`
+`;
 
 export const rightWrapperKF = keyframes`
     from{
@@ -67,7 +66,7 @@ export const rightWrapperKF = keyframes`
         transform-origin: 50% 50% -100000px;
         transform: translate3d(200px, 0, -5px) rotateY(1.2deg);
     }
-`
+`;
 
 export const SidepanelContainerKF = keyframes`
     0%{
@@ -88,7 +87,7 @@ export const SidepanelContainerKF = keyframes`
     100%{
         transform: rotateY(0deg) rotateX(0deg);
     }
-`
+`;
 
 export const CenterPanelContainerKF = keyframes`
     0%{
@@ -109,7 +108,7 @@ export const CenterPanelContainerKF = keyframes`
     100%{
         transform: rotateY(0deg) rotateX(0deg);
     }
-`
+`;
 
 export const PanelKF = keyframes`
     0%{
@@ -120,7 +119,7 @@ export const PanelKF = keyframes`
         transform: translateZ(-0.1px) rotateX(0.05deg);
         opacity: 1;
     }
-`
+`;
 
 export const SidePanelKF = keyframes`
     0%{
@@ -131,7 +130,7 @@ export const SidePanelKF = keyframes`
     transform: translateZ(-1px) rotateX(0.15deg);
         opacity: 1;
     }
-`
+`;
 
 export const opacity = keyframes`
     from{
@@ -140,7 +139,7 @@ export const opacity = keyframes`
     to{
         opacity: 1;
     }
-`
+`;
 export const slide = keyframes`
     0 % {
         transform: translate(0, 0);
@@ -193,7 +192,7 @@ export const slide = keyframes`
     100% {
         transform: translate(0, 0);
     }
-`
+`;
 export const gradient1 = keyframes`
     from {
         stop-color: #4383b8;
@@ -204,7 +203,7 @@ export const gradient1 = keyframes`
     to {
         stop-color: #4383b8;
     }
-`
+`;
 export const gradient2 = keyframes`
     from {
         stop-color: #4aa06c;
@@ -215,7 +214,7 @@ export const gradient2 = keyframes`
     to {
         stop-color: #4aa06c;
     }
-`
+`;
 export const rotate = keyframes`
     from {
         transform: rotate(0deg);
@@ -223,4 +222,4 @@ export const rotate = keyframes`
     to {
         transform: rotate(360deg);
     }
-`
+`;
