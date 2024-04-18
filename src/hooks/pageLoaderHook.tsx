@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import styles from "../../components/LoadingScreens/PuzzleAnimation/puzzleAnimation.module.css";
+import styles from "@/components/puzzleAnimation/puzzleAnimation.module.css";
 
 // try making the stylesheet global
 

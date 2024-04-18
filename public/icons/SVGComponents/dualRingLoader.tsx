@@ -1,6 +1,16 @@
 
 
-export default function LoaderSVG({colour, width, height, strokeWidth}){
+export default function LoaderSVG({
+    colour,
+    width,
+    height,
+    strokeWidth
+}: {
+    colour: string;
+    width: string;
+    height: string;
+    strokeWidth: string;
+}){
     
 
     return(

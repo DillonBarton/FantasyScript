@@ -23,6 +23,7 @@ const FilmDisplaySection = () => {
       >
         <FilmDisplay />
       </PageSection>
+        <SectionDivider/>
     </section>
   );
 };

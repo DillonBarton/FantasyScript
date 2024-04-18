@@ -1,6 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./glideSlider.module.css";
 import { ScreenCard } from "./GlideSlider";
+
+const data = [
+  "fashion",
+  "fashion",
+  "property",
+  "construction",
+  "graphic",
+  "professional",
+  "Restaurant",
+  "null",
+  "null",
+  "null",
+];
 
 export default function GlideSliderReverse({
   unitOfMeasurement,
@@ -8,25 +21,14 @@ export default function GlideSliderReverse({
   width,
 }) {
   const sliderTrackReverse = useRef(null);
-  const data = [
-    "fashion",
-    "fashion",
-    "property",
-    "construction",
-    "graphic",
-    "professional",
-    "Restaurant",
-    "null",
-    "null",
-    "null",
-  ];
+
 
   function setCloneNodes() {
-    let firstSliderClone =
+    const firstSliderClone =
       sliderTrackReverse.current.childNodes[
         sliderTrackReverse.current.childNodes.length - 2
       ].cloneNode(true);
-    let secondSliderClone =
+    const secondSliderClone =
       sliderTrackReverse.current.childNodes[
         sliderTrackReverse.current.childNodes.length - 1
       ].cloneNode(true);
@@ -34,7 +36,7 @@ export default function GlideSliderReverse({
   }
 
   function getFullDistance() {
-    let nodeListLengthMinusClones =
+    const nodeListLengthMinusClones =
       sliderTrackReverse.current.childNodes.length - 2;
     let distanceToTranslate = nodeListLengthMinusClones * width;
     if (unitOfMeasurement === "vw") {
@@ -48,7 +50,7 @@ export default function GlideSliderReverse({
   }
 
   function setsliderPosition() {
-    let distanceToTranslate = getFullDistance();
+    const distanceToTranslate = getFullDistance();
     sliderTrackReverse.current.style.transform = `translateX(-${distanceToTranslate}px)`;
   }
 
@@ -61,7 +63,7 @@ export default function GlideSliderReverse({
 
   function resetAnimation(e) {
     if (e.target.id) {
-      let distanceToTranslate = getFullDistance();
+      const distanceToTranslate = getFullDistance();
       sliderTrackReverse.current.style.transition = "none";
       sliderTrackReverse.current.style.transform = `translateX(-${distanceToTranslate}px)`;
       beginTransition();
@@ -69,7 +71,7 @@ export default function GlideSliderReverse({
   }
 
   function setSpeed() {
-    let fullDistance = getFullDistance();
+    const fullDistance = getFullDistance();
     let slowDuration = getDuration(fullDistance);
     slowDuration *= 3;
     sliderTrackReverse.current.style.transition = `${Math.round(slowDuration)}s linear`;
@@ -77,14 +79,14 @@ export default function GlideSliderReverse({
   }
 
   function resetSpeed() {
-    let fullDistance = getFullDistance();
-    let slowDuration = getDuration(fullDistance);
+    const fullDistance = getFullDistance();
+    const slowDuration = getDuration(fullDistance);
     sliderTrackReverse.current.style.transition = `${Math.round(slowDuration)}s linear`;
     sliderTrackReverse.current.style.transform = `translateX(${1}px)`;
   }
 
   function getDuration(fullDistance) {
-    let speed = fullDistance / duration;
+    const speed = fullDistance / duration;
     return (
       Math.abs(sliderTrackReverse.current.getBoundingClientRect().x) / speed
     );

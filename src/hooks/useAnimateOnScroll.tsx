@@ -1,5 +1,4 @@
 import { useState, RefObject, useEffect } from "react";
-import styles from "@/components/pageSection/pageSection.module.css";
 
 export default function useAnimateOnScroll(
   ref: RefObject<any>,
@@ -8,10 +7,11 @@ export default function useAnimateOnScroll(
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      let offset = document.documentElement.clientHeight + window.scrollY;
-      let scrollHeight =
-        ref.current.getBoundingClientRect().top + window.scrollY;
+
+    const animate = () => {
+      const offset = document.documentElement.clientHeight + window.scrollY;
+      const scrollHeight =
+          ref.current.getBoundingClientRect().top + window.scrollY;
       if (offset >= scrollHeight && !animated) {
         setAnimated(true);
         if (classes) ref.current.classList.add(classes.join(" "));
@@ -19,7 +19,12 @@ export default function useAnimateOnScroll(
         setAnimated(false);
         if (classes) ref.current.classList.remove(classes.join(" "));
       }
-    });
+    }
+
+    window.addEventListener("scroll", animate);
+    return () => {
+      window.removeEventListener("scroll", animate)
+    }
   }, [classes, ref]);
 
   return animated;

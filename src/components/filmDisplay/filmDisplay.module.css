@@ -1,7 +1,7 @@
 .filmDisplayContainer {
   position: relative;
-  width: 56em;
-  height: 56em;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

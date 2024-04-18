@@ -1,12 +1,11 @@
 import React from "react";
 import BubbleDisplay from "@/components/bubbleDisplay/BubbleDisplay";
-import styles from "@/components/pageSection/pageSection.module.css";
 import PageSection from "@/components/pageSection/PageSection";
 import SectionDivider from "@/components/sectionDivider/SectionDivider";
 
 const BubbleDisplaySection = () => {
   return (
-    <section className="relative w-full p-0 bg-[#0F0F0F] z-[3] flex flex-col justify-center items-center">
+    <section className="relative w-full p-0 bg-[#0f0f0f] z-[3] flex flex-col justify-center items-center">
       <PageSection
         title="About us"
         subtitle="London web design specialists"

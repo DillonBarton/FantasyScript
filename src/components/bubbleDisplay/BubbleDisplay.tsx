@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useRef, useState, useLayoutEffect } from "react";
 
-import Image from "next/image";
+import { useRef } from "react";
 
 import styles from "./bubbleDisplay.module.css";
 import useAnimateOnScroll from "../../hooks/useAnimateOnScroll";
-import { cn } from "@/lib/utils";
+
+import bg from "../../../public/images/dreamWorld.jpg"
 
 export default function BubbleDisplay() {
   /**
@@ -27,6 +27,12 @@ export default function BubbleDisplay() {
         ref={bubbleDisplay}
         className={`${styles.bubbleDisplay} w-full h-full`}
       >
+        <div
+          className={`${styles.bubbleDisplayBackground} z-[0]`}
+          style={{
+            backgroundImage: `url(${bg.src})`,
+          }}
+        />
         <div className={`${styles.bubble} ${styles.bubbleOne}`}>
           <div className={styles.bubbleShadow} />
           <div className={`${styles.bubbleBackground} w-full h-full`} />

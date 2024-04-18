@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import useAnimateOnScroll from "../../hooks/useAnimateOnScroll";
 
 import styles from "./filmDisplay.module.css";

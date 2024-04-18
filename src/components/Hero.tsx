@@ -1,9 +1,9 @@
-import { useRef, useEffect, useState } from "react";
+"use client";
 
-import Link from "next/link";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
-import styles from "../src/styles/hero.module.css";
+import styles from "@/styles/hero.module.css";
 
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
@@ -30,7 +30,7 @@ export default function Hero() {
   });
 
   useEffect(() => {
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       if (count == numberOfContainers) {
         setCount(initialState);
       } else {
@@ -41,6 +41,11 @@ export default function Hero() {
   }, [count]);
 
   useEffect(() => {
+    let transformed;
+    let displaced;
+    let distance;
+    if (!heroCarousel.current || !leftButton.current || !rightButton.current)
+      return;
     switch (count) {
       case 0:
         heroCarousel.current.style.transform = `translateX(0)`;
@@ -49,9 +54,10 @@ export default function Hero() {
         break;
 
       default:
-        let transformed = count * heroContainer.current.offsetWidth;
-        let displaced = count * containerMargin;
-        let distance = transformed + displaced;
+        if (!heroContainer.current) return;
+        transformed = count * heroContainer.current.offsetWidth;
+        displaced = count * containerMargin;
+        distance = transformed + displaced;
         heroCarousel.current.style.transform = `translateX(-${distance}px)`;
         leftButton.current.style.transform = `translateX(${distance - 30}px) translateY(-50%)`;
         rightButton.current.style.transform = `translateX(${distance + 30}px) translateY(-50%)`;

@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 import dynamic from "next/dynamic";
 import DreamSpace from "@/styled-components/DreamSpace";
-const Footer = dynamic(() => import("../components/Footer/Footer"));
+const Footer = dynamic(() => import("@/components/footer/Footer"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        id={`pageContainer`}
+        id="pageContainer"
         className={cn(
-          "min-h-screen font-sans antialiased",
+          "font-sans antialiased",
           inter.className + " flexColumn sc",
         )}
       >
